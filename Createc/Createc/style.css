@@ -1,5 +1,8 @@
 /* Componentes */
 
+.mobile-menu {
+    display: none;
+}
 
 .header-logo {
     width: clamp(180px, 11vw, 220px); /* Mínimo 120px, padrão 11vw, máximo 220px */
