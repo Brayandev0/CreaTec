@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="responsive.css">
         <title>Createc</title>
+    
     </head>
 
     <header>
@@ -29,22 +30,21 @@
                 <span>Solicite um Orçamento</span>
                 <span>Invista no seu futuro!</span>
             </button>
-
         </div>
         <button class="menu-hamburguer" id="menu-toggle">
             <span></span>
             <span></span>
             <span></span>
         </button>
+        
+    </header>
+    <body>
         <div class="mobile-menu" id="mobile-menu">
             <button class="header-buttons">Contato</button>
             <button class="header-buttons">Sobre</button>
             <button class="header-buttons">Soluções</button>
             <button class="header-buttons">Suporte</button>
         </div>
-        
-    </header>
-    <body>
         <div class="ladding-page-video-container">
             <video autoplay muted loop id="background-video">
                 <source src="arts/ladding-page.mp4" type="video/mp4" media="(min-width: 769px)">
@@ -57,26 +57,34 @@
                     <h1 class="ladding-page-title"> Nosso software, sua visão</h1>
                 </div>
                 <div class="ladding-page-slogan-atrativo">
-                    <p> Sua empresa merece soluções à altura de seu sucesso</p>
-                    <p> Na Createc, seus desafios de tranformam em oportunidades</p>
+                    <p> Sua empresa merece soluções à <br id="pc-close"> altura de seu sucesso</p>
+                    <p id="mobile-close"> Na Createc, seus desafios de tranformam em oportunidades</p>
                 </div>
-                <div class="ladding-page-linkis">
-                    <div class="ladding-page-link">
-                       <p> <strong> Nome </strong> -  O aplicativo que gerencia o seu negócio online </p>
-                       <button> Venha conhecer  </button>
-                    </div>
-                    <div class="ladding-page-link">
-                        <p> <strong> História de Sucesso </strong> -  Veja o que nossos clientes estao falando </p>
-                       <button> Casos de Sucesso </button>
-                    </div>
-                    <div class="ladding-page-link">
-                        <p> <strong> Algum problema? - </strong>   Entre em contato com o nosso suporte </p>
-                       <button> Suporte  </button>
-                    </div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="ladding-page-link">
+                            <p><strong>Nome</strong> - O aplicativo que gerencia o seu negócio online</p>
+                            <button>Venha conhecer</button>
+                        </div>
+                        <div class="ladding-page-link">
+                            <p><strong>História de Sucesso</strong> - Veja o que nossos clientes estão falando</p>
+                            <button>Casos de Sucesso</button>
+                        </div>
+                        <div class="ladding-page-link">
+                            <p><strong>Algum problema?</strong> - Entre em contato com o nosso suporte</p>
+                            <button>Suporte</button>
+                        </div>
+                        
+                    </div id="pc-close">
+            
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)" >&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+            
+                    <div class="carousel-dots" id="pc-close"></div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </body>
     <script src="efeitos.js"></script>
 </html>
