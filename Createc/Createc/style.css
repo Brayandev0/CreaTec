@@ -147,6 +147,7 @@ header {
     align-items: center; /* Alinha os itens verticalmente */
     z-index: 10;
     background-color: white;
+    border-bottom: solid black 1px;
 }
 
 /* Pages */
