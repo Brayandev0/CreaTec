@@ -26,7 +26,7 @@
         </div>
         <div class="header-orcamento-container">
             <button class="header-orcamento-button">
-                <span>Solicite um Orçamento</span>
+                <span>Solicite um orcamento</span>
                 <span>Invista no seu futuro!</span>
             </button>
 
@@ -54,7 +54,7 @@
             <div class="ladding-page-text">
                 <div> 
                     <img src="arts/ladding-page-logo.png" class="ladding-page-logo">
-                    <h1 class="ladding-page-title"> Nosso software, sua visão</h1>
+                    <h1 class="ladding-page-title"> Sua visão, nosso software</h1>
                 </div>
                 <div class="ladding-page-slogan-atrativo">
                     <p> Sua empresa merece soluções à altura de seu sucesso</p>
@@ -76,7 +76,23 @@
                 </div>
             </div>
         </div>
-
+            
+            <div class="div-desfoque-do-fundo">
+                <div id="orcamento" class="pedir-orcamento">
+                    <span  class="fechar-orcamento" onclick="fechar_orcamento()" > x </span>
+                    <form action="" id="dados_form"> 
+                    <h1> Complete o formulário para entrar em contato </h1>
+                    <input placeholder="Nome Completo" class="orcamento-input" type="text" id="nome">
+                    <input placeholder="Email" class="orcamento-input" type="email" id="email">
+                    <input placeholder="Número de telefone" class="orcamento-input" type="text" style="padding-bottom: 2%;" id="telefone">
+                    <input placeholder="Mensagem" class="orcamento-input" type="text"  style="padding-bottom: 10%; padding-top: 2.5%;" id="mensagem">
+                    <input placeholder="Como você ouviu falar sobre nós?" class="orcamento-input" style="padding-bottom: 13%; padding-top: 2.5%;" id="sobre_nos">
+                    <button onclick="enviarOrcamento()" type="submit"> Enviar</button>
+                    </form>
+                </div>
+            </div>
     </body>
+
     <script src="efeitos.js"></script>
+    <script src="functions.js"></script>
 </html>
