@@ -241,11 +241,7 @@ header {
 
 .pedir-orcamento {
     height: 100vh;
-    width: clamp(380px, 25%, 700px);
-    margin-left: 37.5%;
-    margin-right: 37.5%;
-    position: absolute;
-    top: 0;
+    width: clamp(450px, 25%, 700px);
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -253,12 +249,13 @@ header {
     font-family: "Questrial";
     font-size: 1rem;
     align-items: center;
+    padding-top: 2%;
 }
 .fechar-orcamento {
     margin-top: 6%;
     font-weight: bold;
     font-size: 1.5rem;
-    margin-left: 80%;
+    margin-left: 90%;
 }
 .fechar-orcamento:hover {
     cursor: pointer;
@@ -267,10 +264,10 @@ header {
 
 .pedir-orcamento h1 {
     font-size: clamp(1.5rem, 1.7vw, 1.7rem);
-    padding: 15%;
+    padding-left: 15%;
     padding-top: 0%;
     padding-bottom: 7%;
-    padding-left: 10%;
+    padding-left: 14%;
 }
 
 .div-desfoque-do-fundo {
@@ -280,7 +277,36 @@ header {
     top: 0;
     background-color: rgb(3, 2, 3, 0.43);
     z-index: 102;
+    justify-items: center;
+    display: none;
 }
+@media (min-width: 769px) {
+    .carousel {
+        display: flex;
+        color: White;
+        font-family: 'Questrial';
+        width: 100%;
+        margin-top: 10vh;
+        transition: 0s;
+    }
+    .carousel button {
+        color: white;
+        border: none;
+        background-color: transparent;
+        font-size: 1.2rem;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-decoration: underline;
+        font-weight: 700;
+        top: -1.5vh;
+        left: -1%;
+        position: relative;
+        
+    }
+    .carousel button:hover {
+        cursor: pointer;
+    }
+}
+
 
 .orcamento-input {
     background-color: inherit;
@@ -292,10 +318,11 @@ header {
     padding-top: 4%;
     padding-bottom: 3%;
     padding-left: 3%;
-    margin-right: 5%;
+    margin-right: 0%;
     border-radius: 1.5vh;
-    width: 65%;
+    width: 70%;
     margin-bottom: 4vh;
+    margin-left: 4%;
     }
 
 .pedir-orcamento button {
@@ -309,18 +336,26 @@ header {
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 20%;
+    margin-left: 23%;
 }
 .pedir-orcamento button:hover {
     cursor: pointer;
     transform:scale(110%);
 }
-
+.pedir-orcamento form {
+    padding-left: 10%;
+}
 
 
 /* Themes */
 
 
-
+#pc-close {
+    display: none;
+}
+ #menu-toggle {
+    display: none;
+ }
 
 
 .questrial-regular {
