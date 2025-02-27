@@ -1,0 +1,56 @@
+.main-contact{
+    display: flex;
+}
+
+/*  Fontes  */
+
+
+@font-face {
+    font-family: 'HT Grotesk';
+    src: url('caminho/para/ht-grotesk.woff2') format('woff2'),
+         url('caminho/para/ht-grotesk.woff') format('woff');
+    font-style: normal;
+}
+
+/*  Lado Informação  */
+
+.informacao-contact{
+    height: 100vh;
+    width: 30vw;
+    background-color: black;
+}
+
+.informacao-contact article{
+    margin: 50px;
+}
+
+.text-contact{
+    color: white;
+}
+
+.title-contact{
+    margin-top: 15vh;
+    font-size: 38.7px;
+    font-family: 'HT Grotesk', sans-serif;
+    
+}
+
+.subtitle-contact{
+    font-family: 'HT Grotesk', sans-serif;
+}
+
+.flex-contact{
+    display: flex;
+}
+
+.weaker-contact{
+    color: #6b6868;
+}
+
+/*  Lado Formulario  */
+
+.formulario-contact{
+    height: 100vh;
+    width: 70vw;
+    background-color: lightgray;
+}
