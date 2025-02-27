@@ -147,7 +147,8 @@ header {
     display: flex;
     align-items: center; /* Alinha os itens verticalmente */
     z-index: 10;
-    background-color: #f6f4f4;
+    background-color: white;
+    border-bottom: solid black 1px;
 }
 
 /* Pages */
