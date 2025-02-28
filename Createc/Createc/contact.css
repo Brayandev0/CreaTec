@@ -1,0 +1,74 @@
+.main-contact{
+    display: flex;
+}
+
+/*  Fontes  */
+
+
+@font-face {
+    font-family: 'HT Grotesk';
+    src: url('caminho/para/ht-grotesk.woff2') format('woff2'),
+         url('caminho/para/ht-grotesk.woff') format('woff');
+    font-style: normal;
+}
+
+/*  Lado Informação  */
+
+.informacao-contact{
+    height: 100vh;
+    width: 30vw;
+    background-color: black;
+    padding-top: 3vh;
+}
+
+.informacao-contact article{
+    margin: 50px;
+}
+
+.text-contact{
+    color: white;
+}
+
+.title-contact{
+    margin-top: 15vh;
+    font-size: 38.7px;
+    font-family: 'HT Grotesk', sans-serif;
+    
+}
+
+.subtitle-contact{
+    font-family: 'HT Grotesk', sans-serif;
+    font-size: 21.1px;
+    letter-spacing: 2px;
+}
+
+.subtitle-contact a{
+    text-decoration: none;
+    color: #910157;
+    padding-left: 2%;
+}
+
+.flex-contact{
+    display: flex;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+
+
+.weaker-contact{
+    color: #6b6868;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    margin-top: 5vh;
+}
+
+/*  Lado Formulario  */
+
+.formulario-contact{
+    height: 100vh;
+    width: 70vw;
+    background-color: lightgray;
+}
