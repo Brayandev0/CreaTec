@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="responsive.css">
+        <link rel="stylesheet" href="layout.css">
         <title>Createc</title>
     
     </head>
@@ -18,7 +19,7 @@
         </div>
         <div class="header-buttons-container">        
             <button class="header-buttons">Contato </button>
-            <button class="header-buttons">Sobre </button>
+            <button class="header-buttons">Sobre nós </button>
             <button class="header-buttons">
                 Soluções 
                 <span class="header-button-arrow"></span>
@@ -38,7 +39,7 @@
         </button>
         
     </header>
-    <body>
+    <body class="contato">
         <div class="mobile-menu" id="mobile-menu">
             <button class="header-buttons">Contato</button>
             <button class="header-buttons">Sobre</button>
@@ -75,13 +76,11 @@
                             <p><strong>Algum problema?</strong> - Entre em contato com o nosso suporte</p>
                             <button>Suporte</button>
                         </div>
-
-                        <div  class="carousel-dots" id="pc-close">
-            
-                            <button class="carousel-btn prev" onclick="moveSlide(-1)" id="pc-close" >&#10094;</button>
-                            <button class="carousel-btn next" onclick="moveSlide(1)" id="pc-close">&#10095;</button>
-                        </div>
+                        
                     </div>
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)" id="pc-close" >&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(1)" id="pc-close">&#10095;</button>
+                    <div  class="carousel-dots" id="pc-close"> </div>
                 </div>
             </div>
         </div>

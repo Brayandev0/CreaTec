@@ -1,161 +1,15 @@
 /* Componentes */
 
-.mobile-menu {
-    display: none;
-}
-
-.header-logo {
-    width: clamp(180px, 11vw, 220px); /* Mínimo 120px, padrão 11vw, máximo 220px */
-    height: auto; /* Mantém a proporção original */
-    margin-right: 5%;
-}
-
-.header-logo-container {
-    width: 20%;
-    padding-left: 2vw;
-    padding-top: 1.5vh;
-}
-
-
-.header-buttons-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    white-space: nowrap;
-    padding-top: 1.5vh;
-}
-
-.underline {
-    position: absolute;
-    bottom: 0;
-    height: 2px;
-    background-color: black;
-    width: 0;
-    transition: all 0.3s ease-in-out;
-}
-
-.header-buttons {
-    font-size: clamp(1.5rem, 1.7vw, 1.7rem);
-    margin-right: 5%;
-    border: none;
-    padding-bottom: 5px;
-    margin-top: 1vh;
-    position: relative;
-    cursor: pointer;
-    background-color: #f6f4f4;
-}
-
-.header-buttons-container:hover .underline {
-    width: var(--width, 0);
-    left: var(--left, 0);
-}
-
-.header-buttons:hover ~ .underline {
-    --width: attr(data-width px);
-    --left: attr(data-left px);
-}
-
-
-.header-button-arrow::after {
-    content: "";
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 7px solid black; /* Cor do triângulo */
-    display: inline-block;
-    margin-left: 5px;
-    position: relative;
-    top: -0.7vh;
-    left: -3%;
-  }
-
-.header-buttons-container {
-    width: 40%;
-    text-align: center;
-}
-
-.header-orcamento-button {
-    font-size: 1.7rem;
-    border: none;
-    color: white;
-    font-weight: bold;
-    background-color: #910157;
-    padding: 0.5rem 1rem;
-    margin: 1.5vh 0 1vh 0;
-    white-space: nowrap;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-}
-
-.header-orcamento-button:hover {
-    transform: scale(1.1);
-    background-color: #750144;
-    cursor: pointer;
-}
-
-.header-orcamento-button span {
-    display: inline-block;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.header-orcamento-button:hover span:first-child {
-    opacity: 0;
-    transform: translateY(-100%);
-}
-
-.header-orcamento-button span:last-child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 100%);
-    opacity: 0;
-}
-
-.header-orcamento-button:hover span:last-child {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-}
-
-
-.header-orcamento-container {
-    width: 40vw;
-    text-align: end;
-    padding-right: 2vw;
-}
 
 /* Layout */
 
-html {
-    font-size: 16px;
-    height: 100%;
-}
 
-body {
-    margin: 0;
-    height: 100%;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    height: clamp(60px, 8vh, 10%); /* Mínimo 120px, padrão 11vw, máximo 220px */;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
-    z-index: 10;
-    background-color: white;
-    border-bottom: solid black 1px;
-}
 
 /* Pages */
 
 
 .ladding-page-text {
-    padding-top: 20vh;
+    padding-top: 15vh;
     position: absolute;
     padding-left: 8%;
     width: 100%;
@@ -188,28 +42,8 @@ header {
     font-weight: 600;
 }
 
-.ladding-page-linkis {
-    display: flex;
-    color: White;
-    font-family: 'Questrial';
-    width: 100%;
-    margin-top: 10vh;
-}
-.ladding-page-linkis button {
-    color: white;
-    border: none;
-    background-color: transparent;
-    font-size: 1.2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-decoration: underline;
-    font-weight: 700;
-    top: -1.5vh;
-    left: -1%;
-    position: relative;
-}
-.ladding-page-linkis button:hover {
-    cursor: pointer;
-}
+ 
+
 
 .ladding-page-link {
     margin-right: 5%;
@@ -279,6 +113,7 @@ header {
     z-index: 102;
     justify-items: center;
     display: none;
+    overflow-y: hidden;
 }
 @media (min-width: 769px) {
     .carousel {
