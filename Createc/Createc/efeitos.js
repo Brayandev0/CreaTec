@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Atualizar posição do carrossel
     function updateCarousel() {
-        carousel.style.transform = `translateX(-${currentSlide * 29}%)`;
+        carousel.style.transform = `translateX(-${currentSlide * 24.5}%)`;
         carousel.style.transition = "transform 0.5s ease-in-out";
         updateDots();
     }

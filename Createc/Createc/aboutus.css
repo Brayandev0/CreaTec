@@ -1,0 +1,153 @@
+body {
+    background-color: #0b0a10;
+    
+}
+.about-container{
+    width: 100vw;
+    margin-top: 23vh;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutus-found {
+    margin-left: 76vw;
+    margin-top: 50vh;
+    position: absolute;
+    height: 50vh;
+    width: auto;
+}
+
+.tiulo-menor{
+    letter-spacing: 5px;
+    color: #a6a1a1;
+    font-weight: 400;
+    font-size: 1.6rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titulo-maior {
+    font-family: 'Questrial', serif;
+    letter-spacing: 7px;
+    line-height: 1.2;
+    font-size: 2.5rem;
+    color: #d9d9d9;
+    border-left: solid 6px #7d0c4b;
+    padding-left: 20px;
+}
+
+
+.texto {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #928787;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.div-um {
+    width: 30%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-right: 10%;
+}
+
+.button-container{
+    height: 5vh;
+    text-align: left;
+    margin-top: 5vh;
+}
+
+.button-container button {
+    font-family: "Cormorant Garamond", serif;
+    background-color: #7d0c4b;
+    color: #d9d9d9;
+    font-size: 1.5rem;
+    padding: 2% 5%;
+    border: none;
+    font-weight:600;
+}
+
+.div-um button:hover {
+    text-decoration: underline;
+    transform: scale(104%);
+    cursor: pointer;
+}
+
+.div-dois {
+    width: 30%;
+}
+.div-dois .tiulo-menor {
+    margin-left: 10%;
+}
+.service img {
+    width: clamp(50px, 15%, 150px);
+    height: 0%;
+    margin-right: 5%;
+}
+.service p {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 1,2rem;
+    text-align: justify;
+    width: 60%;
+    letter-spacing: 1.1px;
+    line-height: 1.5;
+}
+.service{
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-y: scroll;
+    }
+
+    .aboutus-found {
+        display: none;
+    }
+
+    .about-container{
+        width: 100vw;
+        margin-top: 15vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .div-um, .div-dois {
+        width: 80%;
+        margin: 0px;
+        margin-right: 4%;
+    }
+    .titulo-maior {
+        font-size: 1.5rem;
+    }
+
+    .div-dois {
+        margin-top: 5vh;
+    }
+
+    .div-dois .tiulo-menor {
+        margin-left: 0%;
+    }
+
+    .service p {
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 700;
+        font-size: 1,2rem;
+        text-align: justify;
+        width: 80%;
+        letter-spacing: 1.1px;
+        line-height: 1.5;
+    }
+    .service{
+        display: flex;
+        align-items: center;
+    }
+
+
+}

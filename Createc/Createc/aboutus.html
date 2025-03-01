@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="layout.css">
+        <link rel="stylesheet" href="aboutus.css">
+        <title>Createc</title>
+    
+    </head>
+
+    <header>
+        <div class="header-logo-container">
+            <img src="arts/logo.png" class="header-logo">
+        </div>
+        <div class="header-buttons-container">        
+            <button class="header-buttons">Contato </button>
+            <button class="header-buttons">Sobre nós </button>
+            <button class="header-buttons">
+                Soluções 
+                <span class="header-button-arrow"></span>
+            </button>
+            <button class="header-buttons">Suporte </button>
+        </div>
+        <div class="header-orcamento-container">
+            <button class="header-orcamento-button">
+                <span>Solicite um Orçamento</span>
+                <span>Invista no seu futuro!</span>
+            </button>
+        </div>
+        <button class="menu-hamburguer" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+    </header>
+    <body>
+        <div class="mobile-menu" id="mobile-menu">
+            <button class="header-buttons">Contato</button>
+            <button class="header-buttons">Sobre</button>
+            <button class="header-buttons">Soluções</button>
+            <button class="header-buttons">Suporte</button>
+        </div>
+        <div class="div-desfoque-do-fundo" id="divOrcamento">
+            <div id="orcamento" class="pedir-orcamento">
+                <span  class="fechar-orcamento" onclick="fecharOrcamento()"> x </span>
+                <h1> Complete o formulário para entrar em contato </h1>
+                <form action="" id="dados_form"> 
+                    <input placeholder="Nome Completo" class="orcamento-input" type="text" id="nome">
+                    <input placeholder="Email" class="orcamento-input" type="email" id="email">
+                    <input placeholder="Número de telefone" class="orcamento-input" type="text" style="padding-bottom: 2%;" id="telefone">
+                    <input placeholder="Mensagem" class="orcamento-input" type="text"  style="padding-bottom: 10%; padding-top: 2.5%;" id="mensagem">
+                    <input placeholder="Como você ouviu falar sobre nós?" class="orcamento-input" style="padding-bottom: 13%; padding-top: 2.5%;" id="sobre_nos">
+                    <button onclick="enviarOrcamento()" type="submit"> Enviar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="about-container">
+            <div class="div-um">
+                <h1 class="tiulo-menor"> Sobre nos </h1>
+                <p class="titulo-maior"> Inovando e Criando soluções para os seus problemas  <p>
+                <p class="texto"> Na Createc, transformamos sua visão em realidade digital. Somos especialistas no desenvolvimento de softwares personalizados, entregando soluções inovadoras para empresas e empreendedores que buscam eficiência, automação e tecnologia de ponta.<p>
+                <div class="button-container">
+                    <button> Fale Conosco</button>
+                </div>
+            </div>
+            <div class="div-dois">
+                <h1 class="tiulo-menor"> Nossos Serviços </h1>
+                <div class="services-container">
+                    <div class="service">
+                        <img src="arts/sistemas.png">
+                        <p> Sistemas personalizados: Softwares desenvolvidos sob medida para atender às demandas do seu negócio</p>
+                    </div>
+                    <div class="service">
+                        <img src="arts/aplicativos.png">
+                        <p> Aplicativos e plataformas web: Soluções intuitivas e eficientes para conectar sua empresa ao mundo digital</p>
+                    </div>
+                    <div class="service">
+                        <img src="arts/automação.png">
+                        <p> Automação e otimização: Ferramentas que reduzem custos e aumentam a produtividade</p>
+                    </div>
+                    <div class="service">
+                        <img src="arts/projeto.png">
+                        <p>Tem um projeto em mente? Vamos torná-lo realidade! Entre em contato e descubra como a Createc pode transformar sua empresa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="arts/aboutus-fundo.png" class="aboutus-found">
+
+
+
+    </body>
+    <script src="efeitos.js"></script>
+</html>

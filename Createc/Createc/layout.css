@@ -53,7 +53,7 @@ header {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: black;
+    background-color: #910157;
     width: 0;
     transition: all 0.3s ease-in-out;
 }
@@ -67,6 +67,11 @@ header {
     position: relative;
     cursor: pointer;
     background-color: #f6f4f4;
+}
+
+.header-buttons:hover {
+    color: #750144;
+    
 }
 
 .header-buttons-container:hover .underline {
@@ -145,6 +150,90 @@ header {
     width: 40vw;
     text-align: end;
     padding-right: 2vw;
+}
+
+#menu-toggle {
+    display: none;
+}
+.pedir-orcamento {
+    height: 100vh;
+    width: clamp(450px, 25%, 700px);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: "Questrial";
+    font-size: 1rem;
+    align-items: center;
+    padding-top: 2%;
+}
+.fechar-orcamento {
+    margin-top: 6%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 90%;
+}
+.fechar-orcamento:hover {
+    cursor: pointer;
+    transform: scale(110%);
+}
+
+.pedir-orcamento h1 {
+    font-size: clamp(1.5rem, 1.7vw, 1.7rem);
+    padding-left: 15%;
+    padding-top: 0%;
+    padding-bottom: 7%;
+    padding-left: 14%;
+}
+
+.div-desfoque-do-fundo {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgb(3, 2, 3, 0.43);
+    z-index: 102;
+    justify-items: center;
+    display: none;
+    overflow-y: hidden;
+}
+
+.orcamento-input {
+    background-color: inherit;
+    border-color: #910157;
+    border-style: solid;
+    font-size: 1rem;
+    color: white;
+    padding: 5%;
+    padding-top: 4%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    margin-right: 0%;
+    border-radius: 1.5vh;
+    width: 70%;
+    margin-bottom: 4vh;
+    margin-left: 4%;
+    }
+
+.pedir-orcamento button {
+    background: linear-gradient(50deg, #69093d, black, black);
+    border: solid, 2px, #69093d;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 2%;
+    border-radius: 2vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 20%;
+    margin-left: 23%;
+}
+.pedir-orcamento button:hover {
+    cursor: pointer;
+    transform:scale(110%);
+}
+.pedir-orcamento form {
+    padding-left: 10%;
 }
 
 
@@ -274,6 +363,9 @@ header {
     }
     .ladding-page-linkis {
         display: grid;
+    }
+    #menu-toggle {
+        display: flex;
     }
 
 }

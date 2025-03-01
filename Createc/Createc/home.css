@@ -1,5 +1,134 @@
+/* Componentes */
 
-@media (max-width: 768px) {
+
+/* Layout */
+
+
+
+/* Pages */
+
+
+.ladding-page-text {
+    padding-top: 15vh;
+    position: absolute;
+    padding-left: 8%;
+    width: 100%;
+}
+
+
+.ladding-page-logo {
+    width: clamp(240px, 21vw, 420px); /* Mínimo 120px, padrão 11vw, máximo 220px */
+    height: auto; /* Mantém a proporção original */
+    margin-right: 15vw;
+}
+
+
+.ladding-page-title {
+    color: white;
+    font-weight: 500;
+    position: relative;
+    top: -3vh;
+    left:2.5%;
+    font-size:1.8rem;
+    font-family: 'Questrial';
+}
+
+.ladding-page-slogan-atrativo {
+    padding-top: 7vh;
+    color: white;
+    font-size: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1;
+    font-weight: 600;
+}
+
+ 
+
+
+.ladding-page-link {
+    margin-right: 5%;
+    width: clamp(180px, 20vw, 300px);
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    background: linear-gradient(135deg, rgba(64, 1, 46, 0.73), rgba(157, 157, 166, 0.76));
+    padding-left: 1.4%;
+    padding-bottom: 1%;
+    line-height: 1.2;
+    padding-right: 1vw;
+}
+
+
+.ladding-page-video-container {
+    width: 100%;
+    min-height: 500px; /* Evita cortes em telas muito pequenas */
+    overflow: hidden;
+    padding-top: 5vh;
+}
+
+
+#background-video {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;    
+}
+
+
+
+
+@media (min-width: 769px) {
+    .carousel {
+        display: flex;
+        color: White;
+        font-family: 'Questrial';
+        width: 100%;
+        margin-top: 10vh;
+        transition: 0s;
+    }
+    .carousel button {
+        color: white;
+        border: none;
+        background-color: transparent;
+        font-size: 1.2rem;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-decoration: underline;
+        font-weight: 700;
+        top: -1.5vh;
+        left: -1%;
+        position: relative;
+        
+    }
+    .carousel button:hover {
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+/* Themes */
+
+
+#pc-close {
+    display: none;
+}
+ #menu-toggle {
+    display: none;
+ }
+
+
+.questrial-regular {
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+
+
+
+
+
+  @media (max-width: 768px) {
 
     body {
         overflow-x: hidden;
@@ -103,7 +232,7 @@
 
     .carousel-container {
         position: relative;
-        width: 100%;
+        width: 80%;
         max-width: 400px;
         overflow: hidden;
         margin: auto;
@@ -115,7 +244,7 @@
     .carousel {
         display: flex;
         transition: transform 0.3s ease-in-out;
-        width: 300%;
+        width: 380%;
         padding-left: 12%;
     }
 
