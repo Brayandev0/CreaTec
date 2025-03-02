@@ -78,5 +78,69 @@
 .formulario-contact{
     height: 100vh;
     width: 70vw;
-    background-color: lightgray;
+    background-color: white;
+}
+
+.dois-lados-contact{
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-contact{
+    margin-top: 8vh;
+
+}
+
+.right-contact{
+    margin-top: 8vh;
+}
+
+.celula-contact{
+    margin: 30px;
+    margin-top: 5vh;
+}
+
+.celula-contact p{
+    color: #6b6868;
+    font-size: 1.2rem;
+}
+
+.celula-contact input{
+    width: 400px;
+    height: 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #a6a1a1;
+    background-color: transparent;
+    border: 2px solid #c7c4c4; 
+    border-radius: 5px; 
+    padding: 10px;
+}
+
+.celula-contact input:focus{
+    border-color: #910157; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(145, 1, 87, 0.7); 
+}
+
+.termos-contact{
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+.termos-contact label{
+    color: #6b6868;
+}
+
+.button-contact{
+    margin-left: 30px;
+}
+.button-contact button{
+    width: 150px;
+    height: 50px;
+    background-color: #910157;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'HT Grotesk', sans-serif;
 }
