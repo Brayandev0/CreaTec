@@ -170,7 +170,35 @@ function enviarOrcamento() {
     }};
 
 
+// Função que alterna a visibilidade da div 'solucao-container'
+function toggleSolucoes() {
+    const solucaoContainer = document.getElementById('solucao-container');
+    
+    // Verifica se a div está visível ou não e alterna
+    if (solucaoContainer.style.display === 'none' || solucaoContainer.style.display === '') {
+        solucaoContainer.style.display = 'block'; // Exibe a div
+    } else {
+        solucaoContainer.style.display = 'none'; // Esconde a div
+    }
+}
 
+// Atribui o evento ao botão de "Soluções"
+document.getElementById('solucao-button').addEventListener('click', toggleSolucoes);
+
+// Função que fecha a div quando o usuário clica fora dela
+function fecharSolucoes(event) {
+    const solucaoContainer = document.getElementById('solucao-container');
+    const solucaoButton = document.getElementById('solucao-button');
+
+    // Verifica se o clique foi fora do botão ou da div
+    if (!solucaoContainer.contains(event.target) && !solucaoButton.contains(event.target)) {
+        solucaoContainer.style.display = 'none';
+    }
+}
+
+// Adiciona um listener de clique em todo o documento
+document.addEventListener('click', fecharSolucoes);
+        
 
 
 

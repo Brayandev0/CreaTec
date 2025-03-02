@@ -15,16 +15,15 @@
 
     <header>
         <div class="header-logo-container">
-            <img src="arts/logo.png" class="header-logo">
+            <img src="arts/logo.png" class="header-logo"  onclick="window.location.href='home.html';">
         </div>
         <div class="header-buttons-container">        
             <button class="header-buttons">Contato </button>
-            <button class="header-buttons">Sobre nós </button>
+            <button class="header-buttons"  onclick="window.location.href='aboutus.html';">Sobre nós </button>
             <button class="header-buttons">
                 Soluções 
                 <span class="header-button-arrow"></span>
-            </button>
-            <button class="header-buttons">Suporte </button>
+            </button>   
         </div>
         <div class="header-orcamento-container">
             <button class="header-orcamento-button">
@@ -40,11 +39,23 @@
         
     </header>
     <body>
+        <div class="div-desfoque-do-fundo" id="divOrcamento">
+            <div id="orcamento" class="pedir-orcamento">
+                <span  class="fechar-orcamento" onclick="fecharOrcamento()"> x </span>
+                <h1> Complete o formulário para entrar em contato </h1>
+                <form action="" id="dados_form"> 
+                    <input placeholder="Nome Completo" class="orcamento-input" type="text" id="nome">
+                    <input placeholder="Email" class="orcamento-input" type="email" id="email">
+                    <input placeholder="Número de telefone" class="orcamento-input" type="text" style="padding-bottom: 2%;" id="telefone">
+                    <input placeholder="Mensagem" class="orcamento-input" type="text"  style="padding-bottom: 10%; padding-top: 2.5%;" id="mensagem">
+                    <input placeholder="Como você ouviu falar sobre nós?" class="orcamento-input" style="padding-bottom: 13%; padding-top: 2.5%;" id="sobre_nos">
+                    <button onclick="enviarOrcamento()" type="submit"> Enviar</button>
+                </form>
+            </div>
+        </div>
         <div class="mobile-menu" id="mobile-menu">
             <button class="header-buttons">Contato</button>
-            <button class="header-buttons">Sobre</button>
-            <button class="header-buttons">Soluções</button>
-            <button class="header-buttons">Suporte</button>
+            <button class="header-buttons"   onclick="window.location.href='aboutus.html';">Sobre nós</button>   
         </div>
         <div class="ladding-page-video-container">
             <video autoplay muted loop id="background-video">
@@ -74,7 +85,7 @@
                         </div>
                         <div class="ladding-page-link">
                             <p><strong>Algum problema?</strong> - Entre em contato com o nosso suporte</p>
-                            <button>Suporte</button>
+                            <button>Suporte</button> 
                         </div>
                         
                         
