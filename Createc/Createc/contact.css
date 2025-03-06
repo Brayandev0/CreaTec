@@ -73,14 +73,13 @@ body {
 
 .grid-contact{
     display: grid;
-    grid-template-columns: repeat(2, 50px);
-    grid-template-rows: repeat(2, 50px);
+    grid-template-columns: repeat(2, 40px);
+    grid-template-rows: repeat(2, 40px);
     gap: 30px;
-    margin-top: 10vh;
 }
 
 .grid-contact img{
-    width: 60px;
+    width: 40px;
     margin: 0px;
     height: auto;
 }
@@ -90,8 +89,8 @@ body {
     height: 120px;
     border-radius: 50%;
     background: linear-gradient(90deg, rgba(125, 12, 75, 1) , rgba(125, 12, 75, 0.10));
-    top: 79vh;
-    left: 16%;
+    top: 72vh;
+    left: 14%;
     position: absolute;
     z-index: 2;
 }
