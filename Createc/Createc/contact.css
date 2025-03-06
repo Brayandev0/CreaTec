@@ -127,10 +127,6 @@ body {
 
 }
 
-.right-contact{
-    margin-top: 8vh;
-}
-
 .celula-contact{
     margin: 30px;
     margin-top: 5vh;
@@ -159,22 +155,33 @@ body {
     box-shadow: 0 0 5px rgba(145, 1, 87, 0.7); 
 }
 
-.termos-contact{
-    margin-left: 30px;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.7;
+.celula-contact-mensagem{
+    margin: 30px;
+    margin-top: 5vh;
 }
 
-
-.termos-contact label{
+.celula-contact-mensagem p{
     color: #6b6868;
+    font-size: 1.2rem;
+}
+
+.celula-contact-mensagem input{
+    width: clamp(150px, 40vw, 400px);  /* minino 150px, por padrão 40vw, e no maximo400px*/
+    height: 15vh;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #a6a1a1;
+    background-color: transparent;
+    border: 2px solid #c7c4c4; 
+    border-radius: 5px; 
+    padding: 10px;
+    text-wrap: wrap;
 }
 
 .button-contact{
     margin-left: 30px;
 }
+
 .button-contact button{
     margin-top: 2%;
     font-weight: 600;
