@@ -165,17 +165,18 @@ body {
     font-size: 1.2rem;
 }
 
-.celula-contact-mensagem input{
-    width: clamp(150px, 40vw, 400px);  /* minino 150px, por padrão 40vw, e no maximo400px*/
+.celula-contact-mensagem textarea{
+    width: clamp(150px, 40vw, 400px);  /* mínimo 150px, por padrão 40vw, e no máximo 400px */
     height: 15vh;
     font-size: 16px;
     font-family: Arial, sans-serif;
     color: #a6a1a1;
     background-color: transparent;
-    border: 2px solid #c7c4c4; 
-    border-radius: 5px; 
+    border: 2px solid #c7c4c4;
+    border-radius: 5px;
     padding: 10px;
     text-wrap: wrap;
+    resize: none; /* Opcional: para impedir o redimensionamento manual do textarea */
 }
 
 .button-contact{
