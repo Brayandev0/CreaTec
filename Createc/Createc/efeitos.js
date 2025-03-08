@@ -33,112 +33,136 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".carousel .ladding-page-link");
-    const totalSlides = slides.length;
-    const carousel = document.querySelector(".carousel");
-    const prevButton = document.querySelector(".carousel-btn.prev");
-    const nextButton = document.querySelector(".carousel-btn.next");
-    const dotsContainer = document.querySelector(".carousel-dots");
-    let autoSlide;
+    // Verificar se a largura da tela é menor que 769px
+    if (window.innerWidth < 769) {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".carousel .ladding-page-link");
+        const totalSlides = slides.length;
+        const prevButton = document.querySelector(".carousel-btn.prev");
+        const nextButton = document.querySelector(".carousel-btn.next");
+        const dotsContainer = document.querySelector(".carousel-dots");
 
-    // Criar os indicadores (bolinhas)
-    function createDots() {
-        dotsContainer.innerHTML = ""; // Limpa antes de criar
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement("span");
-            dot.classList.add("dot");
-            if (i === currentSlide) dot.classList.add("active"); // Deixa ativa a do primeiro slide
-            dot.dataset.index = i; // Define o índice do slide correspondente
-            dotsContainer.appendChild(dot);
+        // Criar os indicadores (bolinhas)
+        function createDots() {
+            dotsContainer.innerHTML = ""; // Limpa antes de criar
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement("span");
+                dot.classList.add("dot");
+                if (i === currentSlide) dot.classList.add("active"); // Deixa ativa a do primeiro slide
+                dot.dataset.index = i; // Define o índice do slide correspondente
+                dotsContainer.appendChild(dot);
+            }
         }
-    }
 
-    // Atualizar posição do carrossel
-    function updateCarousel() {
-        carousel.style.transform = `translateX(-${currentSlide * 24.5}%)`;
-        carousel.style.transition = "transform 0.5s ease-in-out";
-        updateDots();
-    }
+        // Atualizar os slides
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === currentSlide) ? "block" : "none";
+            });
+            updateDots();
+        }
 
-    // Atualizar indicadores (bolinhas)
-    function updateDots() {
-        document.querySelectorAll(".dot").forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentSlide);
+        // Atualizar os indicadores (bolinhas)
+        function updateDots() {
+            const dots = document.querySelectorAll(".dot");
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentSlide);
+            });
+        }
+
+        // Avançar slide
+        function nextSlide() {
+            // Adiciona o efeito de desfoque no slide atual
+            slides[currentSlide].classList.add("blur");
+
+            // Após o desfoque, troque o slide
+            setTimeout(() => {
+                currentSlide = (currentSlide + 1) % totalSlides; // Vai para o próximo, ou volta ao início
+                updateSlides();
+                slides[currentSlide].classList.remove("blur"); // Remove o desfoque do novo slide
+            }, 500); // Tempo de desfoque antes de mudar o slide
+        }
+
+        // Voltar slide
+        function prevSlide() {
+            // Adiciona o efeito de desfoque no slide atual
+            slides[currentSlide].classList.add("blur");
+
+            // Após o desfoque, troque o slide
+            setTimeout(() => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Vai para o anterior, ou vai para o último
+                updateSlides();
+                slides[currentSlide].classList.remove("blur"); // Remove o desfoque do novo slide
+            }, 500); // Tempo de desfoque antes de mudar o slide
+        }
+
+        // Ir para um slide específico ao clicar na bolinha
+        function goToSlide(index) {
+            // Adiciona o efeito de desfoque no slide atual
+            slides[currentSlide].classList.add("blur");
+
+            // Após o desfoque, troque o slide
+            setTimeout(() => {
+                currentSlide = index;
+                updateSlides();
+                slides[currentSlide].classList.remove("blur"); // Remove o desfoque do novo slide
+            }, 500); // Tempo de desfoque antes de mudar o slide
+        }
+
+        // Eventos dos botões
+        prevButton.addEventListener("click", () => {
+            prevSlide();
+            resetAutoSlide(); // Resetar o intervalo de troca automática
         });
-    }
 
-    // Avançar slide
-    function nextSlide() {
-        if (currentSlide < totalSlides - 1) {
-            currentSlide++;
-        } else {
-            currentSlide = 0; // Volta para o primeiro
+        nextButton.addEventListener("click", () => {
+            nextSlide();
+            resetAutoSlide(); // Resetar o intervalo de troca automática
+        });
+
+        // Evento das bolinhas
+        dotsContainer.addEventListener("click", (e) => {
+            if (e.target.classList.contains("dot")) {
+                goToSlide(Number(e.target.dataset.index));
+                resetAutoSlide(); // Resetar o intervalo de troca automática
+            }
+        });
+
+        // Função para iniciar a troca automática de slides a cada 3 segundos
+        let autoSlideInterval;
+        function startAutoSlide() {
+            if (window.innerWidth < 769) {  // Verifica se a tela é menor que 769px
+                autoSlideInterval = setInterval(nextSlide, 3000); // Troca a cada 3 segundos
+            }
         }
-        updateCarousel();
-    }
 
-    // Voltar slide
-    function prevSlide() {
-        if (currentSlide > 0) {
-            currentSlide--;
-        } else {
-            currentSlide = totalSlides - 1; // Vai para o último
+        // Função para resetar o intervalo de troca automática ao interagir
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
         }
-        updateCarousel();
-    }
 
-    // Ir para um slide específico ao clicar na bolinha
-    function goToSlide(index) {
-        currentSlide = index;
-        updateCarousel();
-    }
-
-    // Iniciar autoplay SOMENTE em telas menores que 768px
-    function startAutoSlide() {
-        if (window.innerWidth < 768) {
-            autoSlide = setInterval(nextSlide, 5000);
-        }
-    }
-
-    // Parar autoplay ao interagir
-    function stopAutoSlide() {
-        clearInterval(autoSlide);
-    }
-
-    // Eventos dos botões
-    prevButton.addEventListener("click", () => {
-        stopAutoSlide();
-        prevSlide();
-    });
-
-    nextButton.addEventListener("click", () => {
-        stopAutoSlide();
-        nextSlide();
-    });
-
-    // Evento das bolinhas
-    dotsContainer.addEventListener("click", (e) => {
-        if (e.target.classList.contains("dot")) {
-            stopAutoSlide();
-            goToSlide(Number(e.target.dataset.index));
-        }
-    });
-
-    // Criar bolinhas e iniciar autoplay se necessário
-    createDots();
-    startAutoSlide();
-
-    // Atualizar autoplay e bolinhas ao redimensionar a tela
-    window.addEventListener("resize", () => {
-        stopAutoSlide();
-        startAutoSlide();
+        // Inicializar
         createDots();
-    });
+        updateSlides();
+        startAutoSlide(); // Iniciar a troca automática assim que a página carregar
+    }
 });
 
+function toggleMenu() {     
+    // Mudar o menu do celular: alterna entre os botões do header e o ícone de menu (X)
+    const menuBtn = document.querySelector('.menu-btn');
+    const botoesDiv = document.getElementById('header-buttons'); // Corrigido getElementById para querySelector
+    
+    menuBtn.classList.toggle('active'); // Alterna a classe 'active'
+
+    if (menuBtn.classList.contains('active')) { // Verifica se a classe 'active' está presente
+        botoesDiv.style.display = 'flex';
+    } else {
+        botoesDiv.style.display = 'none';
+    }
+}
 
 
 

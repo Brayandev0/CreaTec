@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Breve</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #0a002b;
+            text-align: center;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .container {
+            width: clamp(320px, 25%, 600px);
+            background: inherit;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .underline {
+            width: 50px;
+            height: 3px;
+            background: #d31549;
+            margin: 0 auto 20px;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .time-box {
+            text-align: center;
+        }
+        
+        .time-box span {
+            display: block;
+            font-size: 40px;
+            font-weight: 600;
+            color: #d31549;
+        }
+        
+        .label {
+            font-size: 12px;
+            font-weight: 300;
+            color: #333;
+        }
+        
+        .notify {
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            background-color: #ccc;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .credits {
+            font-size: 12px;
+            margin-top: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-icons a {
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Página em construção</h1>
+        <div class="underline"></div>
+        <div class="countdown">
+            <div class="time-box"><span id="days">7</span><div class="label">DIAS</div></div>
+            <div class="time-box"><span id="hours">12</span><div class="label">HORAS</div></div>
+            <div class="time-box"><span id="minutes">19</span><div class="label">MINUTOS</div></div>
+            <div class="time-box"><span id="seconds">24</span><div class="label">SEGUNDOS</div></div>
+        </div>
+        <div class="notify">
+            <p>AVISE-ME QUANDO ESTIVER PRONTO</p>
+            <input type="email" placeholder="Digite seu e-mail">
+            <button>ENVIAR</button>
+        </div>
+    </div>
+    
+    <script>
+        function startCountdown() {
+            const countdownDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000); 
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("days").innerText = days;
+                document.getElementById("hours").innerText = hours;
+                document.getElementById("minutes").innerText = minutes;
+                document.getElementById("seconds").innerText = seconds;
+            }
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        }
+        startCountdown();
+    </script>
+</body>
+</html>

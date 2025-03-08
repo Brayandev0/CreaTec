@@ -13,7 +13,6 @@ body {
 
 header {
     max-height: 8vh;
-    padding-top: 1vh;
     width: 100%;
     position: fixed;
     top: 0;
@@ -147,9 +146,31 @@ header {
     fill: #a62249;
 }
 
-.social-icon svg:hover :nth-child(1) {
-    fill: #1e0fa5;
+/* Definindo as cores individuais */
+#facebook-icon:hover   svg {
+    fill: #1877F2; /* Azul do Facebook */
 }
+
+#instagram-icon:hover svg{
+    fill: #E4405F; /* Rosa do Instagram */
+}
+
+#youtube-icon:hover svg {
+    fill: #FF0000; /* Vermelho do YouTube */
+}
+
+#linkedin-icon:hover svg{
+    fill: #0A66C2; /* Azul do LinkedIn */
+}
+
+#github-icon:hover svg{
+    fill: #181717; /* Preto do GitHub */
+}
+
+#whatsapp-icon:hover svg{
+    fill: #25D366; /* Verde do WhatsApp */
+}
+
 
 /* Modal styles */
 .modal {
@@ -319,6 +340,10 @@ header {
     justify-content: end;
 }
 
+/* Esconder botão de menu doss botõs do header no computador*/
+.menu-btn {
+    display: none;
+}
 
 
 /* Responsive adjustments */
@@ -335,11 +360,24 @@ header {
         flex-direction: column;
         padding: 10px 20px;
     }
+    .logo {
+        width: 100%;
+        height: 6vh;
+        justify-content: space-between;  /* Ajustar  a logo e o botão de menu do header no mible  para um ficar em uma   ponta e outro na  outra ponta */
+        align-items: center;
+    }
 
     .nav-buttons {
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 15px;
+        position: fixed;
+        flex-direction: column;
+        z-index: 100;
+        background-color: inherit;
+        right: 0;
+        top: 6vh;
+        display: none;
     }
 
     .nav-btn {
@@ -348,6 +386,7 @@ header {
 
     .social-icons {
         margin-top: 15px;
+        display: none;
     }
 
     .modal {
@@ -420,61 +459,43 @@ header {
     .header-buttons:hover {
         text-decoration: underline;
     }
-
-    .header-buttons-container {
-        flex-direction: column;
-        text-align: center;
-        display: none;
-    }       
+     
 
     .header-logo {
         width: clamp(140px, 40vw, 250px);     
     }
 
-    .header-orcamento-container {
-        width: 100%;
-        text-align: center;
-        padding-right: 0;
-        display: none;
-    }
-    
-    .header-orcamento-button {
-        font-size: 1.2rem;
-        padding: 0.5rem;
-        width: 90%;
-        max-width: 250px;
-    }
 
-    /* Esconder Menu Normal no Mobile */
-
-    .header-orcamento-container {
-        display: none;
-    }
-
-    /* Exibir o botão hambúrguer */
-    .menu-hamburguer {
+    /* Exibir o botão para menu dos botões header no mobile */
+    .menu-btn {
+        width: 35px;
+        height: 30px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 45px;
-        height: 30px;
-        background: none;
-        border: none;
         cursor: pointer;
-        position: absolute;
-        top: 2.5vh;
-        right: 15px;
-        margin-right: 5%;
     }
 
-    .menu-hamburguer span {
-        display: block;
+    .bar {
         width: 100%;
         height: 5px;
-        background-color: black;
-        border-radius: 3px;
+        background-color: #333;
         transition: 0.3s;
     }
+
+    .menu-btn.active .bar:nth-child(1) {
+        transform: translateY(12px) rotate(45deg);
+    }
+
+    .menu-btn.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.active .bar:nth-child(3) {
+        transform: translateY(-12px) rotate(-45deg);
+    }
+
+
 
     #menu-toggle {
         top: 3vh;
@@ -504,27 +525,8 @@ header {
         cursor: pointer;
     }
 
-    /* Mostrar o botão de orçamento no mobile */
-    .mobile-menu .header-orcamento-button {
-        display: block;
-        background-color: #007bff;
-        color: white;
-        padding: 10px;
-        margin: 10px auto;
-        border-radius: 5px;
-        max-width: 250px;
-    }
 
 
-
-    .header-buttons-container {
-        display: none;
-    }
-    .ladding-page-linkis {
-        display: grid;
-    }
-    #menu-toggle {
-        display: flex;
-    }
+ 
 
 }
