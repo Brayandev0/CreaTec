@@ -6,20 +6,30 @@
     background-repeat: no-repeat;
     color: white;
     display: flex;
+    justify-content: center;
+    justify-content: center;
+    align-content: center;
+    
 }
 
 #background-video {
-    width: 100%;
-
+    width: clamp(800px, 110%, 60vw);
+    transform: rotate(315deg);
+    position: relative;
+    left: -20%;
 }
 .video-container {
     background-color: #060102;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+    width: 50%;
 }
 
 .text-container {
     margin-top: 15%;
-    margin-left: 10%;
-    width: 30%;
+    margin-left: 20%;
+    width: clamp(400px, 50%, 600px);
     line-height: 1.5;
     text-align: justify;
 }   
@@ -38,4 +48,24 @@ p{
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
     letter-spacing: 0px;
+}
+
+
+@media (min-width: 768px) and (min-width: 1440px) {
+    
+    .video-container {
+        background-color: #060102;
+        align-items: center;
+        align-content: center;
+        overflow: hidden;
+        width: 40%;
+    }
+    
+    .text-container {
+        margin-top: 15%;
+        margin-left: 0%;
+        width: clamp(400px, 60%, 600px);
+        line-height: 1.5;
+        text-align: justify;
+    }   
 }
