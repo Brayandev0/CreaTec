@@ -1,9 +1,14 @@
 .main-contact{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 body {
     overflow-y: hidden;
+    background-color: #f6f4f4;
 }
 
 /*  Fontes  */
@@ -13,24 +18,21 @@ body {
 /*  Lado Informação  */
 
 .informacao-contact{
-    height: 100%;
     width: clamp(300px, 100vw, 500px);
-    background-color: black;
     overflow: hidden;
 }
 
 .informacao-contact article{
-    margin: 50px;
+    margin: 20px;
 }
 
 .text-contact{
-    color: white;
+    color: black;
 }
 
 .title-contact{
-    margin-top: 15vh;
     font-size: 36px;
-    font-family: 'HT Grotesk', sans-serif;
+    font-family: questrial;
     font-weight: 400;
     letter-spacing: 1px;
 }
@@ -71,82 +73,29 @@ body {
     font-weight: 600;
 }
 
-.grid-contact{
-    display: grid;
-    grid-template-columns: repeat(2, 40px);
-    grid-template-rows: repeat(2, 40px);
-    gap: 30px;
-}
-
-.grid-contact img{
-    width: 40px;
-    margin: 0px;
-    height: auto;
-}
-
-.mini-ball {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: linear-gradient(90deg, rgba(125, 12, 75, 1) , rgba(125, 12, 75, 0.10));
-    top: 72vh;
-    left: 14%;
-    position: absolute;
-    z-index: 2;
-}
-.big-ball {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: linear-gradient(90deg, rgba(125, 12, 75, 1) , rgba(125, 12, 75, 0.0));
-    position: relative;
-    z-index: 3;
-    top: -12vh;
-    left: 60%;
-}
-
-
 /*  Lado Formulario  */
 
 .formulario-contact{
-    height: 100%;
-    width: 70vw;
-    background-color: white;
-    padding: 3%;
+    background-color: #f6f4f4;
+    margin: 20px;
     overflow: hidden;
 }
 
-.dois-lados-contact{
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-}
-
-.left-contact{
-    margin-top: 8vh;
-
-}
-
 .celula-contact{
-    margin: 30px;
-    margin-top: 5vh;
-}
-
-.celula-contact p{
-    color: #6b6868;
-    font-size: 1.2rem;
+    margin: 15px;
 }
 
 .celula-contact input{
     width: clamp(150px, 40vw, 400px);
-    height: 20px;
+    height: 15px;
     font-size: 16px;
     font-family: Arial, sans-serif;
     color: #a6a1a1;
-    background-color: transparent;
+    background-color: #d9d9d9;
     border: 2px solid #c7c4c4; 
     border-radius: 5px; 
     padding: 10px;
+    margin-top: 1.5vh;
 }
 
 .celula-contact input:focus{
@@ -156,31 +105,26 @@ body {
 }
 
 .celula-contact-mensagem{
-    margin: 30px;
-    margin-top: 5vh;
-}
-
-.celula-contact-mensagem p{
-    color: #6b6868;
-    font-size: 1.2rem;
+    margin: 15px;
 }
 
 .celula-contact-mensagem textarea{
     width: clamp(150px, 40vw, 400px);  /* mínimo 150px, por padrão 40vw, e no máximo 400px */
-    height: 15vh;
+    height: 8vh;
     font-size: 16px;
     font-family: Arial, sans-serif;
     color: #a6a1a1;
-    background-color: transparent;
+    background-color: #d9d9d9;
     border: 2px solid #c7c4c4;
     border-radius: 5px;
     padding: 10px;
+    margin-top: 1.5vh;
     text-wrap: wrap;
     resize: none; /* Opcional: para impedir o redimensionamento manual do textarea */
 }
 
 .button-contact{
-    margin-left: 30px;
+    margin-left: 15px;
 }
 
 .button-contact button{
@@ -190,6 +134,7 @@ body {
     height: 50px;
     background-color: #910157;
     border: none;
+    border-radius: 10px;
     color: white;
     font-size: 1.5rem;
     font-family: 'HT Grotesk', sans-serif;
@@ -210,13 +155,6 @@ body {
         overflow-y: scroll;
     }
 
-    .mobile-title  {
-        display: block;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        white-space: nowrap;
-        padding-left: 5vw;
-    }
-
     .formulario-contact{
         width: 92vw;
         height: auto;
@@ -225,14 +163,6 @@ body {
 
     .main-contact {
         flex-direction: column;
-    }
-
-    .mini-ball {
-        display: none;
-    }
-
-    .grid-contact {
-        margin-top: 15vh;
     }
 
     .informacao-contact{
