@@ -154,11 +154,22 @@ body {
     display: none;
 }
 
+.contact-found{
+    margin-left: 76vw;
+    margin-top: 50vh;
+    position: absolute;
+    height: 50vh;
+    width: auto;
+}
 
 @media (max-width: 768px) {
 
     body {
         overflow-y: scroll;
+    }
+
+    .contact-found{
+        display: none;
     }
 
     .formulario-contact{
