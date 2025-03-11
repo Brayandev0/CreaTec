@@ -123,6 +123,12 @@ body {
     resize: none; /* Opcional: para impedir o redimensionamento manual do textarea */
 }
 
+.celula-contact-mensagem textarea:focus{
+    border-color: #910157; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(145, 1, 87, 0.7); 
+}
+
 .button-contact{
     margin-left: 15px;
 }
