@@ -83,6 +83,7 @@ header {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    width: 130px;
     font-weight: bold;
     position: relative;
     overflow: hidden;
