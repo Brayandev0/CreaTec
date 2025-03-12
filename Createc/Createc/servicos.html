@@ -7,9 +7,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="home.css">
-        <link rel="stylesheet" href="responsive.css">
         <link rel="stylesheet" href="layout.css">
+        <link rel="stylesheet" href="servicos.css">
         <link rel="icon" type="image/png" sizes="16x16"  href="/Createc/Createc/favicons/favicon.png">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="theme-color" content="#ffffff">
@@ -77,54 +76,16 @@
         </nav>
     </header>
     <body>
-        <div class="mobile-menu" id="mobile-menu">
-            <button class="nav-btn" id="btn-iniciar">Início</button>
-            <button class="nav-btn" id="btn-quem-somos">Sobre Nós</button>
-            <button class="nav-btn" id="btn-solucoes">Soluções</button>
-            <button class="nav-btn" id="btn-orcamentos">Orçamentos</button>
-            <button class="nav-btn" id="btn-suporte">Suporte</button>
-            <button class="nav-btn" id="btn-contato">Contato</button>
-        </div>
-        <div class="ladding-page-video-container">
-            <video autoplay muted loop id="background-video">
-                <source src="arts/ladding-page.mp4" type="video/mp4" media="(min-width: 769px)">
-                <source src="arts/laddin-page-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-            </video>    
-            
-            <div class="ladding-page-text">
-                <div> 
-                    <img src="arts/ladding-page-logo.png" class="ladding-page-logo">
-                    <h1 class="ladding-page-title"> Sua visão, Nosso software</h1>
-                </div>
-                <div class="ladding-page-slogan-atrativo">
-                    <p> Sua empresa merece soluções à <br id="pc-close"> altura de seu sucesso</p>
-                    <p id="mobile-close"> Na Createc, criamos soluções que impusionam o seu negócio</p>
-                </div>
-                <div class="carousel-container" id="carousel-container">
-
-                    <div class="carousel">
-                        <div class="ladding-page-link">
-                            <p><strong>Nome</strong> - O aplicativo que gerencia o seu negócio online</p>
-                            <button>Venha conhecer</button>
-                        </div>
-                        <div class="ladding-page-link">
-                            <p><strong>História de Sucesso</strong> - Veja o que nossos clientes tem falado</p>
-                            <button>Casos de Sucesso</button>
-                        </div>
-                        <div class="ladding-page-link">
-                            <p><strong>Algum problema?</strong> - Entre em contato com o nosso suporte</p>
-                            <button>Suporte</button> 
-                        </div>
-                        
-                        
-                    </div>
-                    <button class="carousel-btn prev" onclick="moveSlide(-1)" id="pc-close" >&#10094;</button>
-                    <button class="carousel-btn next" onclick="moveSlide(1)" id="pc-close">&#10095;</button>
-                    <div  class="carousel-dots" id="pc-close"> </div>
-                </div>
+        <div class="inicio">
+            <div class="text-container">
+                <p>  Transformando desafios em oportunidades </p>
+                <h1> Da ideia à execução: soluções digitais feitas para você </h1>
+                <p>  Desenvolvemos soluções eficientes para impulsionar o seu negócio, na Createc temos o prazer de entregar serviços de qualidade.  Oferecemos desde pacote completo para o desenvolvimento e manutenção de sites até emails profissionais, SEO para impulsionar a visibilidade da sua empresa e muito mais!</p>
+                <button class="inicio-button"> Conheça nossos Serviços</button>
             </div>
+            <div class="rigth-side"></div>
+            <p class="botao-ir-para-baixo"> ^ </p>
         </div>
-        
     </body>
     <script src="efeitos.js"></script>
-</html>
+</html> 
