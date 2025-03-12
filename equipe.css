@@ -27,7 +27,7 @@ body {
     margin: 0 auto;
     padding: 30px;
 }
-    
+
 .dev-card {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
@@ -159,6 +159,14 @@ body {
     width: 28px;
     height: 28px;
     fill: var(--primary-color);
+}
+
+.equipe-found{
+    margin-left: 76vw;
+    margin-top: 50vh;
+    position: absolute;
+    height: 50vh;
+    width: auto;
 }
 
 /* Responsive adjustments */
