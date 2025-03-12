@@ -161,6 +161,14 @@ body {
     fill: var(--primary-color);
 }
 
+.equipe-found{
+    margin-left: 76vw;
+    margin-top: 50vh;
+    position: absolute;
+    height: 50vh;
+    width: auto;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .modal-content {
