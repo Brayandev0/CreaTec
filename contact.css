@@ -186,7 +186,7 @@ body {
 @media (max-width: 768px) {
 
     body {
-        overflow-y: scroll;
+        height:160vh;
     }
 
     .contact-found{
@@ -197,10 +197,14 @@ body {
         width: 92vw;
         height: auto;
         min-height: 145vh;
+        margin-top: -200px;
     }
 
     .main-contact {
-        flex-direction: column;
+        display: inline-block;
+        margin-top:90px;
+        margin-bottom: -10px;
+    
     }
 
     .informacao-contact{
@@ -232,7 +236,7 @@ body {
         margin-top: 0vh;
     }
     .celula-contact input {
-        width: clamp(150px, 500vw, 300px);
+        width: clamp(200px, 500vw, 300px);
     }
 
 }
