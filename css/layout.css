@@ -437,7 +437,18 @@ header {
     }
 }
 
-
+@media (max-width: 1050px) and (min-width: 768px){
+    .social-icons{
+        display: none;
+    }
+    body{
+        width: 100%;
+    }
+    .nav-buttons{
+        width: 750px;
+        padding-left: 10px;
+    }
+}
 @media (max-width: 768px) {
 
     body {
