@@ -17,16 +17,16 @@
     </head>
 
     <header>
-        <nav class="navbar">
+        <nav class="navbar"> <!-- Header para telas maiores como as de computador, onde seu codigo está no layout -->
             <div class="logo">
                 <img src="/arts/logo (2).png" alt="Createc Logo" class="nav-logo" onclick="window.location.href='index.html'">
-                <div class="menu-btn" onclick="toggleMenu()">
+                <div class="menu-btn" onclick="toggleMenu()"> <!-- O botão de tres barrinhas para exibição do header no mobile -->
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
             </div>
-            <div class="nav-buttons" id="header-buttons">
+            <div class="nav-buttons" id="header-buttons"> <!-- Botões do header-->
                 <button class="nav-btn" id="btn-iniciar"  onclick="window.location.href='index.html'">Início</button>
                 <button class="nav-btn" id="btn-quem-somos"  onclick="window.location.href='aboutus.html'">Sobre Nós</button>
                 <button class="nav-btn" id="btn-solucoes"  onclick="window.location.href='servicos.html'">Serviços</button>
@@ -35,7 +35,7 @@
                 <button class="nav-btn" id="btn-suporte"  onclick="window.location.href='https://createc.com.br/suporte/open.php'">Suporte</button>
                 <button class="nav-btn" id="btn-contato"  onclick="window.location.href='contact.html'">Contato</button>
             </div>
-            <div class="social-icons">  
+            <div class="social-icons">  <!-- Div que contem os botes de rede social -->
                 <a href="#" class="social-icon" id="facebook-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="var(--primary-color)">
                         <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
@@ -76,8 +76,8 @@
     </header>
     <body>
         <!-- Div para as partículas -->
-        <div id="particles-js"></div>
-        <div class="text-container">
+        <div id="particles-js"></div> <!-- Div para as paticulas-->
+        <div class="text-container"> <!-- Div que guarda todo o texto -->            
             <p>  Algo  incrível está a caminho!</p>
             <h1> Em Breve</h1>
             <p>Nosso site está passando por melhorias para trazer a você uma experiência ainda mais inovadora. </p>
@@ -85,12 +85,12 @@
             <p>A espera  vai valer a pena. Até logo!</p>
         </div>
     </body>
-    <script  src="efeitos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script  src="efeitos.js"></script> <!-- Script que contem os efeitos de tela, que incluem o carrosel da pagina inicial (os slides) -->  
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- Script esxterno das particulas -->  
     <script>
-       particlesJS("particles-js", {
+       particlesJS("particles-js", { // Configuração das particulas
         "particles": {
-            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, 
             "color": { "value": "#7d0c4b" },
             "shape": { "type": "circle" },
             "opacity": { "value": 0.5 },

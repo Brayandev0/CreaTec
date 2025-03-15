@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Importação das fontes do google-->  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <!-- é uma otimização de desempenho usada para melhorar o carregamento de fontes hospedadas no Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> <!-- Importação da fonte 'Questrial'-->
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> <!-- Importamento da fonte 'HT Grotesk'-->
+    <meta charset="UTF-8"> <!-- Permite o uso de ascentos no site, pois sem esse comando o navegador nao da suporte para linguas latinas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define por padrão o zoom do navegador em 100% (normal) -->
+    <link rel="stylesheet" href="css/layout.css"> <!-- CSS que contem as configurações do body, header, botoes do header e footer. Certas paginas podem ter em seu prorpio css algo que foi necessario mudar no body, senmpre confira primeiro no layout, mas pode dar uma olhada no css proprio-->  
+    <link rel="stylesheet" href="css/contact.css"> <!-- CSS da propria pagina -->  
     <title>Createc</title>
-    <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon.png"> <!--O favacion (imagem que aparece na aba do site, tem que trocar inclusive) -->  
+    <meta name="msapplication-TileColor" content="#ffffff">  <!-- Define a cor de fundo dos blocos dinâmicos no Windows quando o site é fixado no menu Iniciar -->
+    <meta name="theme-color" content="#ffffff"> <!-- Altera a cor da barra de endereço no Chrome, Edge e Android.-->
 </head>
 
 <header>
@@ -75,24 +75,24 @@
 </header>
 
 <body>
-    <div class="main-contact">
-        <div class="informacao-contact">
-            <article class="text-contact">
-            <div id="texto_principal"> 
-                <p class="title-contact"><strong>Contato Comercial<br> Impulsione sua empresa</strong></p>
-                <p class="subtitle-contact" style="font-weight: 600;">Já é cliente ou precisa de ajuda com um serviço? <a href="">Contate-se conosco</a></p>
-                <p class="weaker-contact" >VENDAS - BRASIL</p>
-                <div class="flex-contact">
-                    <img src="arts/telefone.png">
-                    <p>(34) 98418-0453</p>
+    <div class="main-contact"> <!-- Div que contem todo o conteudo da pagina  -->
+        <div class="informacao-contact"> <!-- Div que contem as divs que contem os textos da pagina-->
+            <article class="text-contact"> <!-- Nao sei dizer bem porque o Ryan usou-->
+                <div id="texto_principal">  <!-- Div que contem os textos princiapsi da pagina-->
+                    <p class="title-contact"><strong>Contato Comercial<br> Impulsione sua empresa</strong></p>
+                    <p class="subtitle-contact" style="font-weight: 600;">Já é cliente ou precisa de ajuda com um serviço? <a href="">Contate-se conosco</a></p>
+                    <p class="weaker-contact" >VENDAS - BRASIL</p>
+                    <div class="flex-contact"> <!-- Div que contem o numeor com o icone de telefone-->
+                        <img src="arts/telefone.png">
+                        <p>(34) 98418-0453</p>
+                    </div>
                 </div>
-            </div>
-                
-                <p class="weaker-contact">OUTRAS REGIÕES</p>
-                <p class="subtitle-contact">Deixe seus dados para contato</p>
+                    
+                    <p class="weaker-contact">OUTRAS REGIÕES</p>  
+                    <p class="subtitle-contact">Deixe seus dados para contato</p>
             </article>
         </div>
-        <div class="formulario-contact">
+        <div class="formulario-contact"> <!-- Div que contem os inputs da pagina -->
             <div class="left-contact">
                 <p class="title-contact"><strong>Formulário de Contato</strong></p>
                 <div class="celula-contact">
@@ -113,7 +113,7 @@
             </div>
         </div>
     </div>
-    <img src="arts/aboutus-fundo.png" class="contact-found">
+    <img src="arts/aboutus-fundo.png" class="contact-found"> <!-- Imagem usada de fundo, que eu tinha removido. Se voce estiver vendo isso lembre-me de remover -->
 </body>
-<script src="efeitos.js"></script>
+<script src="efeitos.js"></script> <!-- Script que contem os efeitos visuais das paginas, como os slides da pagina incial -->
 </html>

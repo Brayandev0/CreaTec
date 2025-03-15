@@ -3,11 +3,11 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: 100vh; /* Div que abriga todo o conteúdo da página contato*/
 }
 
 body {
-    overflow-y: hidden;
+    overflow-y: hidden; /*Fiz com o body nao oferecesse a opção de rolagem da tela*/
     background-color: #f6f4f4;
 }
 
@@ -17,39 +17,39 @@ body {
 
 /*  Lado Informação  */
 
-.informacao-contact{
+.informacao-contact{ /*Div que abriga o conteudo em tyexto da pagina, sem ser o titulo  "Formulario de contato' e os inputs*/
     width: clamp(300px, 100vw, 500px);
     overflow: hidden;
 }
 
-.informacao-contact article{
+.informacao-contact article{ /* N]ao sei porque ele usou isso*/
     margin: 20px;
 }
 
-.text-contact{
+.text-contact{ /* Dentro do texto de informação contact, aseta a cor como preto*/
     color: black;
 }
 
-.title-contact{
+.title-contact{ /* Configuração do 'Contato comercial...' (titulo da div informação contact, em outras palavras o titulo do lado esquerdo)*/
     font-size: 36px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
 }
 
-.subtitle-contact{
+.subtitle-contact{ /*Texto do subtitlo <p class="subtitle-contact" style="font-weight: 600;">Já é cliente ou precisa de ajuda com um serviço? <a href="">Contate-se conosco</a></p>*/
     font-family: 'HT Grotesk', sans-serif;
     font-size: 21.1px;
     letter-spacing: 2px;
 }
 
-.subtitle-contact a{
+.subtitle-contact a{  /*Configuração do a (contate-se conosco)*/
     text-decoration: none;
     color: #910157;
     padding-left: 2%;
 }
 
-.flex-contact{
+.flex-contact{ /*Div que segura o a imagem de telefone e o seu número de telefone*/
     display: flex;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -58,36 +58,36 @@ body {
     align-items: center;
 }
 
-.flex-contact img {
+.flex-contact img { /*Confurção da imagem do telefone*/
     width: 7%;
     margin-right: 2%;
     padding-top: 2%;
     height: 5%;
 }
 
-.social-contact-icons {
+.social-contact-icons { /*Confugração da div quer abriga botoes de rede social da página de contato*/
     display: flex;
     gap: 25px;
     align-items: center;
 }
 
-.social-contact-icon {
+.social-contact-icon { /*Confurações dos botçoes de rede social*/
     transition: transform 0.3s ease;
 }
 
-.social-contact-icon:hover {
+.social-contact-icon:hover { /*Quando o botao de rede social estiver sobre o mouse*/
     transform: translateY(-3px) scale(1.1);
 }
 
-.social-contact-icon svg {
+.social-contact-icon svg { /* Configuração da imagem dentro do botão de rede social (ex: icnone do facebook)*/
     transition: fill 0.3s ease;
 }
 
-.social-contact-icon:hover svg {
+.social-contact-icon:hover svg { /*Quando o icone da umag4m estriver sobre o mouse*/
     fill: #a62249;
 }
 
-.weaker-contact{
+.weaker-contact{  /*Confugraão do texto: <p class="weaker-contact" >VENDAS - BRASIL</p> e do <p class="weaker-contact">OUTRAS REGIÕES</p>  . Que ficam na div informalç~çao contact*/
     color: #6b6868;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1rem;
@@ -96,17 +96,17 @@ body {
 
 /*  Lado Formulario  */
 
-.formulario-contact{
+.formulario-contact{ /* Configração da div do lado esquerrdo que abriga os texto, ooaquela que nao tem inpuut*/
     background-color: #f6f4f4;
     margin: 20px;
     overflow: hidden;
 }
 
-.celula-contact{
+.celula-contact{ /*Confuração do input (' 'celula' é o nome da div do input')*/
     margin: 15px;
 }
 
-.celula-contact input{
+.celula-contact input{ /* Configuração do input*/
     width: clamp(150px, 40vw, 400px);
     height: 15px;
     font-size: 16px;
@@ -119,17 +119,17 @@ body {
     margin-top: 1.5vh;
 }
 
-.celula-contact input:focus{
+.celula-contact input:focus{ /*Configuração de quando o input estiver clicado (alguem está dentro da caixa de texto para digitar)*/
     border-color: #910157; 
     outline: none; 
     box-shadow: 0 0 5px rgba(145, 1, 87, 0.7); 
 }
 
-.celula-contact-mensagem{
+.celula-contact-mensagem{  /*Div que abriga o inpuit que pergunta qual o motivo odo seu contato*/
     margin: 15px;
 }
 
-.celula-contact-mensagem textarea{
+.celula-contact-mensagem textarea{ /*Confugração da div que fala qual foi o motivo do seu contato*/
     width: clamp(150px, 40vw, 400px);  /* mínimo 150px, por padrão 40vw, e no máximo 400px */
     height: 8vh;
     font-size: 16px;
@@ -144,17 +144,17 @@ body {
     resize: none; /* Opcional: para impedir o redimensionamento manual do textarea */
 }
 
-.celula-contact-mensagem textarea:focus{
+.celula-contact-mensagem textarea:focus{ /*Configuração de quando a div de qual o motivo do seu contato erstiver clicada (usurio está com texto aberto para digitar) */
     border-color: #910157; 
     outline: none; 
     box-shadow: 0 0 5px rgba(145, 1, 87, 0.7); 
 }
 
-.button-contact{
+.button-contact{ /*div do botão de enviar*/
     margin-left: 15px;
 }
 
-.button-contact button{
+.button-contact button{ /*Botão de enviar*/
     margin-top: 2%;
     font-weight: 600;
     width: 130px;
@@ -167,15 +167,15 @@ body {
     font-family: 'HT Grotesk', sans-serif;
 }
 
-.button-contact button:hover{
+.button-contact button:hover{ /*Botao de enviuar está sobre o mouse*/
     cursor: pointer;
     transform: scale(110%);
 }
-.mobile-title {
+.mobile-title {  /* ? */
     display: none;
 }
 
-.contact-found{
+.contact-found{ /* Imagem do fundo, quer não é um fundo e sim uma imagem solta por ai que parece um fundo*/
     margin-left: 76vw;
     margin-top: 50vh;
     position: absolute;
@@ -186,56 +186,56 @@ body {
 @media (max-width: 768px) {
 
     body {
-        height:160vh;
+        height:160vh; /* Boduy com tamanho especifico (crime)*/
     }
 
-    .contact-found{
+    .contact-found{ /* Tirou a imagem pecadora ("fundo") do celular*/
         display: none;
     }
 
-    .formulario-contact{
+    .formulario-contact{ /* Div dos inputs*/
         width: 92vw;
         height: auto;
         min-height: 145vh;
         margin-top: -200px;
     }
 
-    .main-contact {
+    .main-contact { /*Div que contem todo o conteudo da pagina*/
         display: inline-block;
         margin-top:90px;
         margin-bottom: -10px;
     
     }
 
-    .informacao-contact{
+    .informacao-contact{ /*Div que contem todo o texto (a div quer nao tem input)*/
         width: 100vw;
         height: 100vh;
         padding-left: 1vw;
         padding-right: 3vw;
     }
 
-    .flex-contact {
+    .flex-contact { /*Dvi que contem o numero e o icone de telefone*/
         margin-top: 0vh;
     }
 
-    .weaker-contact {
-        position: block;
+    .weaker-contact { /*Div que contem os texto (vendas - brasil) e (em outras regioes) localizados na div de informação ((texto, a que nao tem inpout)*/
+        position: block; 
         margin-top: 4vh;
     }
 
-    .informacao-contact article {
+    .informacao-contact article { /*Configuração do artile que contem todo o texto, á 'div' dentro da div de informação (a que ano tem input) q ue tbm está segurando tudo*/
         margin: 20px;
         margin-top: 0px;
         margin-bottom: 0px;
     }
-    .dois-lados-contact {
+    .dois-lados-contact { /*Provavelmnte uma classe que nao foia pagada, nao achei no codigo*/
         flex-direction: column;
     }
 
-    .left-contact, .right-contact {
+    .left-contact, .right-contact { /* Provavelmnte algo que foi apagado, nao existe nada no codigo que vi usando*/
         margin-top: 0vh;
     }
-    .celula-contact input {
+    .celula-contact input { /*Configuraçõ dos inputs*/
         width: clamp(200px, 500vw, 300px);
     }
 

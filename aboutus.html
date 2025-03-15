@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/layout.css">
-        <link rel="stylesheet" href="css/aboutus.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Importação das fontes do google--> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Api do google para otimização de desempenho para fontes carregadas no google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> <!-- Importtação da fonte 'Questrial'-->
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Importação da fonte 'Cormorant Garamond'-->
+        <meta charset="UTF-8"> <!-- Faz o navegador aceitar acentos e cecidilha, pois em padrao de lingua inglesa o navegador nao dá suporte -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define o padrão do zoom do navegador em 100%-->
+        <link rel="stylesheet" href="css/layout.css"> <!-- CSS que abriga as cxonfiguração do body, do footer, do header e dos botoes do header. Certas paginas podem ter condiguraçãooes extras em seu prorpio css para o body-->
+        <link rel="stylesheet" href="css/aboutus.css"> <!-- CSS prorpio da pagina (about us = Sobre nós) -->
 
-        <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon.png">
-        <meta name="msapplication-TileColor" content="#ffffff">
+        <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon.png"> <!-- Confugrações dop favicon-->
+        <meta name="msapplication-TileColor" content="#ffffff"> 
         <meta name="theme-color" content="#ffffff">
+        <meta name="msapplication-TileColor" content="#ffffff">  <!-- Define a cor de fundo dos blocos dinâmicos no Windows quando o site é fixado no menu Iniciar -->
+        <meta name="theme-color" content="#ffffff"> <!-- Altera a cor da barra de endereço no Chrome, Edge e Android.-->
         <title>Createc</title>
     
     </head>
@@ -76,8 +78,8 @@
         </nav>
     </header>
     <body>
-        <div class="about-container">
-            <div class="div-um">
+        <div class="about-container"> <!-- Div que serve de container para todo o coneúdo da pagina, pois evito mexer em configurações gerais do body-->
+            <div class="div-um"> <!-- Div que contem tudo do lado esquerdo da pagina (divsoria do sobre nos, a div dois é dos serviços)-->
                 <h1 class="tiulo-menor"> Sobre nos </h1>
                 <p class="titulo-maior"> Inovando e Criando soluções para os seus problemas  <p>
                 <p class="texto"> Na Createc, transformamos sua visão em realidade digital. Somos especialistas no desenvolvimento de softwares personalizados, entregando soluções inovadoras para empresas e empreendedores que buscam eficiência, automação e tecnologia de ponta.<p>
@@ -85,8 +87,8 @@
                     <button onclick="window.location.href='contact.html'">Fale Conosco</button>
                 </div>
             </div>
-            <div class="div-dois">
-                <h1 class="tiulo-menor"> Nossos Serviços </h1>
+            <div class="div-dois"> <!-- Diferente da div um que abriga sobre a empresa, essa div abriga e forma breve os nossos serviços -->
+                <h1 class="tiulo-menor"> Nossos Serviços </h1> 
                 <div class="services-container">
                     <div class="service">
                         <img src="arts/sistemas.png">
@@ -107,10 +109,7 @@
                 </div>
             </div>
         </div>
-        <img src="arts/aboutus-fundo.png" class="aboutus-found">
-
-
-
-    </body>
-    <script src="efeitos.js"></script>
+        <img src="arts/aboutus-fundo.png" class="aboutus-found"> <!-- Um crime colocar op fundo como div ou imaghem, eu estou cojmentrando no moemento. Caso voce esteja vendo isso, por favor me lmbre pois está errado mas é um detalhe que nao  vou corrigir no momento-->
+    </body> 
+    <script src="efeitos.js"></script> <!-- Script que contem efeitos visusais das paginas, oi que inclui os slides da pagina inicial-->
 </html>
