@@ -19,7 +19,28 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    
+    /* Segunda imagem normal */
+    background-image: url(arts/aboutus-fundo.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: clamp(250px, 50%, 500px);
 }
+
+/* Criamos um pseudo-elemento para a primeira imagem */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: clamp(250px, 50%, 500px);
+    height: clamp(250px, 50%, 500px);
+    background-image: url(arts/aboutus-fundo.png);
+    background-size: cover;
+    transform: rotate(180deg); /* Rotaciona apenas esse fundo */
+    background-position: left top;
+}
+
 
 .header {
     display: flex;
@@ -52,6 +73,9 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     align-items: flex-start; /* Alinha os containers no topo */
+    border-left: #750c2d solid 5px;
+    border-right: #750c2d solid 5px;
+    padding: 0px 25px;
 }
 
 .container {

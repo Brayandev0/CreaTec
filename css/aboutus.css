@@ -1,21 +1,18 @@
 body {
     background-color: #f5f5f5;
+    background-image: url(/arts/aboutus-fundo.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: clamp(250px, 25%, 500px);
+    justify-content: center ;
 
 }
 .about-container{  /* Div que contem todo o condtudo da pagina*/
     width: 100vw;
-    margin-top: 23vh;
     display: flex;
     justify-content: center; 
 }
 
-.aboutus-found { /* Div que serve como ofundo da pagina (aquela img criminosa no final do codigo) */
-    margin-left: 76vw;
-    margin-top: 50vh;
-    position: absolute;
-    height: 50vh;
-    width: auto;
-}
 
 .tiulo-menor{  /* Aquele mini titulo do começo 'sobre nos' e 'nossos servicos'*/
     letter-spacing: 5px;
