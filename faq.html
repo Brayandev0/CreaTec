@@ -1,170 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-    <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon.png"> <!-- Confugrações dop favicon-->
-    <link rel="stylesheet" href="css/layout.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon.png"> <!-- Confugrações dop favicon-->
+        <link rel="stylesheet" href="css/layout.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
     <title>Createc - Perguntas Frequentes</title>
     <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f6f4f4;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    
-    /* Segunda imagem normal */
-    background-image: url(arts/aboutus-fundo.png);
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: clamp(250px, 50%, 500px);
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f6f4f4;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            
+            /* Segunda imagem normal */
+            background-image: url(arts/aboutus-fundo.png);
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: clamp(250px, 50%, 500px);
+        }
 
-/* Criamos um pseudo-elemento para a primeira imagem */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: clamp(250px, 50%, 500px);
-    height: clamp(250px, 50%, 500px);
-    background-image: url(arts/aboutus-fundo.png);
-    background-size: cover;
-    transform: rotate(180deg); /* Rotaciona apenas esse fundo */
-    background-position: left top;
-}
+        /* Criamos um pseudo-elemento para a primeira imagem */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: clamp(250px, 50%, 500px);
+            height: clamp(250px, 50%, 500px);
+            background-image: url(arts/aboutus-fundo.png);
+            background-size: cover;
+            transform: rotate(180deg); /* Rotaciona apenas esse fundo */
+            background-position: left top;
+        }
 
 
-.header {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    width: 100%;
-}
 
-.logo {
-    width: 150px;
-}
 
-.title {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        .title {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 90px;
-    padding-bottom: 50px;
-    color: black;
-    margin-top: 20px;
-}
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 90px;
+            padding-bottom: 50px;
+            color: black;
+            margin-top: 20px;
+        }
 
-.faq-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    align-items: flex-start; /* Alinha os containers no topo */
-    border-left: #750c2d solid 5px;
-    border-right: #750c2d solid 5px;
-    padding: 0px 25px;
-}
+        .faq-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            align-items: flex-start; /* Alinha os containers no topo */
+            border-left: #750c2d solid 5px;
+            border-right: #750c2d solid 5px;
+            padding: 0px 25px;
+        }
 
-.container {
-    padding-top: 100px;
-    flex: 1;
-    background: white;
-    padding: 20px;
-    width: 2000px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #dcdcdc; /* container da resposta */
-    position: relative;
-    min-height: 400px; /* Altura mínima para os containers */
+        .container {
+            padding-top: 100px;
+            flex: 1;
+            background: white;
+            padding: 20px;
+            width: 2000px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #dcdcdc; /* container da resposta */
+            position: relative;
+            min-height: 400px; /* Altura mínima para os containers */
 
-}
+        }
 
-.container::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    z-index: -1;
-    filter: blur(20px);
-    border-radius: 15px;
-}
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            z-index: -1;
+            filter: blur(20px);
+            border-radius: 15px;
+        }
 
-h2 {
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 20px;
-}
+        h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.faq-item {
-    margin-bottom: 15px;
+        .faq-item {
+            margin-bottom: 15px;
 
-    padding-bottom: 10px;
-}
+            padding-bottom: 10px;
+        }
 
-.faq-question {
-    background-color: #8C1D40;
-    color: white;
-    padding: 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: left;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .faq-question {
+            background-color: #8C1D40;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: left;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.faq-answer {
-    display: none;
-    padding: 15px;
-    text-align: left;
-    background: #6A1630;
-    border-radius: 5px;
-    animation: fadeIn 0.5s ease-in-out;
-}
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            text-align: left;
+            background: #6A1630;
+            border-radius: 5px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.faq-toggle {
-    font-size: 20px;
-    font-weight: bold;
-}
+        .faq-toggle {
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-@media (max-width: 800px) {
-    .faq-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .container {
-        width: 95%;
-    }
-}
+        @media (max-width: 800px) {
+            .faq-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .container {
+                width: 95%;
+            }
+        }
     </style>
+</head>
 
 <header>
     <nav class="navbar">
-        <div class="logo" style="padding-right: 210px;">
-            <img src="/arts/logo (2).png" alt="Createc Logo" class="nav-logo" onclick="window.location.href='index.html'">
-
-
-
+        <div class="logo">
+            <img src="arts/logo (2).png" alt="Createc Logo" class="nav-logo" onclick="window.location.href='index.html'">
             <div class="menu-btn" onclick="toggleMenu()">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -219,7 +209,6 @@ h2 {
         </div>
     </nav>
 </header>
-</head>
 <body>
 
     <div class="title">
@@ -281,9 +270,7 @@ h2 {
         </div>
     </div>
     
-            </div>
-        </div>
-    </div>
+</body>
     <script>
         function toggleAnswer(index) {
             var answers = document.querySelectorAll('.faq-answer');
@@ -297,5 +284,4 @@ h2 {
             }
         }
     </script>
-</body>
 </html>

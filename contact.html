@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <!-- é uma otimização de desempenho usada para melhorar o carregamento de fontes hospedadas no Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> <!-- Importação da fonte 'Questrial'-->
     <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> <!-- Importamento da fonte 'HT Grotesk'-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8"> <!-- Permite o uso de ascentos no site, pois sem esse comando o navegador nao da suporte para linguas latinas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define por padrão o zoom do navegador em 100% (normal) -->
     <link rel="stylesheet" href="css/layout.css"> <!-- CSS que contem as configurações do body, header, botoes do header e footer. Certas paginas podem ter em seu prorpio css algo que foi necessario mudar no body, senmpre confira primeiro no layout, mas pode dar uma olhada no css proprio-->  
@@ -129,28 +130,49 @@
                     <p class="subtitle-contact">Deixe seus dados para contato</p>
             </article>
         </div>
-        <div class="formulario-contact"> <!-- Div que contem os inputs da pagina -->
+        <!-- Estrutura do formulário -->
+        <div class="formulario-contact"> 
             <div class="left-contact">
                 <p class="title-contact"><strong>Formulário de Contato</strong></p>
+
+                <!-- Campo Nome -->
                 <div class="celula-contact">
-                    <input type="text" placeholder="Nome Completo">
+                    <input type="text" id="nome" placeholder="Nome Completo">
+                    <span class="error-message" id="erro-nome"></span> <!-- Mensagem de erro -->
                 </div>
+
+                <!-- Campo Email -->
                 <div class="celula-contact">
-                    <input type="text" placeholder="Email">
+                    <input type="text" id="email" placeholder="Email">
+                    <span class="error-message" id="erro-email"></span> <!-- Mensagem de erro -->
                 </div>  
+
+                <!-- Campo Telefone -->
                 <div class="celula-contact">
-                    <input type="text" placeholder="Telefone">
+                    <input type="text" id="telefone" placeholder="Telefone" maxlength="15">
+                    <span class="error-message" id="erro-telefone"></span> <!-- Mensagem de erro -->
                 </div>
+
+                <!-- Campo Mensagem -->
                 <div class="celula-contact-mensagem">
-                    <textarea placeholder="Motivo Pelo Seu Contato"></textarea>
+                    <textarea id="mensagem" placeholder="Motivo Pelo Seu Contato" maxlength="155"></textarea>
+                    <span class="error-message" id="erro-mensagem"></span> <!-- Mensagem de erro -->
                 </div>  
+
+                <!-- Botão de envio -->
                 <div class="button-contact">
-                    <button>Enviar</button>
+                    <button onclick="enviarOrcamento()" class="erro-button">Enviar</button>
                 </div>                                  
             </div>
         </div>
     </div>
-    <img src="arts/aboutus-fundo.png" class="contact-found"> <!-- Imagem usada de fundo, que eu tinha removido. Se voce estiver vendo isso lembre-me de remover -->
+    <div class="erro-container">
+        <div class="erro">
+            <h1> Formulário Enviado</h1>
+            <p> Mensagem enviada com sucesso!</p>
+            <button onclick="esconderPopup()"> Fechar</button>
+        </div>
+    </div>
 </body>
 <script src="efeitos.js"></script> <!-- Script que contem os efeitos visuais das paginas, como os slides da pagina incial -->
 </html>

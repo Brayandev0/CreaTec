@@ -1,37 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const container = document.querySelector(".header-buttons-container");
-    const underline = document.createElement("div");
-    underline.classList.add("underline");
-    container.appendChild(underline);
-
-    const buttons = document.querySelectorAll(".header-buttons");
-
-    buttons.forEach((button) => {
-        button.addEventListener("mouseenter", function () {
-            const rect = button.getBoundingClientRect();
-            const containerRect = container.getBoundingClientRect();
-            underline.style.width = `${rect.width}px`;
-            underline.style.left = `${rect.left - containerRect.left}px`;
-        });
-    });
-
-    container.addEventListener("mouseleave", function () {
-        underline.style.width = "0";
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    menuToggle.addEventListener("click", function () {
-        mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
-    });
-});
-
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
     // Verificar se a largura da tela é menor que 769px
@@ -150,49 +116,118 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-function toggleMenu() {     
-    // Mudar o menu do celular: alterna entre os botões do header e o ícone de menu (X)
-    const menuBtn = document.querySelector('.menu-btn');
-    const botoesDiv = document.getElementById('header-buttons'); // Corrigido getElementById para querySelector
-    
-    menuBtn.classList.toggle('active'); // Alterna a classe 'active'
 
-    if (menuBtn.classList.contains('active')) { // Verifica se a classe 'active' está presente
-        botoesDiv.style.display = 'flex';
+
+// F U N Ç Ã O   Q U E  E X I B E  O  H E A D E R   M O B I L E
+
+function toggleMenu() {
+    // Variáveis para o ícone do menu, o desfoque e o header
+    const menuIcon = document.getElementById('menu-mobile'); // Ícone do menu
+    const menuHeader = document.querySelector('.header-mobile'); // Cabeçalho móvel
+    const backgroundBlur = document.getElementById('desfoque-de-fundo-mobile'); // Desfoque de fundo
+
+    // Alterna a classe 'active' no ícone de menu
+    menuIcon.classList.toggle('active');
+
+    // Verifica se a classe 'active' foi adicionada
+    if (menuIcon.classList.contains('active')) {
+        menuHeader.style.display = 'flex';  // Torna o menu visível
+        backgroundBlur.style.display = 'block';  // Torna o desfoque visível
     } else {
-        botoesDiv.style.display = 'none';
+        menuHeader.style.display = 'none';  // Esconde o menu
+        backgroundBlur.style.display = 'none';  // Esconde o desfoque
     }
 }
 
 
 
+
+
+// F O R M U L Á R I O   D A  P Á G I N A  D E  C O N T A T O
+
 function enviarOrcamento() {
-    alert("teste")
-    let data = document.getElementById("dados_form");
-    let nome = document.getElementById("nome").value
-    let email = document.getElementById("email").value
-    let telefone = document.getElementById("telefone").value
-    let mensagem = document.getElementById("mensagem").value
-    let sobre_nos = document.getElementById("sobre_nos").value
+    // Limpa as mensagens de erro antes de validar novamente
+    limparErros();
 
-    if(nome.length <= 2 || nome.length >= 50){
-        // aqui voce poem oq vai mudar caso o nome seja invalido
-        return alert("deu erro aq paizao" + nome) // ele retorna os erros, para implementar uma mensagem coloque nos return aq 
-    };
-    if(!email.includes("@") || !email.includes(".com")){
-        // aqui voce poem oq vai mudar caso o nome seja invalido
-        return alert("erro" + email)
+    // Obtendo os valores dos campos e removendo espaços extras
+    let nome = document.getElementById("nome").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let telefone = document.getElementById("telefone").value.replace(/\s/g, ""); // Remove espaços
+    let mensagem = document.getElementById("mensagem").value.trim();
+    const popupDeEnviado = document.querySelectorAll('.erro-container')
+
+    let formularioValido = true; // Flag para saber se há erros
+
+    // Validação do nome (entre 3 e 50 caracteres e sem números)
+    if (nome.length < 3 || nome.length > 50 || /\d/.test(nome)) {
+        mostrarErro("nome", "O nome deve ter entre 3 e 50 caracteres e não pode conter números.");
+        formularioValido = false;
     }
-    if(telefone.length < 9 || telefone.length > 15){
-        // aqui voce poem oq vai mudar caso o nome seja invalido
-        return alert("erro no telefone" + telefone)
 
+    // Validação do email (precisa conter @ e um domínio válido)
+    if (!email.includes("@") || !email.includes(".")) {
+        mostrarErro("email", "Insira um e-mail válido.");
+        formularioValido = false;
     }
-    if(mensagem.length > 155 || mensagem.length < 3){
-        // aqui voce poem oq vai mudar caso o nome seja invalido
-        return alert("opa paezao erro na mensagem " + mensagem)
-    }};
+
+    // Validação do telefone (entre 9 e 15 números e sem letras)
+    if (telefone.length < 9 || telefone.length > 15 || /\D/.test(telefone)) {
+        mostrarErro("telefone", "O telefone deve conter apenas números e ter entre 9 e 15 dígitos.");
+        formularioValido = false;
+    }
+
+    // Validação da mensagem (mínimo 3 caracteres, máximo 155)
+    if (mensagem.length < 3 || mensagem.length > 155) {
+        mostrarErro("mensagem", "A mensagem deve ter entre 3 e 155 caracteres.");
+        formularioValido = false;
+    }
+
+    // Se houver erro, não enviar o formulário
+    if (!formularioValido) return;
+
+    // Se tudo estiver certo, envia os dados
+    popupDeEnviado[0].style.display = 'block';
+}
 
 
 
 
+// Função para exibir a mensagem de sucesso e limpar os textos dos campos
+function esconderPopup() {
+    const popupDeEnviado = document.querySelector('.erro-container');  // Seleciona o popup
+
+    // Limpar os inputs do formulário
+    const inputs = document.querySelectorAll('input, textarea');  // Seleciona todos os inputs e textareas no formulário
+    inputs.forEach(input => {
+        input.value = '';  // Limpa o valor de cada input
+    });
+
+    // Esconder o popup
+    popupDeEnviado.style.display = 'none';  // Esconde o popup
+}
+
+// função para exibir as mensagens de erro
+function mostrarErro(campoId, mensagem) {
+    let campo = document.getElementById(campoId);
+    let containerErro = campo.parentElement.querySelector(".error-message");
+
+    // Se já existe uma mensagem de erro, não cria outra
+    if (!containerErro) {
+        containerErro = document.createElement("div");
+        containerErro.className = "error-message"; 
+        containerErro.style.color = "red"; 
+        containerErro.style.fontSize = "14px";
+        containerErro.style.marginTop = "5px";
+        campo.parentElement.appendChild(containerErro);
+    }
+
+    // Adiciona a mensagem de erro
+    containerErro.textContent = mensagem;
+}
+
+
+// Função para limpar todas as mensagens de erro antes de validar novamente
+function limparErros() {
+    let mensagensErro = document.querySelectorAll(".error-message");
+    mensagensErro.forEach((msg) => msg.remove());
+}

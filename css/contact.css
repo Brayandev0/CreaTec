@@ -7,8 +7,11 @@
 }
 
 body {
-    overflow-y: hidden; /*Fiz com o body nao oferecesse a opção de rolagem da tela*/
     background-color: #f6f4f4;
+    background-image: url(/arts/aboutus-fundo.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: clamp(250px, 25%, 500px);
 }
 
 /*  Fontes  */
@@ -182,6 +185,73 @@ body {
     height: 50vh;
     width: auto;
 }
+
+/* Ajusta o layout para garantir que a mensagem de erro fique abaixo do input */
+.celula-contact {
+    display: flex;
+    flex-direction: column; /* Deixa os elementos em coluna (input → erro abaixo) */
+}
+
+.error-message {
+    color: red; /* Destaca a mensagem de erro */
+    font-size: 0.85em; /* Mantém o texto um pouco menor */
+    margin-top: 5px; /* Espaço entre o input e a mensagem de erro */
+    display: block; /* Garante que fique em uma linha separada */
+}
+
+.erro-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    display: none;
+}
+
+.erro {
+    text-align: center;
+    background-color: #791033;
+    padding: 20px;
+    width: clamp(100px, 50%, 500px);
+    font-family: 'HT Grotesk', sans-serif;
+    color: white;
+    border: 5px solid #791033; /* Primeira borda rosa escuro */
+    box-shadow: 
+        0 0 0 5px black,     /* Primeira borda preta */
+        0 0 0 10px #791033,  /* Segunda borda rosa escuro */
+        0 0 0 15px black;    /* Segunda borda preta */ ;
+    
+}
+
+
+
+.erro button {
+    background-color: #fff;
+    font-weight: bold;
+    color: #791033;
+    font-size: 1rem;
+    padding-right: 20px;
+    padding-left: 18px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #ddd;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.623);
+    transition: all 0.3s ease-in-out; /* Suaviza a animação */
+}
+
+.erro button:hover {
+    cursor: pointer;
+    transform: scale(1.1); /* Aumenta levemente e inclina */
+    background: linear-gradient(45deg, #700921, #9b0c3b); /* Efeito gradiente vibrante */
+    color: #fff;
+    box-shadow: 0px 4px 20px rgba(255, 65, 108, 0.6); /* Sombra brilhante para destaque */
+}
+
+
+
+
+
 
 @media (max-width: 768px) {
 
