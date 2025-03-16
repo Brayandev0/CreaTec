@@ -102,6 +102,7 @@ body {
 
     body {
         overflow-y: scroll; /*Tornei possivel rolar a tela*/
+        background-image: none;
     }
 
     .aboutus-found { /*Removi a img criminosa (fundo) da pagina no mobile. Eu nao removi agora porque nao deu, mas ela é um erro (tremendo, mas nao causa bugs)*/
@@ -110,7 +111,9 @@ body {
 
     .about-container{ /* Defini o container da pagina para deixar tudo em colunas retas (ao inves de ficar de lado, ficam empilhados)*/
         width: 100vw;
-        margin-top: 15vh;
+        position: absolute;
+        margin-top: 8vh;
+        top: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
