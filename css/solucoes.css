@@ -1,0 +1,31 @@
+
+
+
+
+
+
+.solucao img {
+    width: 70px;
+    height: auto;
+    padding-right: 15px;
+}
+
+
+.solucao p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.linha-vertical {
+    height: 80%;
+    width: 2px;
+    background-color: rgb(80, 2, 22);
+}
+
+
+.solucao {
+    display: flex;
+    align-items: center;
+
+}
