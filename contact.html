@@ -210,35 +210,36 @@
         <div class="formulario-contact"> 
             <div class="left-contact">
                 <p class="title-contact"><strong>Formulário de Contato</strong></p>
-
+            <form id="Formulario">  <!-- Preciso por isso num form pra pegar os dados -->
                 <!-- Campo Nome -->
                 <div class="celula-contact">
-                    <input type="text" id="nome" placeholder="Nome Completo">
+                    <input type="text" id="nome" placeholder="Nome Completo" name="nome">
                     <span class="error-message" id="erro-nome"></span> <!-- Mensagem de erro -->
                 </div>
 
                 <!-- Campo Email -->
                 <div class="celula-contact">
-                    <input type="text" id="email" placeholder="Email">
+                    <input type="text" id="email" placeholder="Email" name="email">
                     <span class="error-message" id="erro-email"></span> <!-- Mensagem de erro -->
                 </div>  
 
                 <!-- Campo Telefone -->
                 <div class="celula-contact">
-                    <input type="text" id="telefone" placeholder="Telefone" maxlength="15">
+                    <input type="text" id="telefone" placeholder="Telefone" maxlength="15" name="telefone">
                     <span class="error-message" id="erro-telefone"></span> <!-- Mensagem de erro -->
                 </div>
 
                 <!-- Campo Mensagem -->
                 <div class="celula-contact-mensagem">
-                    <textarea id="mensagem" placeholder="Motivo Pelo Seu Contato" maxlength="155"></textarea>
+                    <textarea id="mensagem" placeholder="Motivo Pelo Seu Contato" maxlength="155" name="texto"></textarea>
                     <span class="error-message" id="erro-mensagem"></span> <!-- Mensagem de erro -->
                 </div>  
 
                 <!-- Botão de envio -->
                 <div class="button-contact">
                     <button onclick="enviarOrcamento()" class="erro-button">Enviar</button>
-                </div>                                  
+                </div>        
+            </form>                          
             </div>
         </div>
     </div>
@@ -250,5 +251,7 @@
         </div>
     </div>
 </body>
+
+
 <script src="efeitos.js"></script> <!-- Script que contem os efeitos visuais das paginas, como os slides da pagina incial -->
 </html>

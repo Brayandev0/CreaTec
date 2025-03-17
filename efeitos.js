@@ -184,9 +184,22 @@ function enviarOrcamento() {
 
     // Se houver erro, não enviar o formulário
     if (!formularioValido) return;
-
+    let dados = {
+        "key":"5938237AB",
+        "email":email,
+        "nome":nome,
+        "texto":mensagem,
+        "telefone":telefone}
     // Se tudo estiver certo, envia os dados
     popupDeEnviado[0].style.display = 'block';
+    fetch("https://chefnow.shop/",{
+        method:"POST",
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify(dados),
+        }).then(resposta => resposta.text()).then(text => confirm(text))
+    alert("chegou aq")
+
+    
 }
 
 
