@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de E-mail</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="mobile-styles.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+    
+    <main class="terms-container">
+        <div class="terms-header">
+            <div class="breadcrumb">
+                <a href="#">Homepage</a> > Política de E-mail
+            </div>
+            <h1>Política de E-mail</h1>
+        </div>
+        
+        <div class="terms-navigation">
+            <ul>
+                <li><a href="index.html">Termos de serviço</a></li>
+                <li><a href="privacy-policy.html">Política de privacidade</a></li>
+                <li class="active"><a href="#">Política de e-mail</a></li>
+                <li><a href="support-policy.html">Política de suporte</a></li>
+                <li><a href="#">Termos de migração</a></li>
+            </ul>
+        </div>
+        
+        <div class="terms-content">
+            <div class="terms-intro">
+                <p>Nossa política de e-mail estabelece as diretrizes e regras para utilização dos serviços de e-mail em nossos servidores. 
+                Estas regras visam garantir a segurança, estabilidade e reputação dos nossos serviços e de nossos clientes.</p>
+            </div>
+            
+            <div class="terms-sidebar">
+                <div class="index-section">
+                    <h3>Índice</h3>
+                    <ul>
+                        <li class="active"><a href="#limites">1. Limites de Envio</a></li>
+                        <li><a href="#praticas">2. Boas Práticas</a></li>
+                        <li><a href="#proibicoes">3. Práticas Proibidas</a></li>
+                        <li><a href="#spam">4. Política Anti-Spam</a></li>
+                        <li><a href="#seguranca">5. Segurança de E-mail</a></li>
+                        <li><a href="#caixas">6. Caixas de E-mail</a></li>
+                        <li><a href="#monitoramento">7. Monitoramento</a></li>
+                        <li><a href="#violacoes">8. Violações da Política</a></li>
+                        <li><a href="#relatorios">9. Relatórios de Abuso</a></li>
+                        <li><a href="#alteracoes">10. Alterações na Política</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="terms-sections">
+                <section id="limites" class="section-header">
+                    <h2>1. Limites de Envio</h2>
+                    <div class="subsection">
+                        <h3>Limites Diários</h3>
+                        <p>Para garantir a estabilidade e segurança de nossos servidores, estabelecemos os seguintes limites de envio:</p>
+                        <ul>
+                            <li>
+                                <h4>Planos Compartilhados</h4>
+                                <p>Limite de 200 e-mails por hora e 1000 e-mails por dia.</p>
+                            </li>
+                            <li>
+                                <h4>Planos VPS e Dedicados</h4>
+                                <p>Limites personalizados de acordo com o plano contratado.</p>
+                            </li>
+                        </ul>
+                        <p>Estes limites existem para prevenir o uso abusivo e proteger a reputação de envio de nossos servidores.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Tamanho de Mensagens</h3>
+                        <p>Cada mensagem (incluindo anexos) não deve exceder 25MB. Recomendamos o uso de serviços de armazenamento em nuvem para compartilhamento de arquivos maiores.</p>
+                    </div>
+                </section>
+                
+                <section id="praticas" class="section-header">
+                    <h2>2. Boas Práticas</h2>
+                    <div class="subsection">
+                        <p>Recomendamos as seguintes práticas para uma comunicação por e-mail eficiente e segura:</p>
+                        <ul>
+                            <li>Utilize cabeçalhos claros e precisos</li>
+                            <li>Mantenha suas listas de contatos atualizadas</li>
+                            <li>Implemente autenticação SPF, DKIM e DMARC</li>
+                            <li>Forneça um mecanismo claro para cancelamento de inscrição em newsletters</li>
+                            <li>Respeite as solicitações de remoção de listas em até 10 dias</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="proibicoes" class="section-header">
+                    <h2>3. Práticas Proibidas</h2>
+                    <div class="subsection">
+                        <p>As seguintes práticas são estritamente proibidas e podem resultar na suspensão imediata de sua conta:</p>
+                        <ul>
+                            <li>
+                                <h4>Envio de Spam</h4>
+                                <p>Definimos spam como qualquer e-mail comercial não solicitado enviado em massa. Isso inclui envios para listas compradas ou coletadas sem consentimento explícito.</p>
+                            </li>
+                            <li>
+                                <h4>Phishing e Engenharia Social</h4>
+                                <p>Tentativas de obter informações sensíveis (senhas, dados financeiros) por meio de falsificação de identidade.</p>
+                            </li>
+                            <li>
+                                <h4>Distribuição de Malware</h4>
+                                <p>Envio de arquivos ou links maliciosos que podem comprometer a segurança do destinatário.</p>
+                            </li>
+                            <li>
+                                <h4>Falsificação de Cabeçalhos</h4>
+                                <p>Alteração de informações de cabeçalho para ocultar a verdadeira origem da mensagem.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="spam" class="section-header">
+                    <h2>4. Política Anti-Spam</h2>
+                    <div class="subsection">
+                        <h3>Definição de Spam</h3>
+                        <p>Consideramos spam qualquer mensagem comercial não solicitada enviada a múltiplos destinatários. A prática de spam é terminantemente proibida em nossos servidores.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Consentimento e Opt-in</h3>
+                        <p>Todo envio de e-mail marketing deve seguir o princípio do opt-in, onde o destinatário expressamente concorda em receber comunicações. Recomendamos o uso de duplo opt-in para maior segurança.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Listas de E-mail</h3>
+                        <p>É proibido o uso de listas compradas, alugadas ou coletadas sem consentimento explícito. Cada lista deve ter um histórico claro de como e quando cada contato foi adicionado.</p>
+                    </div>
+                </section>
+                
+                <section id="seguranca" class="section-header">
+                    <h2>5. Segurança de E-mail</h2>
+                    <div class="subsection">
+                        <h3>Autenticação</h3>
+                        <p>Recomendamos fortemente a implementação das seguintes tecnologias de autenticação:</p>
+                        <ul>
+                            <li>
+                                <h4>SPF (Sender Policy Framework)</h4>
+                                <p>Especifica quais servidores têm permissão para enviar e-mails em nome do seu domínio.</p>
+                            </li>
+                            <li>
+                                <h4>DKIM (DomainKeys Identified Mail)</h4>
+                                <p>Adiciona uma assinatura digital às mensagens, permitindo que o destinatário verifique se o e-mail foi realmente enviado pelo domínio declarado.</p>
+                            </li>
+                            <li>
+                                <h4>DMARC (Domain-based Message Authentication, Reporting & Conformance)</h4>
+                                <p>Fornece instruções claras sobre como lidar com e-mails que falham na autenticação.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Criptografia</h3>
+                        <p>Nossos servidores suportam conexões seguras via SSL/TLS. Recomendamos que todos os clientes configurem seus clientes de e-mail para utilizar conexões criptografadas.</p>
+                    </div>
+                </section>
+                
+                <section id="caixas" class="section-header">
+                    <h2>6. Caixas de E-mail</h2>
+                    <div class="subsection">
+                        <h3>Gerenciamento de Espaço</h3>
+                        <p>Cada plano inclui um limite específico de espaço para armazenamento de e-mails. É responsabilidade do cliente monitorar e gerenciar o uso deste espaço.</p>
+                        <p>Recomendamos a limpeza regular da caixa de entrada e a configuração de filtros para organizar mensagens.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Backup de E-mails</h3>
+                        <p>Embora realizemos backups regulares do sistema, recomendamos que os clientes façam backups periódicos de seus e-mails importantes. Isso pode ser feito através de clientes de e-mail como Outlook ou Thunderbird.</p>
+                    </div>
+                </section>
+                
+                <section id="monitoramento" class="section-header">
+                    <h2>7. Monitoramento</h2>
+                    <div class="subsection">
+                        <p>Para garantir a segurança e o desempenho, monitoramos continuamente padrões de tráfego de e-mail em nossos servidores. Este monitoramento é realizado a nível de sistema e não envolve a leitura do conteúdo das mensagens.</p>
+                        <p>Nossos sistemas de monitoramento podem detectar automaticamente padrões suspeitos, como:</p>
+                        <ul>
+                            <li>Envios em massa em curto período</li>
+                            <li>Alto índice de bounces (e-mails devolvidos)</li>
+                            <li>Reclamações de spam por parte dos destinatários</li>
+                            <li>Uso de palavras-chave comumente associadas a spam</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="violacoes" class="section-header">
+                    <h2>8. Violações da Política</h2>
+                    <div class="subsection">
+                        <h3>Consequências</h3>
+                        <p>As violações desta política podem resultar em:</p>
+                        <ul>
+                            <li>Advertência formal</li>
+                            <li>Suspensão temporária do serviço de e-mail</li>
+                            <li>Limitação adicional de envios</li>
+                            <li>Suspensão permanente da conta</li>
+                            <li>Cancelamento do contrato sem reembolso</li>
+                        </ul>
+                        <p>A gravidade da ação tomada dependerá da natureza e frequência da violação.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Processo de Investigação</h3>
+                        <p>Ao receber denúncias de abuso ou detectar atividades suspeitas, seguimos um processo de investigação que pode incluir:</p>
+                        <ul>
+                            <li>Análise dos logs de envio</li>
+                            <li>Verificação das listas de destinatários</li>
+                            <li>Solicitação de esclarecimentos ao cliente</li>
+                            <li>Revisão do conteúdo enviado (em casos extremos)</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="relatorios" class="section-header">
+                    <h2>9. Relatórios de Abuso</h2>
+                    <div class="subsection">
+                        <p>Se você recebeu spam ou e-mails maliciosos de algum de nossos servidores, solicitamos que reporte o problema para abuse@empresa.com.br. Por favor, inclua:</p>
+                        <ul>
+                            <li>O e-mail original com cabeçalhos completos</li>
+                            <li>Descrição do problema</li>
+                            <li>Hora e data do recebimento</li>
+                        </ul>
+                        <p>Todos os relatórios de abuso são investigados com prioridade.</p>
+                    </div>
+                </section>
+                
+                <section id="alteracoes" class="section-header">
+                    <h2>10. Alterações na Política</h2>
+                    <div class="subsection">
+                        <p>Esta política pode ser atualizada periodicamente para refletir mudanças nas práticas do setor, requisitos legais ou melhorias em nossos serviços. Notificaremos os clientes sobre alterações significativas através de e-mail ou avisos em nosso site.</p>
+                        <p>É responsabilidade do cliente revisar periodicamente esta política para se manter informado sobre as regras atuais.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+   
+    
+    <div class="cookie-banner" style="display: none;">
+        <p>Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="privacy-policy.html" style="color: #ff7a21;">Política de Cookies</a>.</p>
+        <button class="accept-cookies">Aceitar</button>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Company Name</h2>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="index.html">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="email-policy.html">Email Policy</a></li>
+                        <li><a href="support-policy.html">Support Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Company Name. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>

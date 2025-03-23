@@ -57,7 +57,7 @@ document.querySelectorAll('button:not(.details-btn)').forEach(button => {
       params.append('plan', plan);
       params.append('price', price);
       params.append('features', JSON.stringify(features));
-      window.location.href = `contato.html?${params.toString()}`;
+      window.location.href = `contatoplano.html?${params.toString()}`;
     }, 2000);
   });
 });
