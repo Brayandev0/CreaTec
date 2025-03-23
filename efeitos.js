@@ -244,3 +244,106 @@ function limparErros() {
     let mensagensErro = document.querySelectorAll(".error-message");
     mensagensErro.forEach((msg) => msg.remove());
 }
+
+
+
+
+//    T E L A   D E   S O L U Ç Õ E S 
+
+// Service details data
+const serviceDetails = {
+    'Website Creation': {
+      title: 'Professional Website Creation',
+      description: 'Our website creation service delivers custom-designed, responsive websites that perfectly match your brand and business goals. We focus on user experience, modern design principles, and optimal performance. Our process includes detailed planning, design mockups, development, testing, and deployment. We use the latest technologies and best practices to ensure your website is fast, secure, and easy to maintain.'
+    },
+    'Professional Email': {
+      title: 'Business Email Solutions',
+      description: 'Get a professional email setup with your domain name to enhance your business credibility. Our email solutions include custom domain configuration, spam protection, email forwarding, and integration with popular email clients. We ensure reliable delivery, security, and professional appearance for all your business communications.'
+    },
+    'SEO': {
+      title: 'Search Engine Optimization',
+      description: 'Our comprehensive SEO services help improve your website\'s visibility in search engine results. We perform detailed keyword research, optimize on-page elements, improve technical SEO aspects, and create quality content strategies. Our approach includes regular monitoring and adjustments to maintain and improve your rankings.'
+    },
+    'Software Development': {
+      title: 'Custom Software Solutions',
+      description: 'We create tailored software solutions to address your specific business challenges. Our development process includes requirement analysis, architecture design, development, testing, and deployment. We use modern technologies and methodologies to deliver scalable, secure, and efficient software solutions.'
+    },
+    'Marketing Management': {
+      title: 'Strategic Marketing Solutions',
+      description: 'Our marketing management services help you reach and engage your target audience effectively. We develop comprehensive marketing strategies, manage campaigns, analyze performance, and optimize results. Services include social media management, content marketing, email campaigns, and advertising management.'
+    },
+    'Process Automation': {
+      title: 'Business Process Automation',
+      description: 'Streamline your operations with our intelligent automation solutions. We identify processes that can be automated, implement appropriate tools and workflows, and ensure smooth integration with your existing systems. This results in increased efficiency, reduced errors, and improved productivity.'
+    },
+    'App Development': {
+      title: 'Mobile App Development',
+      description: 'We develop high-quality mobile applications for both iOS and Android platforms. Our app development process includes UI/UX design, native or cross-platform development, testing, and deployment. We ensure your app is user-friendly, performant, and aligned with your business objectives.'
+    },
+    'UI/UX and Logo Design': {
+      title: 'Creative Design Services',
+      description: 'Our design team creates engaging user interfaces and memorable brand identities. Services include UI/UX design for digital products, logo design, brand guidelines, and visual identity development. We focus on creating designs that are both aesthetically pleasing and functionally effective.'
+    }
+  };
+  
+  // Add hover effects and click handlers for service cards
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-5px)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0)';
+    });
+    
+    card.addEventListener('click', () => {
+      const title = card.querySelector('h3').textContent;
+      showModal(title);
+    });
+  });
+  
+  // Remove default text selection from arrows
+  document.querySelectorAll('.arrow').forEach(arrow => {
+    arrow.style.userSelect = 'none';
+  });
+  
+  // Update modal functionality
+  function showModal(serviceTitle) {
+    const details = serviceDetails[serviceTitle];
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    
+    modal.innerHTML = `
+      <div class="modal-content">
+        <h2>${details.title}</h2>
+        <p>${details.description}</p>
+        <button class="modal-back">←</button>
+      </div>
+    `;
+    
+    const services = document.querySelector('.services');
+    services.classList.add('fade-out');
+    
+    document.body.appendChild(modal);
+    
+    // Trigger animations
+    setTimeout(() => {
+      modal.classList.add('active');
+    }, 300);
+    
+    // Back button functionality
+    modal.querySelector('.modal-back').addEventListener('click', () => {
+      modal.classList.remove('active');
+      services.classList.remove('fade-out');
+      setTimeout(() => modal.remove(), 300);
+    });
+    
+    // Click outside to close
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        services.classList.remove('fade-out');
+        setTimeout(() => modal.remove(), 300);
+      }
+    });
+  }

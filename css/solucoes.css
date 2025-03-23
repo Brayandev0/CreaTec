@@ -1,109 +1,277 @@
-
-body {
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-    /* Segunda imagem normal */
-    background-image: url(/arts/aboutus-fundo.png);
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: clamp(250px, 50%, 500px);
-}
-
-/* Criamos um pseudo-elemento para a primeira imagem */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: clamp(250px, 50%, 500px);
-    height: clamp(250px, 50%, 500px);
-    background-image: url(/arts/aboutus-fundo.png);
-    background-size: cover;
-    transform: rotate(180deg); /* Rotaciona apenas esse fundo */
-    background-position: left top;
-}
-
-
-
-h1 {
-    font-family: 'Questrial', sans-serif;
-    letter-spacing: 2px;
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: #910142;
-    margin-bottom: 10vh;
-}
-
-.solucao img {
-    width: 70px;
-    height: auto;
-    padding-right: 15px;
-}
-
-.solucao p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-
-.linha-vertical {
-    height: 60px;
-    margin-left: 15px;
-    margin-right: 20px;
-    width: 4px;
-    max-width: 2px;
-    background-color: rgb(80, 2, 22);
-}
-
-.solucao {
+:root {
+    --primary-color: #800020;
+    --pink-light: #FFE6E6;
+    --text-gray: #666;
+  }
+  
+  .page-wrapper {
+    margin: 0;
+    padding: 4rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
-    width: 325px;    
-    height: 70px;
-    padding: 10px 20px 10px 20px;
-    border: solid 2px ;
-    grid: 15px;
-}
-
-.solucoes-container {
+    justify-content: center;
+    background: #fff;
+    overflow: hidden;
+  }
+  
+  .services {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: opacity 0.3s ease;
+  }
+  
+  .services.fade-out {
+    opacity: 0;
+  }
+  
+  h5 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+  }
+  
+  .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Cria duas colunas de tamanho igual */
-    gap: 15px; /* Espaçamento entre as divs */
-    width: clamp(300px, 80%, 750px);
-    margin: 0 auto; /* Centraliza o container na página */
-    border-left:  solid 5px #910142;
-    border-right: solid 5px #910142;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 13px;
-}
-
-@media (max-width: 768px){
-    .solucoes-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .service-card {
+    margin: 0;
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .service-card:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  .icon-wrapper {
+    margin: 0;
+    background: var(--pink-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .icon-wrapper svg {
+    fill: var(--primary-color);
+  }
+  
+  .service-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #2F0F1A;
+  }
+  
+  .service-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  
+  .arrow {
+    margin: 0;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    width: 28px;
+    height: 28px;
+    background: var(--pink-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover .arrow {
+    transform: translateX(5px);
+  }
+  
+  .modal {
+    margin: 0;
+    padding: 4rem;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  .modal-content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+  }
+  
+  .modal.active .modal-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .modal h2 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+  
+  .modal p {
+    margin: 0;
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  
+  .modal-back {
+    margin: 0;
+    padding: 0;
+    background: var(--pink-light);
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .modal-back:hover {
+    transform: translateX(-5px);
+  }
+  
+  @media (max-width: 1200px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
-    body {
-        overflow-y: scroll;
+    
+    .page-wrapper {
+      padding: 3rem;
     }
-
-    .solucao {
-        display: flex;
-        align-items: center;
-        width: 250px;    
-        height: 70px;
-        padding: 10px 20px 10px 20px;
-        border: solid 2px ;
-        grid: 0px;
+  }
+  
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
-    h1 {
-        margin-bottom: 5vh;
-        margin-top: 5vh;
+    
+    .page-wrapper {
+      padding: 2.5rem;
+      height: auto;
+      min-height: 100vh;
+      overflow-y: auto;
     }
-}
+  
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .page-wrapper {
+      padding: 1.5rem;
+    }
+    
+    .modal {
+      padding: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .service-card {
+      padding: 1.2rem;
+    }
+  
+    .modal-content {
+      padding: 1rem;
+    }
+  
+    .modal h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .page-wrapper {
+      padding: 1rem;
+    }
+  
+    h5 {
+      font-size: 0.9rem;
+    }
+  
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+    }
+  
+    .service-card h3 {
+      font-size: 1rem;
+    }
+  
+    .service-card p {
+      font-size: 0.8rem;
+    }
+  }

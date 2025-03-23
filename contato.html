@@ -1,267 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon.png"> <!-- Confugrações dop favicon-->
-        <link rel="stylesheet" href="css/layout.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <title>Createc - Perguntas Frequentes</title>
-    <style>
-  body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-y: scroll;
-            min-height: 100vh;
-            background: #f6f4f4;
-            position: relative; /* Adicionado para posicionar os elementos de fundo */
-            overflow-x: hidden; /* Evita rolagem horizontal */
-        }
-
-        /* Elemento de fundo 1 (rotacionado) */
-        body::before {
-            content: "";
-            position: fixed; /* Fixo para acompanhar o scroll */
-            top: 0;
-            left: 0;
-            width: clamp(250px, 50%, 500px);
-            height: clamp(250px, 50%, 500px);
-            background-image: url(arts/aboutus-fundo.png);
-            background-size: cover;
-            transform: rotate(180deg);
-            background-position: left top;
-            z-index: -1; /* Coloca atrás do conteúdo */
-        }
-
-        /* Elemento de fundo 2 (normal) */
-        body::after {
-            content: "";
-            position: fixed; /* Fixo para acompanhar o scroll */
-            bottom: 0;
-            right: 0;
-            width: clamp(250px, 50%, 500px);
-            height: clamp(250px, 50%, 500px);
-            background-image: url(arts/aboutus-fundo.png);
-            background-size: cover;
-            background-position: right bottom;
-            z-index: -1; /* Coloca atrás do conteúdo */
-        }
-
-        a {
-            color: #C75C71;
-        }
-
-        .title {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 36px;
-            font-weight: bold;
-            text-align: center;
-            padding-top: 90px;
-            padding-bottom: 50px;
-            color: black;
-            margin-top: 20px;
-        }
-
-        .faq-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            align-items: flex-start;
-            border-left: #750c2d solid 5px;
-            border-right: #750c2d solid 5px;
-            padding: 0px 25px;
-        }
-
-        .container {
-            padding-top: 100px;
-            flex: 1;
-            background: white;
-            padding: 20px;
-            width: 2000px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #dcdcdc;
-            position: relative;
-            min-height: 400px;
-        }
-
-        .container::before {
-            content: "";
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            z-index: -1;
-            filter: blur(20px);
-            border-radius: 15px;
-        }
-
-        h2 {
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .faq-item {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-        }
-
-        .faq-question {
-            background-color: #8C1D40;
-            color: white;
-            padding: 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            text-align: left;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 15px;
-            text-align: left;
-            background: #6A1630;
-            border-radius: 5px;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .faq-toggle {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .faq-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .container {
-                width: 95%;
-            }
-            body {
-                overflow-y: scroll;
-            }
-        }
-
-        @media (max-width: 1050px) and (min-width: 768px){ 
-
-            
-            .title {
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                font-size: 18px;
-                font-weight: bold;
-                text-align: center;
-                padding-top: 90px;
-                padding-bottom: 20px;
-                color: black;
-                margin-top: 20px;
-            }
-
-            .faq-container {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                width: 90%;
-                max-width: 1200px;
-                margin: 20px auto;
-                align-items: flex-start;
-                border-left: #750c2d solid 5px;
-                border-right: #750c2d solid 5px;
-                padding: 0px 25px;
-            }
-
-            .container {
-                padding-top: 100px;
-                flex: 1;
-                background: white;
-                padding: 20px;
-                padding-bottom: 0px;
-                width: 2000px;
-                border-radius: 10px;
-                box-shadow: 0 0 15px #dcdcdc;
-                position: relative;
-                min-height: 400px;
-            }
-
-            .container::before {
-                content: "";
-                position: absolute;
-                top: -5px;
-                left: -5px;
-                right: -5px;
-                bottom: -5px;
-                z-index: -1;
-                filter: blur(20px);
-                border-radius: 15px;
-            }
-
-            h2 {
-                color: #ffffff;
-                text-align: center;
-                margin-bottom: 20px;
-            }
-
-            .faq-item {
-                margin-bottom: 15px;
-                padding-bottom: 10px;
-            }
-
-            .faq-question {
-                background-color: #8C1D40;
-                color: white;
-                padding: 10px;
-                cursor: pointer;
-                border-radius: 5px;
-                text-align: left;
-                font-weight: bold;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-size: 12px;
-            }
-
-            .faq-answer {
-                display: none;
-                font-size: 12px;
-                padding: 15px;
-                text-align: left;
-                background: #6A1630;
-                border-radius: 5px;
-                animation: fadeIn 0.5s ease-in-out;
-            }
-        
-            @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-            }
-
-            .faq-toggle {
-                font-size: 20px;
-                font-weight: bold;
-            }
-        }
-
-
-    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Planos e Serviços</title>
+  <link rel="stylesheet" href="/css/servicos.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/contato.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <header>
@@ -398,80 +145,56 @@
         </div>
     </nav>  
   </header>
-<body>
 
-    <div class="title">
-        Perguntas frequentes!
-    </div>
-    <div class="faq-container">
-        <div class="container">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(0)">O que é um e-mail profissional e quais as vantagens? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Um e-mail profissional usa o domínio da empresa (ex: seunome@suaempresa.com), transmitindo mais credibilidade. Ele fortalece a marca, melhora a segurança, aumenta a confiança dos clientes e organiza melhor a comunicação.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(1)">Qual o horário de atendimento? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Atendemos de segunda a sexta-feira, das 8h às 18h.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(2)">Como funciona a entrega de sites? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Todos os planos contratados são entregues prontos e configurados, permitindo o uso imediato, mesmo para quem não tem experiência técnica.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(3)">Como posso solicitar um orçamento? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Solicite um orçamento facilmente em nossa <a href="/contato.html">página de contato</a>.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(4)">Como posso entrar em contato com o suporte? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Você pode entrar em contato com o suporte através do e-mail suporte@createc.com.br ou pelo nosso sistema de <a href="/suporte">Suporte</a>.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(5)">O que é SEO e por que é importante para meu site? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">SEO (Search Engine Optimization) é o conjunto de técnicas para otimizar sites e melhorar seu posicionamento nos mecanismos de busca, como o Google. Isso aumenta a visibilidade, atrai mais visitantes e gera tráfego qualificado.</div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(6)">Quem somos? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Somos uma startup de tecnologia especializada em oferecer soluções digitais inovadoras para resolver problemas de negócios.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(7)">Quais serviços nós oferecemos? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Oferecemos criação e personalização de sites, configuração de domínio e hospedagem, SEO e gerenciamento de marketing e redes sociais.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(8)">Qual o tempo de entrega dos nossos serviços? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">O tempo de entrega varia conforme o plano escolhido. No plano <strong>Tracionado</strong>, a entrega total do projeto costuma levar cerca de 4 semanas.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(9)">Como acompanho meus orçamentos? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Todos os orçamentos solicitados são enviados ao suporte, e o tempo de atendimento depende do volume de solicitações.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(10)">Posso alterar o plano contratado após a compra? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Sim, você pode solicitar a alteração do plano contratado em ate 10 dias uteis. Entre em contato com nosso suporte para realizar a mudança.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(11)">Posso contratar um pacote mesmo estando fora do Brasil? <span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Sim, todas as contratações ocorrem normalmente, independentemente da sua localização.</div>
-            </div>
-        </div>
-    </div>
+
+<body>
+  <div class="container">
+    <a href="servicos.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Voltar
+    </a>
     
+    <div class="contact-wrapper">
+      <div class="plan-details">
+        <h2>Detalhes do Plano <span id="plan-name"></span></h2>
+        <div class="plan-summary">
+          <div class="price-tag">
+            <span>R$</span>
+            <span id="plan-price"></span>
+            <span>/projeto</span>
+          </div>
+          <div id="plan-features" class="features-list">
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Formulário de Contato</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Nome Completo</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" required>
+            <label for="phone">Telefone</label>
+          </div>
+          
+          <div class="form-group">
+            <textarea id="message" name="message" required></textarea>
+            <label for="message">Mensagem</label>
+          </div>
+          
+          <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="contato.js"></script>
 </body>
-    <script src="efeitos.js"></script>
-    <script>
-        function toggleAnswer(index) {
-            var answers = document.querySelectorAll('.faq-answer');
-            var toggles = document.querySelectorAll('.faq-toggle');
-            if (answers[index].style.display === 'none' || answers[index].style.display === '') {
-                answers[index].style.display = 'block';
-                toggles[index].textContent = '-';
-            } else {
-                answers[index].style.display = 'none';
-                toggles[index].textContent = '+';
-            }
-        }
-    </script>
 </html>
