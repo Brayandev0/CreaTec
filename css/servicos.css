@@ -39,13 +39,13 @@ h1 {
 }
 
 .pricing-card {
-  background: #27010b; /* Cor sem transparência */
+  background: #f1eff1; /* Cor sem transparência */
   border-radius: 15px;
   padding: 25px 20px;
   text-align: center;
   position: relative;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #9C1042;
   transition: all 0.4s ease;
   min-height: fit-content;
   max-width: 400px;
@@ -59,7 +59,7 @@ h1 {
 }
 
 .pro {
-  border: 1px solid #8b0000;
+  border: 2px solid #8b0000;
 }
 
 .popular {
@@ -106,7 +106,7 @@ h2 {
   font-size: 2.8rem;
   font-weight: bold;
   margin: 20px 0;
-  color: #fff;
+  color: #000;
   text-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
   display: flex;
   align-items: center;
@@ -133,7 +133,7 @@ h2 {
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.4rem;
-  color: #b8c2cc;
+  color: #818181;
   text-decoration: line-through;
   opacity: 0.8;
   display: flex;
@@ -159,7 +159,7 @@ ul {
   margin: 25px 0;
   padding: 0 10px;
   border-radius: 10px;
-  background: rgba(13, 17, 23, 0.5);
+  background: #f1eff1;
 }
 
 li {
@@ -169,9 +169,9 @@ li {
   align-items: center;
   justify-content: flex-start;
   gap: 15px;
-  color: #b8c2cc;
+  color: #000;
   font-size: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #00000056;
   transition: all 0.3s ease;
 }
 
@@ -192,7 +192,7 @@ li:hover {
 
 #service-button{
   background: linear-gradient(45deg, #ac0c27, #460217);
-  color: white;
+  color: #000;
   border: none;
   padding: 15px 30px;
   border-radius: 30px;
