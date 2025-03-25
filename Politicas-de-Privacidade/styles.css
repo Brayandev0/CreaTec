@@ -9,7 +9,13 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
+
+footer {
+    position: unset;
+}
+
 
 main {
     flex: 1;

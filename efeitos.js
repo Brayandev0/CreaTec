@@ -375,3 +375,147 @@ const serviceDetails = {
         }
     });
 });
+
+
+
+// Função para criar dinamicamente o modal de cookies e adicioná-lo ao body
+function createCookieModal() {
+  // Criar o container principal do modal
+  const cookieModal = document.createElement('div');
+  cookieModal.id = 'cookieModal';
+  cookieModal.className = 'cookie-modal';
+  
+  // Definir o conteúdo HTML para o modal
+  cookieModal.innerHTML = `
+      <div class="cookie-modal-content">
+          <div class="cookie-modal-header">
+              <h2>Configurações de Cookies</h2>
+              <span class="close-button">&times;</span>
+          </div>
+          <div class="cookie-modal-body">
+              <p>Utilizamos cookies para melhorar sua experiência em nosso site. Selecione quais tipos de cookies você aceita:</p>
+              
+              <div class="cookie-option">
+                  <input type="checkbox" id="necessarios" checked disabled>
+                  <label for="necessarios">Cookies Necessários</label>
+                  <p class="cookie-description">Essenciais para o funcionamento básico do site. Não podem ser desativados.</p>
+              </div>
+              
+              <div class="cookie-option">
+                  <input type="checkbox" id="estatisticas">
+                  <label for="estatisticas">Cookies de Estatísticas</label>
+                  <p class="cookie-description">Ajudam a entender como os visitantes interagem com o site, melhorando seu desempenho.</p>
+              </div>
+          </div>
+          <div class="cookie-modal-footer">
+              <button id="acceptSelected" class="cookie-save-button">Salvar Preferências</button>
+              <button id="acceptAll" class="cookie-accept-all-button">Aceitar Todos</button>
+          </div>
+      </div>
+  `;
+  
+  // Adicionar o modal ao body do documento
+  document.body.appendChild(cookieModal);
+  
+  // Obter referências para elementos interativos dentro do modal
+  const closeButton = cookieModal.querySelector('.close-button');
+  const acceptSelectedBtn = document.getElementById('acceptSelected');
+  const acceptAllBtn = document.getElementById('acceptAll');
+  
+  // Adicionar evento de clique para o botão de fechar
+  closeButton.addEventListener('click', () => {
+      // Animação de desaparecimento antes de esconder
+      cookieModal.style.opacity = '0';
+      setTimeout(() => {
+          cookieModal.style.display = 'none';
+          cookieModal.style.opacity = '1'; // Resetar opacidade para próxima abertura
+      }, 300);
+  });
+
+  // Adicionar evento para fechar o modal quando clicar fora do conteúdo
+  window.addEventListener('click', (e) => {
+      if (e.target === cookieModal) {
+          cookieModal.style.display = 'none';
+      }
+  });
+
+  // Adicionar evento para o botão "Salvar Preferências"
+  acceptSelectedBtn.addEventListener('click', () => {
+      saveCookiePreferences();
+      cookieModal.style.display = 'none';
+  });
+
+  // Adicionar evento para o botão "Aceitar Todos"
+  acceptAllBtn.addEventListener('click', () => {
+      // Marcar todas as checkboxes exceto as desativadas
+      document.querySelectorAll('.cookie-option input[type="checkbox"]').forEach(checkbox => {
+          if (!checkbox.disabled) {
+              checkbox.checked = true;
+          }
+      });
+      saveCookiePreferences();
+      cookieModal.style.display = 'none';
+  });
+
+  // Retornar o elemento de modal criado
+  return cookieModal;
+}
+
+// Função para salvar as preferências atuais de cookies no localStorage
+function saveCookiePreferences() {
+  // Criar um objeto para armazenar as preferências
+  const preferences = {
+      necessarios: true, // Sempre obrigatório
+      preferencias: document.getElementById('preferencias').checked,
+      estatisticas: document.getElementById('estatisticas').checked,
+      marketing: document.getElementById('marketing').checked
+  };
+  
+  // Salvar preferências no localStorage como string JSON
+  localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+  
+  // Registrar preferências salvas para depuração
+  console.log('Preferências de cookies salvas:', preferences);
+}
+
+// Função para carregar preferências previamente salvas do localStorage
+function loadSavedPreferences() {
+  // Tentar obter preferências salvas do localStorage
+  const savedPreferences = localStorage.getItem('cookiePreferences');
+  
+  // Se existirem preferências, aplicá-las às checkboxes
+  if (savedPreferences) {
+      const preferences = JSON.parse(savedPreferences);
+      
+      // Definir checkboxes de acordo com as preferências salvas
+      document.getElementById('preferencias').checked = preferences.preferencias;
+      document.getElementById('estatisticas').checked = preferences.estatisticas;
+      document.getElementById('marketing').checked = preferences.marketing;
+  }
+}
+
+// Função para verificar se precisamos mostrar o diálogo de consentimento de cookies
+function checkCookieConsent() {
+  // Removida a lógica para exibição automática do modal
+  // O modal agora só aparece quando o botão é clicado
+}
+
+// Inicializar tudo quando o DOM estiver completamente carregado
+document.addEventListener('DOMContentLoaded', () => {
+  // Criar o modal de cookies quando a página carregar
+  const cookieModal = createCookieModal();
+  
+  // Obter referência para o botão de configurações de cookies
+  const cookieBtn = document.getElementById('cookieBtn');
+  
+  // Adicionar evento de clique para mostrar as configurações de cookies
+  cookieBtn.addEventListener('click', () => {
+      cookieModal.style.display = 'flex';
+  });
+  
+  // Carregar quaisquer preferências previamente salvas
+  loadSavedPreferences();
+  
+  // A verificação automática para exibir o modal foi removida
+  // O modal só será exibido ao clicar no botão
+});
