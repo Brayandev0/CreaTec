@@ -100,9 +100,7 @@ document.querySelectorAll('.details-btn').forEach(button => {
         card.style.transform = 'none';
       });
 
-      // Scale up only the clicked card
-      const clickedCard = button.closest('.pricing-card');
-      clickedCard.style.transform = 'scale(1.05)';
+     
     }
   });
 });
@@ -136,6 +134,6 @@ document.querySelector('.custom-plan-btn').addEventListener('click', () => {
     params.append('plan', 'Personalizado');
     params.append('price', 'A definir');
     params.append('features', JSON.stringify(['Plano totalmente personalizado', 'Recursos sob demanda', 'Orçamento flexível', 'Atendimento dedicado']));
-    window.location.href = `contato.html?${params.toString()}`;
+    window.location.href = `contatoplano.html?${params.toString()}`;
   }, 2000);
 });

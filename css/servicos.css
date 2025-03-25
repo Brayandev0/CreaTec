@@ -13,6 +13,9 @@ body {
   padding: 40px 20px;
   overflow-y: scroll; 
 }
+ footer {
+  position: unset;
+ }
 
 .container {
   max-width: 1400px;
