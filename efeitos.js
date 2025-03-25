@@ -347,3 +347,31 @@ const serviceDetails = {
       }
     });
   }
+
+
+
+  // F U N Ç Ã O  D O  F O O T E R  P A R A   M O S T R A R  O S  L I N K S  D E  P O L I T I C A S
+
+
+  // Adicione este script para controlar o dropdown de termos
+  document.addEventListener('DOMContentLoaded', function() {
+    const termsToggle = document.querySelector('.terms-toggle');
+    const termsDropdown = document.querySelector('.terms-dropdown');
+    
+    if (termsToggle && termsDropdown) {
+        termsToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Impede que o evento chegue ao document
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            termsDropdown.classList.toggle('show');
+        });
+    }
+    
+    // Fechar o dropdown quando clicar fora
+    document.addEventListener('click', function() {
+        if (termsDropdown && termsDropdown.classList.contains('show')) {
+            termsToggle.setAttribute('aria-expanded', 'false');
+            termsDropdown.classList.remove('show');
+        }
+    });
+});
