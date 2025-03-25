@@ -185,7 +185,7 @@ li:last-child {
 li:hover {
   background: rgba(139, 0, 0, 0.1);
   transform: translateX(5px);
-  color: #fff;
+  color: #000;
 }
 
 .feature-icon {
@@ -194,8 +194,9 @@ li:hover {
 }
 
 #service-button{
-  background: linear-gradient(45deg, #ac0c27, #460217);
-  color: #000;
+  background: linear-gradient(45deg,  #ff2e51, #f13f5d);
+  border: 2px solid #000000 !important;
+  color: #fff;
   border: none;
   padding: 15px 30px;
   border-radius: 30px;
@@ -232,8 +233,7 @@ li:hover {
 }
 
 .details-btn {
-  background: transparent !important; 
-  border: 2px solid #ff2e4a !important;
+  background: linear-gradient(45deg, #ac0c27, #b30b40)!important; 
   margin-top: 15px !important;
   font-size: 0.9rem !important;
   transition: all 0.3s ease;
@@ -244,7 +244,7 @@ li:hover {
 }
 
 .details-btn.active {
-  background: #ff2e4a !important;
+  background: linear-gradient(45deg, #ac0c27, #b30b40)!important; 
 }
 
 .expanded-content {
@@ -268,7 +268,7 @@ li:hover {
 }
 
 .expanded-content p {
-  color: #b8c2cc;
+  color: #575454;
   line-height: 1.6;
   margin-bottom: 15px;
 }
@@ -280,6 +280,12 @@ li:hover {
 .expanded-content .feature-list li {
   font-size: 0.9rem;
   padding: 8px;
+}
+
+.expanded-content .atencao{
+  color: red;
+    line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 768px) {
@@ -410,11 +416,11 @@ li:hover {
   gap: 60px;
   max-width: 1000px;
   margin: 0 auto;
-  background: #33020a; /* Cor sem transparência */
+  background: #f1eff1; /* Cor sem transparência */
   border-radius: 20px;
   padding: 40px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #9C1042;
   transition: all 0.4s ease;
 }
 
@@ -436,7 +442,7 @@ li:hover {
 }
 
 .custom-plan-text p {
-  color: #b8c2cc;
+  color: #575454;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 30px;
@@ -459,9 +465,9 @@ li:hover {
 }
 
 .custom-plan-btn {
-  background: linear-gradient(45deg, #ff2e4a, #8b0000);
+  background: linear-gradient(45deg, #ff2e51, #f13f5d);
+  border: 2px solid #000;
   color: white;
-  border: none;
   padding: 15px 30px;
   border-radius: 30px;
   font-size: 1.1rem;
