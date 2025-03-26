@@ -4,21 +4,8 @@
 // Função que retorna o CSS do chatbot
 const getChatbotStyles = () => {
     return `/* Reset de margens, paddings e box-sizing para todos os elementos */
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
   
   /* Estilo para o corpo da página */
-  body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-  }
   
   /* Container principal do chatbot */
   .chatbot-container {
@@ -30,10 +17,12 @@ const getChatbotStyles = () => {
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       position: fixed;
-      bottom: 90px;
-      right: 20px;
+      bottom: 135px;
+      right: 30px;
       transition: transform 0.3s ease, opacity 0.3s ease;
       z-index: 999;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
   }
   
   /* Media query para dispositivos móveis */
@@ -582,8 +571,8 @@ const getChatbotStyles = () => {
   /* Botão de mostrar/ocultar o chatbot */
   .chatbot-toggle-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 70px;
+      right: 30px;
       width: 60px;
       height: 60px;
       border-radius: 50%;
@@ -623,6 +612,32 @@ const getChatbotStyles = () => {
   .chatbot-container:not(.hidden) ~ .chatbot-toggle-button .chatbot-icon-close {
       display: block;
   }
+     @media (max-width: 1100px) and (min-width: 1000px) {
+     
+     .chatbot-toggle-button {
+      position: fixed;
+      bottom: 70px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color:rgb(105, 7, 40);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+     
+    .chatbot-toggle-button svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+     }
   `;
   
   };
