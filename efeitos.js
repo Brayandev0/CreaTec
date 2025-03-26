@@ -519,3 +519,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // A verificação automática para exibir o modal foi removida
   // O modal só será exibido ao clicar no botão
 });
+
+
+
