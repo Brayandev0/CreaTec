@@ -4,21 +4,8 @@
 // Função que retorna o CSS do chatbot
 const getChatbotStyles = () => {
     return `/* Reset de margens, paddings e box-sizing para todos os elementos */
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
   
   /* Estilo para o corpo da página */
-  body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-  }
   
   /* Container principal do chatbot */
   .chatbot-container {
@@ -30,10 +17,12 @@ const getChatbotStyles = () => {
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       position: fixed;
-      bottom: 90px;
-      right: 20px;
+      bottom: 135px;
+      right: 30px;
       transition: transform 0.3s ease, opacity 0.3s ease;
       z-index: 999;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
   }
   
   /* Media query para dispositivos móveis */
@@ -569,7 +558,7 @@ const getChatbotStyles = () => {
   .chatbot-send-button {
       background-color:rgb(107, 10, 34);
       border: none;
-      border-radius: 50%;
+      border-radius: 50%;   
       width: 40px;
       height: 40px;
       display: flex;
@@ -582,8 +571,8 @@ const getChatbotStyles = () => {
   /* Botão de mostrar/ocultar o chatbot */
   .chatbot-toggle-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 70px;
+      right: 30px;
       width: 60px;
       height: 60px;
       border-radius: 50%;
@@ -623,6 +612,197 @@ const getChatbotStyles = () => {
   .chatbot-container:not(.hidden) ~ .chatbot-toggle-button .chatbot-icon-close {
       display: block;
   }
+
+
+
+
+     @media (max-width: 1100px) and (min-width: 1000px) {
+     
+
+    .chatbot-container {
+      width: 100%;
+      max-width: 400px;
+      height: 500px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: fixed;
+      bottom: 135px;
+      right: 30px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      z-index: 999;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+     .chatbot-toggle-button {
+      position: fixed;
+      bottom: 70px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color:rgb(105, 7, 40);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+     
+    .chatbot-toggle-button svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+     
+    /* Classe para esconder o chatbot */
+    .chatbot-container.hidden {
+        transform: translateY(20px);
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    /* Estilo das telas do chatbot */
+    .chatbot-screen {
+        display: none;
+        flex-direction: column;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    
+    /* Classe para a tela ativa */
+    .chatbot-screen.active {
+        display: flex;
+    }
+    
+    /* Cabeçalho do chatbot */
+    .chatbot-header {
+        background-color: #1e1e1e;
+        background-image: url(/a/0427a186-f83a-4165-8a95-3c9e4d5971cc);
+        background-size: cover;
+        background-position: center;
+        padding: 10px 10px;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        position: relative;
+    }
+    
+    /* Sobreposição escura no cabeçalho */
+    .chatbot-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+    
+    /* Ajuste do z-index para avatar e perfil */
+    .chatbot-header-avatar,
+    .chatbot-header-profile {
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Estilo do avatar no cabeçalho */
+    .chatbot-header-avatar {
+        padding: 10px;
+        background-color: rgba(68, 68, 68, 0.7);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+    
+    /* Efeito hover no avatar */
+    .chatbot-header-avatar:hover {
+        transform: scale(1.1);
+    }
+    
+    /* Container para os perfis de usuário */
+    .chatbot-header-profiles {
+        display: flex;
+    }
+    
+    /* Estilo das fotos de perfil */
+    .chatbot-header-profile-pic {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid #1e1e1e;
+        margin-left: -8px;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.2s ease;
+    }
+
+
+
+    /* Efeito hover nas fotos de perfil */
+    .chatbot-header-profile-pic:hover {
+        transform: translateY(-5px);
+        z-index: 5;
+    }
+    
+    /* Imagens dos perfis */
+    .chatbot-header-profile-pic:first-child {
+        background-image: url(/a/32273cb1-5506-4ae1-987a-84d629f046af);
+        margin-left: 0;
+    }
+    
+    .chatbot-header-profile-pic:nth-child(2) {
+        background-image: url(/a/a1db8e1c-915f-4d98-a976-88ceaa4c214c);
+    }
+    
+    /* Seção de boas-vindas */
+    .chatbot-welcome {
+        padding: 25px 20px 15px;
+        text-align: left;
+        background: linear-gradient(rgb(0, 0, 0), rgba(170, 1, 57, 0.9));
+        color: white;
+    }
+    
+    /* Título da seção de boas-vindas */
+    .chatbot-welcome-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Título do item de opção */
+    .chatbot-option-title {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 4px;
+        transition: color 0.2s ease;
+    }
+    
+    /* Mudança de cor no título ao passar o mouse */
+    .chatbot-option-item:hover .chatbot-option-title {
+        color:rgb(107, 9, 38);
+    }
+    
+    /* Descrição do item de opção */
+    .chatbot-option-description {
+        font-size: 12px;
+        color: #777;
+    }
+
+     }
   `;
   
   };
