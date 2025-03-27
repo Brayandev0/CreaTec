@@ -251,103 +251,273 @@ function limparErros() {
 //    T E L A   D E   S O L U Ç Õ E S 
 
 // Service details data
+// Dados dos detalhes dos serviços
 const serviceDetails = {
-    'Website Creation': {
-      title: 'Professional Website Creation',
-      description: 'Our website creation service delivers custom-designed, responsive websites that perfectly match your brand and business goals. We focus on user experience, modern design principles, and optimal performance. Our process includes detailed planning, design mockups, development, testing, and deployment. We use the latest technologies and best practices to ensure your website is fast, secure, and easy to maintain.'
+    'Criação de Websites': {
+      title: 'Criação de Websites Profissionais',
+      description: 'Nosso serviço de criação de sites oferece designs personalizados e responsivos que se alinham perfeitamente com sua marca e objetivos de negócio. Nos concentramos na experiência do usuário, princípios de design modernos e desempenho ideal. Nosso processo inclui planejamento detalhado, protótipos de design, desenvolvimento, testes e implantação. Utilizamos as tecnologias mais recentes e melhores práticas para garantir que seu site seja rápido, seguro e fácil de manter.'
     },
-    'Professional Email': {
-      title: 'Business Email Solutions',
-      description: 'Get a professional email setup with your domain name to enhance your business credibility. Our email solutions include custom domain configuration, spam protection, email forwarding, and integration with popular email clients. We ensure reliable delivery, security, and professional appearance for all your business communications.'
+    'E-mail Profissional': {
+      title: 'Soluções de E-mail Corporativo',
+      description: 'Tenha um e-mail profissional com seu domínio para aumentar a credibilidade do seu negócio. Nossas soluções de e-mail incluem configuração de domínio personalizado, proteção contra spam, encaminhamento de e-mails e integração com clientes de e-mail populares. Garantimos entrega confiável, segurança e aparência profissional para todas as suas comunicações comerciais.'
     },
     'SEO': {
-      title: 'Search Engine Optimization',
-      description: 'Our comprehensive SEO services help improve your website\'s visibility in search engine results. We perform detailed keyword research, optimize on-page elements, improve technical SEO aspects, and create quality content strategies. Our approach includes regular monitoring and adjustments to maintain and improve your rankings.'
+      title: 'Otimização para Mecanismos de Busca',
+      description: 'Nossos serviços abrangentes de SEO ajudam a melhorar a visibilidade do seu site nos resultados de pesquisa. Realizamos pesquisa detalhada de palavras-chave, otimizamos elementos on-page, melhoramos aspectos técnicos de SEO e criamos estratégias de conteúdo de qualidade. Nossa abordagem inclui monitoramento regular e ajustes para manter e melhorar seu posicionamento.'
     },
-    'Software Development': {
-      title: 'Custom Software Solutions',
-      description: 'We create tailored software solutions to address your specific business challenges. Our development process includes requirement analysis, architecture design, development, testing, and deployment. We use modern technologies and methodologies to deliver scalable, secure, and efficient software solutions.'
+    'Desenvolvimento de Software': {
+      title: 'Soluções de Software Personalizadas',
+      description: 'Criamos soluções de software sob medida para resolver os desafios específicos do seu negócio. Nosso processo de desenvolvimento inclui análise de requisitos, design de arquitetura, desenvolvimento, testes e implantação. Utilizamos tecnologias modernas e metodologias ágeis para entregar soluções escaláveis, seguras e eficientes.'
     },
-    'Marketing Management': {
-      title: 'Strategic Marketing Solutions',
-      description: 'Our marketing management services help you reach and engage your target audience effectively. We develop comprehensive marketing strategies, manage campaigns, analyze performance, and optimize results. Services include social media management, content marketing, email campaigns, and advertising management.'
+    'Gestão de Marketing': {
+      title: 'Soluções Estratégicas de Marketing',
+      description: 'Nossos serviços de gestão de marketing ajudam você a alcançar e engajar seu público-alvo de forma eficaz. Desenvolvemos estratégias de marketing abrangentes, gerenciamos campanhas, analisamos desempenho e otimizamos resultados. Nossos serviços incluem gestão de mídias sociais, marketing de conteúdo, campanhas de e-mail e gestão de publicidade.'
     },
-    'Process Automation': {
-      title: 'Business Process Automation',
-      description: 'Streamline your operations with our intelligent automation solutions. We identify processes that can be automated, implement appropriate tools and workflows, and ensure smooth integration with your existing systems. This results in increased efficiency, reduced errors, and improved productivity.'
+    'Automação de Processos': {
+      title: 'Automação de Processos Empresariais',
+      description: 'Simplifique suas operações com nossas soluções inteligentes de automação. Identificamos processos que podem ser automatizados, implementamos as ferramentas e fluxos de trabalho adequados e garantimos integração perfeita com seus sistemas existentes. Isso resulta em maior eficiência, redução de erros e melhoria na produtividade.'
     },
-    'App Development': {
-      title: 'Mobile App Development',
-      description: 'We develop high-quality mobile applications for both iOS and Android platforms. Our app development process includes UI/UX design, native or cross-platform development, testing, and deployment. We ensure your app is user-friendly, performant, and aligned with your business objectives.'
+    'Desenvolvimento de Apps': {
+      title: 'Desenvolvimento de Aplicativos Móveis',
+      description: 'Desenvolvemos aplicativos móveis de alta qualidade para as plataformas iOS e Android. Nosso processo de desenvolvimento inclui design UI/UX, desenvolvimento nativo ou multiplataforma, testes e implantação. Garantimos que seu aplicativo seja intuitivo, performático e alinhado com seus objetivos de negócio.'
     },
-    'UI/UX and Logo Design': {
-      title: 'Creative Design Services',
-      description: 'Our design team creates engaging user interfaces and memorable brand identities. Services include UI/UX design for digital products, logo design, brand guidelines, and visual identity development. We focus on creating designs that are both aesthetically pleasing and functionally effective.'
+    'Design UI/UX e Logotipos': {
+      title: 'Serviços Criativos de Design',
+      description: 'Nossa equipe de design cria interfaces de usuário envolventes e identidades visuais memoráveis. Nossos serviços incluem design UI/UX para produtos digitais, criação de logotipos, diretrizes de marca e desenvolvimento de identidade visual. Nos concentramos em criar designs que sejam tanto esteticamente agradáveis quanto funcionalmente eficazes.'
     }
-  };
-  
-  // Add hover effects and click handlers for service cards
-  document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-5px)';
+};
+
+// Adiciona eventos após o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', function() {
+    // Efeitos hover e cliques para os cards de serviço
+    document.querySelectorAll('.service-card').forEach(card => {
+        // Efeito hover
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.transition = 'transform 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+        
+        // Clique para abrir modal
+        card.addEventListener('click', function() {
+            const title = this.querySelector('h3').textContent;
+            showModal(title);
+        });
     });
-    
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'translateY(0)';
-    });
-    
-    card.addEventListener('click', () => {
-      const title = card.querySelector('h3').textContent;
-      showModal(title);
-    });
-  });
-  
-  // Remove default text selection from arrows
-  document.querySelectorAll('.arrow').forEach(arrow => {
-    arrow.style.userSelect = 'none';
-  });
-  
-  // Update modal functionality
-  function showModal(serviceTitle) {
+});
+
+// Função para mostrar o modal
+let currentModal = null;
+
+function showModal(serviceTitle) {
+    // Fecha o modal atual se existir
+    if (currentModal) {
+        closeModal(currentModal);
+    }
+
     const details = serviceDetails[serviceTitle];
+    if (!details) return;
+    
     const modal = document.createElement('div');
     modal.className = 'modal';
     
     modal.innerHTML = `
-      <div class="modal-content">
-        <h2>${details.title}</h2>
-        <p>${details.description}</p>
-        <button class="modal-back">←</button>
+    <header>
+    <nav class="navbar">  <!-- H E A D E R  P A R A  T E L A S  G R A N D E S-->
+        <div class="logo">
+            <img src="/arts/logo (2).png" alt="Createc Logo" class="nav-logo" onclick="window.location.href='index.html'">
+            <div class="menu-btn" onclick="toggleMenu()" id="menu-mobile">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="nav-buttons" id="header-buttons">
+            <button class="nav-btn" id="btn-iniciar"  onclick="window.location.href='index.html'">Início</button>
+            <button class="nav-btn" id="btn-quem-somos"  onclick="window.location.href='sobre-nos.html'">Sobre Nós</button>
+            <button class="nav-btn" id="btn-solucoes"  onclick="window.location.href='solucoes.html'">Soluções</button>
+            <button class="nav-btn" id="btn-servicos"  onclick="window.location.href='servicos.html'">Serviços</button>
+            <button class="nav-btn" id="btn-desenvolvedores"  onclick="window.location.href='equipe.html'">Equipe</button>
+            <button class="nav-btn" id="btn-solucoes"  onclick="window.location.href='faq.html'">FAQ</button>
+            <button class="nav-btn" id="btn-suporte" onclick="window.location.href='https://createc.com.br/atendimento'">Suporte</button>
+            <button class="nav-btn" id="btn-contato"  onclick="window.location.href='contato.html'">Contato</button>
+        </div>
+        <div style="width: 20%; background: transparent;"></div>
+    </nav>
+    <div class="desfoque" id="desfoque-de-fundo-mobile" onclick="toggleMenu()"></div> <!-- Div que desfoca o fundo quando o header -mobile aparece-->
+    <nav class="header-mobile" id="header-mobile">  <!-- Div que contem o header mobile-->
+        <img class="mobile-logo" src="arts/logo (2).png"> <!-- Logo que parece na parte de cima-->
+        <div class="mobile-buttons">  <!-- container dos botões do header-mobile-->
+            <button class="mobile-button" onclick="window.location.href='index.html'"> <!-- botao do header mobile-->
+                <img src="arts/mobile-button-home.png" class="mobile-button-icone">
+                <p> Inicío</p>
+            </button>
+            <button class="mobile-button" onclick="window.location.href='sobre-nos.html'">
+                <img src="arts/mobile-button-sobre.png" class="mobile-button-icone">
+                <p> Sobre nós </p>
+            </button>
+            <button class="mobile-button" onclick="window.location.href='solucoes.html'">
+                <img src="arts/mobile-button-solucoes.png" class="mobile-button-icone">
+                <p> Soluções</p>
+            </button>
+            <button class="mobile-button" onclick="window.location.href='servicos.html'">
+                <img src="arts/mobile-button-servicos.png" class="mobile-button-icone">
+                <p> Serviços </p>
+            </button>
+            <button class="mobile-button" onclick="window.location.href='equipe.html'">
+                <img src="arts/mobile-button-equipe.png" class="mobile-button-icone">
+                <p> Equipe</p>
+            </button>
+            <button class="mobile-button" onclick="window.location.href='faq.html'">
+                <img src="arts/mobile-button-faq.png" class="mobile-button-icone">
+                <p> FAQ</p>
+            </button>
+            <button class="mobile-button" onclick="window.location.href='https://createc.com.br/atendimento'">
+                <img src="arts/mobile-button-suporte.png" class="mobile-button-icone">
+                <p> Suporte</p>
+            </button>
+            <button class="mobile-button"   onclick="window.location.href='contato.html'">
+                <img src="arts/mobile-button-contato.png" class="mobile-button-icone">
+                <p> Contato</p>
+            </button>
+        </div>
+        <div class="mobile-social-icons">
+            <a href="#" class="social-icon" id="facebook-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="var(--primary-color)">
+                    <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/createc.com.br " class="social-icon" id="instagram-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="var(--primary-color)">
+                    <path d="M12 2c-2.714 0-3.056.012-4.123.06-1.064.049-1.791.218-2.427.465a4.901 4.901 0 0 0-1.772 1.153 4.9 4.9 0 0 0-1.153 1.772c-.247.636-.416 1.363-.465 2.427C2.012 8.944 2 9.286 2 12s.012 3.056.06 4.123c.049 1.064.218 1.791.465 2.427a4.9 4.9 0 0 0 1.153 1.772 4.901 4.901 0 0 0 1.772 1.153c.636.247 1.363.416 2.427.465 1.067.048 1.409.06 4.123.06s3.056-.012 4.123-.06c1.064-.049 1.791-.218 2.427-.465a4.901 4.901 0 0 0 1.772-1.153 4.9 4.9 0 0 0 1.153-1.772c.247-.636.416-1.363.465-2.427.048-1.067.06-1.409.06-4.123s-.012-3.056-.06-4.123c-.049-1.064-.218-1.791-.465-2.427a4.9 4.9 0 0 0-1.153-1.772 4.901 4.901 0 0 0-1.772-1.153c-.636-.247-1.363-.416-2.427-.465C15.056 2.012 14.714 2 12 2zm0 1.8c2.667 0 2.986.01 4.041.058.976.045 1.505.208 1.858.345.467.182.8.4 1.15.75.35.35.568.683.75 1.15.137.353.3.882.345 1.858.048 1.055.058 1.374.058 4.041 0 2.667-.01 2.986-.058 4.041-.045.976-.208 1.505-.345 1.858a3.09 3.09 0 0 1-.75 1.15 3.09 3.09 0 0 1-1.15.75c-.353.137-.882.3-1.858.345-1.055.048-1.374.058-4.041.058-2.667 0-2.986-.01-4.041-.058-.976-.045-1.505-.208-1.858-.345a3.09 3.09 0 0 1-1.15-.75 3.09 3.09 0 0 1-.75-1.15c-.137-.353-.3-.882-.345-1.858-.048-1.055-.058-1.374-.058-4.041 0-2.667.01-2.986.058-4.041.045-.976.208-1.505.345-1.858.182-.467.4-.8.75-1.15a3.09 3.09 0 0 1 1.15-.75c.353-.137.882-.3 1.858-.345 1.055-.048 1.374-.058 4.041-.058zm0 3.065a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 8.47a3.335 3.335 0 1 1 0-6.67 3.335 3.335 0 0 1 0 6.67zm6.538-8.67a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-icon" id="youtube-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="var(--primary-color)">
+                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.246 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-icon" id="linkedin-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 26 26" fill="var(--primary-color)">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+            <a href="https://x.com/CreatecB75879?t=_b2wIyhRzxwehRZRXig29w&s=08 " class="social-icon" id="twitter-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="var(--primary-color)">
+                    <path d="M23.643 4.937a9.72 9.72 0 0 1-2.828.775 4.935 4.935 0 0 0 2.165-2.723 9.864 9.864 0 0 1-3.127 1.195 4.92 4.92 0 0 0-8.384 4.482A13.963 13.963 0 0 1 1.671 3.15a4.916 4.916 0 0 0 1.523 6.573 4.902 4.902 0 0 1-2.228-.616v.061a4.92 4.92 0 0 0 3.946 4.827 4.902 4.902 0 0 1-2.224.084 4.927 4.927 0 0 0 4.598 3.417A9.876 9.876 0 0 1 0 19.54a13.945 13.945 0 0 0 7.548 2.212c9.057 0 14.01-7.502 14.01-14.01 0-.213-.005-.426-.014-.637a9.935 9.935 0 0 0 2.439-2.532z"/>
+                </svg>
+            </a>                
+            <a href="#" class="social-icon" id="github-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="var(--primary-color)">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="#" class="social-icon" id="whatsapp-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="var(--primary-color)">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+            </a>
+        </div>
+        <p>&copy; Createc 2025. Todos os direitos reservados</p>
+    </nav>  
+  </header>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fechar">×</button>
+            <h2>${details.title}</h2>
+            <p>${details.description}</p>
+        </div>
+         <footer>
+      <div class="footer-terms">
+          <button class="terms-toggle" aria-expanded="false" aria-controls="terms-dropdown">
+              Termos e Políticas
+              <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+          </button>
+          <div id="terms-dropdown" class="terms-dropdown">
+              <a href="/Politicas-de-Privacidade/index.html" class="footer-link">Termos de Serviço</a>
+              <a href="/Politicas-de-Privacidade/privacy-policy.html" class="footer-link">Política de Privacidade</a>
+              <a id="cookieBtn" class="footer-link">Configuração de Cookies</a>
+          </div>
       </div>
+      <p class="copyright">&copy; Createc 2025. Todos os direitos reservados</p>
+      <div class="social-icons">  
+          <a href="https://www.facebook.com/profile.php?id=61574403354143" class="social-icon" id="facebook-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="var(--primary-color)">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+          </a>
+          <a href="https://www.instagram.com/createc.com.br" class="social-icon" id="instagram-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="var(--primary-color)">
+                  <path d="M12 2c-2.714 0-3.056.012-4.123.06-1.064.049-1.791.218-2.427.465a4.901 4.901 0 0 0-1.772 1.153 4.9 4.9 0 0 0-1.153 1.772c-.247.636-.416 1.363-.465 2.427C2.012 8.944 2 9.286 2 12s.012 3.056.06 4.123c.049 1.064.218 1.791.465 2.427a4.9 4.9 0 0 0 1.153 1.772 4.901 4.901 0 0 0 1.772 1.153c.636.247 1.363.416 2.427.465 1.067.048 1.409.06 4.123.06s3.056-.012 4.123-.06c1.064-.049 1.791-.218 2.427-.465a4.901 4.901 0 0 0 1.772-1.153 4.9 4.9 0 0 0 1.153-1.772c.247-.636.416-1.363.465-2.427.048-1.067.06-1.409.06-4.123s-.012-3.056-.06-4.123c-.049-1.064-.218-1.791-.465-2.427a4.9 4.9 0 0 0-1.153-1.772 4.901 4.901 0 0 0-1.772-1.153c-.636-.247-1.363-.416-2.427-.465C15.056 2.012 14.714 2 12 2zm0 1.8c2.667 0 2.986.01 4.041.058.976.045 1.505.208 1.858.345.467.182.8.4 1.15.75.35.35.568.683.75 1.15.137.353.3.882.345 1.858.048 1.055.058 1.374.058 4.041 0 2.667-.01 2.986-.058 4.041-.045.976-.208 1.505-.345 1.858a3.09 3.09 0 0 1-.75 1.15 3.09 3.09 0 0 1-1.15.75c-.353.137-.882.3-1.858.345-1.055.048-1.374.058-4.041.058-2.667 0-2.986-.01-4.041-.058-.976-.045-1.505-.208-1.858-.345a3.09 3.09 0 0 1-1.15-.75 3.09 3.09 0 0 1-.75-1.15c-.137-.353-.3-.882-.345-1.858-.048-1.055-.058-1.374-.058-4.041 0-2.667.01-2.986.058-4.041.045-.976.208-1.505.345-1.858.182-.467.4-.8.75-1.15a3.09 3.09 0 0 1 1.15-.75c.353-.137.882-.3 1.858-.345 1.055-.048 1.374-.058 4.041-.058zm0 3.065a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 8.47a3.335 3.335 0 1 1 0-6.67 3.335 3.335 0 0 1 0 6.67zm6.538-8.67a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/>
+              </svg>
+          </a>
+          <a href=" https://www.youtube.com/channel/UCi7oVwfmS6tShPmKbQ6CrJg" class="social-icon" id="youtube-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24" fill="var(--primary-color)">
+                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.246 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"/>
+              </svg>
+          </a>
+          <a href="https://www.linkedin.com/groups/10078001" class="social-icon" id="linkedin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="var(--primary-color)">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+          </a>
+          <a href="https://x.com/CreatecB75879?t=_b2wIyhRzxwehRZRXig29w&s=08" class="social-icon" id="twitter-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="var(--primary-color)">
+                  <path d="M23.643 4.937a9.72 9.72 0 0 1-2.828.775 4.935 4.935 0 0 0 2.165-2.723 9.864 9.864 0 0 1-3.127 1.195 4.92 4.92 0 0 0-8.384 4.482A13.963 13.963 0 0 1 1.671 3.15a4.916 4.916 0 0 0 1.523 6.573 4.902 4.902 0 0 1-2.228-.616v.061a4.92 4.92 0 0 0 3.946 4.827 4.902 4.902 0 0 1-2.224.084 4.927 4.927 0 0 0 4.598 3.417A9.876 9.876 0 0 1 0 19.54a13.945 13.945 0 0 0 7.548 2.212c9.057 0 14.01-7.502 14.01-14.01 0-.213-.005-.426-.014-.637a9.935 9.935 0 0 0 2.439-2.532z"/>
+              </svg>
+          </a>                
+          <a href="https://api.whatsapp.com/send?phone=5534984180453&text=Ol%C3%A1%2C+eu+gostaria+de+solicitar+um+or%C3%A7amento" class="social-icon" id="whatsapp-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="var(--primary-color)">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+          </a>
+      </div> 
+  </footer>
     `;
     
-    const services = document.querySelector('.services');
-    services.classList.add('fade-out');
-    
     document.body.appendChild(modal);
+    currentModal = modal;
     
-    // Trigger animations
-    setTimeout(() => {
-      modal.classList.add('active');
-    }, 300);
+    // Forçar reflow para ativar a animação
+    void modal.offsetWidth;
     
-    // Back button functionality
-    modal.querySelector('.modal-back').addEventListener('click', () => {
-      modal.classList.remove('active');
-      services.classList.remove('fade-out');
-      setTimeout(() => modal.remove(), 300);
+    modal.classList.add('active');
+    
+    // Botão de fechar
+    const closeBtn = modal.querySelector('.modal-close');
+    closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeModal(modal);
     });
     
-    // Click outside to close
+    // Fechar ao clicar fora
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-        services.classList.remove('fade-out');
-        setTimeout(() => modal.remove(), 300);
-      }
+        if (e.target === modal) {
+            closeModal(modal);
+        }
     });
-  }
+}
 
+function closeModal(modal) {
+    if (!modal) return;
+    
+    modal.classList.remove('active');
+    
+    // Remover após a animação
+    setTimeout(() => {
+        if (modal && modal.parentNode) {
+            modal.parentNode.removeChild(modal);
+        }
+        if (modal === currentModal) {
+            currentModal = null;
+        }
+    }, 300); // Tempo deve corresponder à duração da transição
+}
 
 
   // F U N Ç Ã O  D O  F O O T E R  P A R A   M O S T R A R  O S  L I N K S  D E  P O L I T I C A S
@@ -387,6 +557,7 @@ function createCookieModal() {
   
   // Definir o conteúdo HTML para o modal
   cookieModal.innerHTML = `
+        
       <div class="cookie-modal-content">
           <div class="cookie-modal-header">
               <h2>Configurações de Cookies</h2>
