@@ -1,12 +1,12 @@
 // Importa o módulo de estilos, configuração, gerenciador de exclusão e sistema de resposta a palavras-chave
-import { getChatbotStyles } from './chatbot/styles.js';
-import { config } from './chatbot/config.js';
-import { initDeleteManager } from './chatbot/chatDeleteManager.js';
-import { initChatDeleteButtons } from './chatbot/chatDeleteManager.js';
-import { applyChatbotResetStyles } from './chatbot/chatbotReset.js';
-import { keywordResponder } from './chatbot/keywordResponder.js';
-import { formatMessageText, formatPreviewText } from './chatbot/messageFormatter.js';
-import { setupAvatarCustomization } from './chatbot/avatarCustomization.js';
+import { getChatbotStyles } from './styles.js';
+import { config } from './config.js';
+import { initDeleteManager } from './chatDeleteManager.js';
+import { initChatDeleteButtons } from './chatDeleteManager.js';
+import { applyChatbotResetStyles } from './chatbotReset.js';
+import { keywordResponder } from './keywordResponder.js';
+import { formatMessageText, formatPreviewText } from './messageFormatter.js';
+import { setupAvatarCustomization } from './avatarCustomization.js';
 
 // Função para injetar o CSS na página
 const injectChatbotStyles = () => {
@@ -71,7 +71,7 @@ const createChatbotHTML = () => {
         </div>
         <!-- Seção de boas-vindas -->
         <div class="chatbot-welcome">
-            <h2 class="chatbot-welcome-title">Seja bem-vindo(a)</h2>
+            <h2 class="chatbot-welcome-title">Olá</h2>
             <p class="chatbot-welcome-subtitle">Como podemos ajudar?</p>
         </div>
         <!-- Lista de opções disponíveis -->
@@ -90,7 +90,7 @@ const createChatbotHTML = () => {
             </div>
             <!-- Opções adicionais -->
             <div class="chatbot-option-item">
-                <p class="chatbot-option-title">Acessar a FAQ </p>
+                <p class="chatbot-option-title">Renovar BotConversa</p>
                 <div class="chatbot-option-icon">
                     <svg width="16" height="16" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
@@ -98,7 +98,7 @@ const createChatbotHTML = () => {
                 </div>
             </div>
             <div class="chatbot-option-item">
-                <p class="chatbot-option-title">Entrar em contato de outra forma</p>
+                <p class="chatbot-option-title">Acessa a comunidade do BotConversa</p>
                 <div class="chatbot-option-icon">
                     <svg width="16" height="16" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
@@ -106,7 +106,15 @@ const createChatbotHTML = () => {
                 </div>
             </div>
             <div class="chatbot-option-item">
-                <p class="chatbot-option-title">Entrar em contato por meio do Whatsapp</p>
+                <p class="chatbot-option-title">Aulas Ao Vivo no Zoom Todo Dia às 10h AM</p>
+                <div class="chatbot-option-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="chatbot-option-item">
+                <p class="chatbot-option-title">Adquira seu acesso ao BotConversa</p>
                 <div class="chatbot-option-icon">
                     <svg width="16" height="16" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
