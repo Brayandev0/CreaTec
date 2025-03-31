@@ -149,6 +149,10 @@
     transition: transform 0.3s ease;
 }
 
+.modal-content p{
+  text-align: justify;
+}
+
 .modal.active .modal-content {
     transform: translateY(0);
 }
