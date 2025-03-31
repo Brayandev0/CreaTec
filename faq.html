@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/layout.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <script type="module" src="chatbot.js"></script>
 
     <title>Createc - Perguntas Frequentes</title>
@@ -265,27 +266,28 @@
 </head>
 
 <header>
-    <nav class="navbar">  <!-- H E A D E R  P A R A  T E L A S  G R A N D E S-->
-        <div class="logo">
-            <img src="/arts/logo (2).png" alt="Createc Logo" class="nav-logo" onclick="window.location.href='index.html'">
-            <div class="menu-btn" onclick="toggleMenu()" id="menu-mobile">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+    <div class="container">
+        <div class="img">
+            <img src="arts/logo.png" alt="Logo">
         </div>
-        <div class="nav-buttons" id="header-buttons">
-            <button class="nav-btn" id="btn-iniciar"  onclick="window.location.href='index.html'">Início</button>
-            <button class="nav-btn" id="btn-quem-somos"  onclick="window.location.href='sobre-nos.html'">Sobre Nós</button>
-            <button class="nav-btn" id="btn-solucoes"  onclick="window.location.href='solucoes.html'">Soluções</button>
-            <button class="nav-btn" id="btn-servicos"  onclick="window.location.href='servicos.html'">Serviços</button>
-            <button class="nav-btn" id="btn-desenvolvedores"  onclick="window.location.href='equipe.html'">Equipe</button>
-            <button class="nav-btn" id="btn-solucoes"  onclick="window.location.href='faq.html'">FAQ</button>
-            <button class="nav-btn" id="btn-suporte" onclick="window.location.href='https://createc.com.br/atendimento'">Suporte</button>
-            <button class="nav-btn" id="btn-contato"  onclick="window.location.href='contato.html'">Contato</button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#index" class="nav-link">Inicio</a></li>
+                <li><a href="#sobre-nos" class="nav-link ">Sobre Nós</a></li>
+                <li><a href="#solucoes" class="nav-link ">Soluções</a></li>
+                <li><a href="#servicos" class="nav-link ">Serviços</a></li>
+                <li><a href="#equipe" class="nav-link ">Equipe</a></li>
+                <li><a href="#faq" class="nav-link  active">FAQ</a></li>
+                <li><a href="/atendimento" class="nav-link">Suporte</a></li>
+                <li><a href="#contato" class="nav-link ">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
-        <div style="width: 20%; background: transparent;"></div>
-    </nav>
+    </div>
     <div class="desfoque" id="desfoque-de-fundo-mobile" onclick="toggleMenu()"></div> <!-- Div que desfoca o fundo quando o header -mobile aparece-->
     <nav class="header-mobile" id="header-mobile">  <!-- Div que contem o header mobile-->
         <img class="mobile-logo" src="arts/logo (2).png"> <!-- Logo que parece na parte de cima-->
