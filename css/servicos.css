@@ -78,13 +78,11 @@ h1 {
   position: relative;
   max-width: 1130px;
   margin: 0 auto;
-  overflow: hidden;
   padding: 20px 0;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease;
   margin-left: 9px;
   padding: 20px 0;
 }
