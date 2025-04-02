@@ -76,7 +76,7 @@ h1 {
 /* Estilos do Carrossel */
 .carousel-container {
   position: relative;
-  max-width: 1100px;
+  max-width: 1130px;
   margin: 0 auto;
   overflow: hidden;
   padding: 20px 0;
@@ -85,7 +85,7 @@ h1 {
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
-  gap: 30px;
+  margin-left: 9px;
   padding: 20px 0;
 }
 
