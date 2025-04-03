@@ -1,0 +1,231 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Createc - Login</title>
+    <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon-64x64.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login_page_container">
+        <div class="login_left_panel">
+            <div class="login_logo_container">
+                <div class="login_logo_icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="login_logo_text">Createc Login</div>
+            </div>
+            
+            <div class="login_form_container">
+                <h1 class="login_heading">Conect-se com sua conta</h1>
+                <p class="login_subheading">Bem-vindo de volta!</p>
+                
+                
+                <form class="login_form" id="loginForm">
+                    <div class="login_input_group">
+                        <label for="login_email" class="login_label">
+                            <i class="far fa-envelope"></i>
+                        </label>
+                        <input type="email" id="login_email" class="login_input" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="login_input_group">
+                        <label for="login_password" class="login_label">
+                            <i class="fas fa-lock"></i>
+                        </label>
+                        <input type="password" id="login_password" class="login_input" placeholder="Senha" required>
+                        <button type="button" id="login_toggle_password" class="login_toggle_password">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="login_options">
+                        <div class="login_remember">
+                            <input type="checkbox" id="login_remember_me" class="login_checkbox">
+                            <label for="login_remember_me">Lembre-me</label>
+                        </div>
+                        <a href="#" class="login_forgot_password">Esqueceu sua senha?</a>
+                    </div>
+                    
+                    <button type="submit" class="login_submit_btn">Login</button>
+                </form>
+                
+                <div class="login_signup_prompt">
+                    Ainda não tem uma conta? <a href="#" class="login_signup_link">Crie uma conta</a>
+                </div>
+            </div>
+            
+            <!-- Added registration form container -->
+            <div class="register_form_container" style="display: none;">
+                <h1 class="login_heading">Crie uma Conta</h1>
+                <p class="login_subheading">Conecte-se a createc para ter acesso ao nosso site!</p>
+                
+                
+                <form class="login_form" id="registerForm">
+                    <div class="login_input_group">
+                        <label for="register_name" class="login_label">
+                            <i class="far fa-user"></i>
+                        </label>
+                        <input type="text" id="register_name" class="login_input" placeholder="Nome Completo" required>
+                    </div>
+                    
+                    <div class="login_input_group">
+                        <label for="register_email" class="login_label">
+                            <i class="far fa-envelope"></i>
+                        </label>
+                        <input type="email" id="register_email" class="login_input" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="login_input_group">
+                        <label for="register_confirm_password" class="login_label">
+                            <i class="fas fa-lock"></i>
+                        </label>
+                        <input type="tel" id="register_telefone" maxlength="15" class="login_input" placeholder="Telefone: (00) 00000-0000" required>
+                    </div>
+
+                    <div class="login_input_group">
+                        <label for="register_password" class="login_label">
+                            <i class="fas fa-lock"></i>
+                        </label>
+                        <input type="password" id="register_password" class="login_input" placeholder="Senha" required>
+                        <button type="button" id="register_toggle_password" class="login_toggle_password">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="login_options">
+                        <div class="login_remember">
+                            <input type="checkbox" id="register_terms" class="login_checkbox" required>
+                            <label for="register_terms">Eu concordo com os <a href="#" class="login_terms_link">Termos e Condições</a></label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="login_submit_btn">Cadastre-se</button>
+                </form>
+                
+                <div class="login_signup_prompt">
+                    Já tem uma conta? <a href="#" class="login_signin_link">Login</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="login_right_panel">
+            <div class="login_feature_container">    
+                <div class="login_feature_illustration">
+                    <img src="/a/efbb85e1-af6e-416e-88c8-f685834b1df1" alt="Dashboard interface" class="login_feature_img active">
+                    <img src="/a/5a5595b4-ebee-4de5-a8e0-848c63116cc6" alt="Login interface" class="login_feature_img">
+                    <img src="/a/5f78d4fa-17cb-423b-903c-f6aec7872e41" alt="Registration interface" class="login_feature_img">
+                    <img src="/a/e65d09b1-faa2-4974-bb36-3c3f29ee1be2" alt="Application integration" class="login_feature_img">
+                </div>
+                
+                <div class="login_pagination">
+                    <span class="login_pagination_dot login_pagination_active" data-slide="0"></span>
+                    <span class="login_pagination_dot" data-slide="1"></span>
+                    <span class="login_pagination_dot" data-slide="2"></span>
+                    <span class="login_pagination_dot" data-slide="3"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="login.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos do formulário
+            const loginForm = document.getElementById('loginForm');
+            const emailInput = document.getElementById('login_email');
+            const passwordInput = document.getElementById('login_password');
+            
+            // Função para validar e-mail
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            // Função para mostrar erros de validação
+            function showError(input, message) {
+                const inputGroup = input.closest('.login_input_group');
+                input.classList.add('login_input_error');
+                
+                const errorElement = document.createElement('div');
+                errorElement.className = 'login_error_message';
+                errorElement.textContent = message;
+                inputGroup.appendChild(errorElement);
+            }
+            
+            // Função para remover erros
+            function removeError(input) {
+                const inputGroup = input.closest('.login_input_group');
+                input.classList.remove('login_input_error');
+                
+                const errorElement = inputGroup.querySelector('.login_error_message');
+                if (errorElement) {
+                    errorElement.remove();
+                }
+            }
+            
+            // Função chamada quando o login é bem-sucedido
+            function loginSuccessful() {
+                // 1. Criar cookie de autenticação (válido por 1 dia)
+                const expirationDate = new Date();
+                expirationDate.setDate(expirationDate.getDate() + 1);
+                document.cookie = `usuarioLogado=true; expires=${expirationDate.toUTCString()}; path=/`;
+                
+                // 2. Mostrar mensagem de sucesso
+                const successMessage = document.createElement('div');
+                successMessage.className = 'login_success_message';
+                successMessage.textContent = 'Login bem-sucedido! Redirecionando...';
+                loginForm.appendChild(successMessage);
+                
+                // 3. Redirecionar para a página principal após 2 segundos
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 2000);
+            }
+            
+            // Evento de submit do formulário
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validação básica
+                let isValid = true;
+                
+                // Validar e-mail
+                if (!emailInput.value.trim()) {
+                    showError(emailInput, 'E-mail é obrigatório');
+                    isValid = false;
+                } else if (!isValidEmail(emailInput.value)) {
+                    showError(emailInput, 'Por favor, insira um e-mail válido');
+                    isValid = false;
+                } else {
+                    removeError(emailInput);
+                }
+                
+                // Validar senha
+                if (!passwordInput.value.trim()) {
+                    showError(passwordInput, 'Senha é obrigatória');
+                    isValid = false;
+                } else {
+                    removeError(passwordInput);
+                }
+                
+                // Se tudo estiver válido, prosseguir com o login
+                if (isValid) {
+                    // EM UM SISTEMA REAL, AQUI VOCÊ FARIA UMA REQUISIÇÃO AO SERVIDOR
+                    // PARA VERIFICAR AS CREDENCIAIS. ESTE É APENAS UM EXEMPLO SIMPLES.
+                    
+                    // Simulando uma requisição assíncrona
+                    setTimeout(() => {
+                        loginSuccessful();
+                    }, 500);
+                }
+            });
+            
+            // Seu código existente para alternar entre login/cadastro e mostrar senha...
+        });
+    </script>
+</body>
+</html>
