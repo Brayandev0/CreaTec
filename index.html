@@ -17,48 +17,6 @@
         <meta name="theme-color" content="#ffffff">
         <title>Createc</title>
         <script type="module" src="chatbot.js"></script>
-        <script>
-            // Verificação de autenticação ao carregar a página
-            document.addEventListener('DOMContentLoaded', function() {
-                /**
-                 * Função para ler cookies
-                 * @param {string} name - Nome do cookie que deseja obter
-                 * @returns {string|null} Valor do cookie ou null se não existir
-                 */
-                function getCookie(name) {
-                    // Formata a string de cookies para facilitar a busca
-                    const cookies = `; ${document.cookie}`;
-                    
-                    // Divide a string para encontrar o cookie específico
-                    const parts = cookies.split(`; ${name}=`);
-                    
-                    // Se encontrou, retorna o valor, senão retorna null
-                    if (parts.length === 2) return parts.pop().split(';').shift();
-                    return null;
-                }
-                
-                // Verifica se o usuário está logado
-                const usuarioLogado = getCookie('usuarioLogado');
-                
-                // Se não estiver logado, redireciona para a página de login
-                if (usuarioLogado !== 'true') {
-                    window.location.href = "login.html";
-                }
-                
-                // Configura o botão de logout (se existir na página)
-                const logoutBtn = document.getElementById('logoutBtn');
-                if (logoutBtn) {
-                    logoutBtn.addEventListener('click', function() {
-                        // Para fazer logout, invalidamos o cookie
-                        document.cookie = "usuarioLogado=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                        
-                        // Redireciona para a página de login
-                        window.location.href = "login.html";
-                    });
-                }
-            });
-            
-        </script>
     </head>
 
     <header>

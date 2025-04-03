@@ -20,7 +20,7 @@
             </div>
             
             <div class="login_form_container">
-                <h1 class="login_heading">Conect-se com sua conta</h1>
+                <h1 class="login_heading">Conecte-se com sua conta</h1>
                 <p class="login_subheading">Bem-vindo de volta!</p>
                 
                 
@@ -115,7 +115,7 @@
         <div class="login_right_panel">
             <div class="login_feature_container">    
                 <div class="login_feature_illustration">
-                    <img src="/a/efbb85e1-af6e-416e-88c8-f685834b1df1" alt="Dashboard interface" class="login_feature_img active">
+                    <img src="./arts/web-design.png" alt="Dashboard interface" class="login_feature_img active">
                     <img src="/a/5a5595b4-ebee-4de5-a8e0-848c63116cc6" alt="Login interface" class="login_feature_img">
                     <img src="/a/5f78d4fa-17cb-423b-903c-f6aec7872e41" alt="Registration interface" class="login_feature_img">
                     <img src="/a/e65d09b1-faa2-4974-bb36-3c3f29ee1be2" alt="Application integration" class="login_feature_img">
@@ -132,100 +132,5 @@
     </div>
     
     <script type="module" src="login.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Elementos do formulário
-            const loginForm = document.getElementById('loginForm');
-            const emailInput = document.getElementById('login_email');
-            const passwordInput = document.getElementById('login_password');
-            
-            // Função para validar e-mail
-            function isValidEmail(email) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailRegex.test(email);
-            }
-            
-            // Função para mostrar erros de validação
-            function showError(input, message) {
-                const inputGroup = input.closest('.login_input_group');
-                input.classList.add('login_input_error');
-                
-                const errorElement = document.createElement('div');
-                errorElement.className = 'login_error_message';
-                errorElement.textContent = message;
-                inputGroup.appendChild(errorElement);
-            }
-            
-            // Função para remover erros
-            function removeError(input) {
-                const inputGroup = input.closest('.login_input_group');
-                input.classList.remove('login_input_error');
-                
-                const errorElement = inputGroup.querySelector('.login_error_message');
-                if (errorElement) {
-                    errorElement.remove();
-                }
-            }
-            
-            // Função chamada quando o login é bem-sucedido
-            function loginSuccessful() {
-                // 1. Criar cookie de autenticação (válido por 1 dia)
-                const expirationDate = new Date();
-                expirationDate.setDate(expirationDate.getDate() + 1);
-                document.cookie = `usuarioLogado=true; expires=${expirationDate.toUTCString()}; path=/`;
-                
-                // 2. Mostrar mensagem de sucesso
-                const successMessage = document.createElement('div');
-                successMessage.className = 'login_success_message';
-                successMessage.textContent = 'Login bem-sucedido! Redirecionando...';
-                loginForm.appendChild(successMessage);
-                
-                // 3. Redirecionar para a página principal após 2 segundos
-                setTimeout(() => {
-                    window.location.href = "index.html";
-                }, 2000);
-            }
-            
-            // Evento de submit do formulário
-            loginForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Validação básica
-                let isValid = true;
-                
-                // Validar e-mail
-                if (!emailInput.value.trim()) {
-                    showError(emailInput, 'E-mail é obrigatório');
-                    isValid = false;
-                } else if (!isValidEmail(emailInput.value)) {
-                    showError(emailInput, 'Por favor, insira um e-mail válido');
-                    isValid = false;
-                } else {
-                    removeError(emailInput);
-                }
-                
-                // Validar senha
-                if (!passwordInput.value.trim()) {
-                    showError(passwordInput, 'Senha é obrigatória');
-                    isValid = false;
-                } else {
-                    removeError(passwordInput);
-                }
-                
-                // Se tudo estiver válido, prosseguir com o login
-                if (isValid) {
-                    // EM UM SISTEMA REAL, AQUI VOCÊ FARIA UMA REQUISIÇÃO AO SERVIDOR
-                    // PARA VERIFICAR AS CREDENCIAIS. ESTE É APENAS UM EXEMPLO SIMPLES.
-                    
-                    // Simulando uma requisição assíncrona
-                    setTimeout(() => {
-                        loginSuccessful();
-                    }, 500);
-                }
-            });
-            
-            // Seu código existente para alternar entre login/cadastro e mostrar senha...
-        });
-    </script>
 </body>
 </html>
