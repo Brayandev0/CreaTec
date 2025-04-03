@@ -43,96 +43,37 @@
       box-shadow: 0 4px 15px rgba(139, 0, 46, 0.3);
     }
     
-    /* Carrossel Styles */
-    .carousel-container {
-      position: relative;
-      max-width: 1100px;
-      margin: 0 auto;
-      overflow: hidden;
-      padding: 20px 0;
-    }
-    
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-      gap: 30px;
-      padding: 20px 0;
-    }
-    
-    .carousel-nav {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      gap: 10px;
-    }
-    
-    .carousel-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #ddd;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .carousel-dot.active {
-      background: #ff2e51;
-      transform: scale(1.2);
-    }
-    
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 50px;
-      height: 50px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      color: #ff2e51;
-      font-size: 1.5rem;
-    }
-    
-    .carousel-arrow:hover {
-      background: #ff2e51;
-      color: white;
-    }
-    
-    .carousel-arrow.left {
-      left: 10px;
-    }
-    
-    .carousel-arrow.right {
-      right: 10px;
-    }
-    
-    /* Estilo para esconder cards */
-    .pricing-card.hidden {
-      display: none;
-    }
-    
-    /* Ajustes de layout */
+    /* Ajustes de layout para o grid */
     .pricing-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
-      margin-top: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+    
+    /* Para telas médias - 2 cards por linha */
+    @media (max-width: 1100px) and (min-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* Para telas pequenas - 1 card por linha */
+    @media (max-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
     }
     
     /* Estilos para classificação de categorias */
     .pricing-card {
       position: relative;
+      width: 100%;
       min-width: 300px;
-      flex: 0 0 auto;
+      max-width: 100%;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
     }
     
     .category-tag {
@@ -169,6 +110,43 @@
       max-width: 1100px;
       margin: 40px auto 0;
     }
+
+    /* Estilos para o conteúdo expandido */
+    .expanded-content {
+      display: none;
+      padding: 15px;
+      margin-top: 10px;
+      background-color: #f9f9f9;
+      border-radius: 0 0 10px 10px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .expanded-content.show {
+      display: block;
+    }
+    
+    /* Melhorar visual dos botões de detalhes */
+    .details-btn {
+      background: transparent;
+      border: none;
+      color: #ff2e51;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      padding: 5px 10px;
+      transition: all 0.3s ease;
+      text-decoration: underline;
+    }
+
+    .details-btn:hover {
+      color: #8b002e;
+    }
+    
+    /* Estilo para esconder cards */
+    .pricing-card.hidden {
+      display: none;
+    }
   </style>
 </head>
 
@@ -176,23 +154,14 @@
   <div class="container">
     <h1>Nossos Planos e Serviços</h1>
     
-    <!-- Botões de filtro por categoria -->
+    <!-- Botões de filtro por categoria sem a opção "Todos" -->
     <div class="category-filters">
-      <button class="category-button active" data-category="todos">Todos</button>
-      <button class="category-button" data-category="websites">Websites</button>
+      <button class="category-button active" data-category="websites">Websites</button>
       <button class="category-button" data-category="ecommerce">E-commerce</button>
       <button class="category-button" data-category="marketing">Marketing Digital</button>
     </div>
     
-    <!-- Carrossel para a categoria "Todos" -->
-    <div class="carousel-container" id="todos-carousel">
-      <div class="carousel-arrow left" id="prev-btn"><i class="fas fa-chevron-left"></i></div>
-      <div class="carousel-track" id="carousel-track"></div>
-      <div class="carousel-arrow right" id="next-btn"><i class="fas fa-chevron-right"></i></div>
-      <div class="carousel-nav" id="carousel-dots"></div>
-    </div>
-    
-    <!-- Grid normal para outras categorias -->
+    <!-- Grid para exibição de cards -->
     <div class="pricing-grid" id="category-grid">
       <!-- Plano Starter - Categoria Websites -->
       <div class="pricing-card basic" data-category="websites">
@@ -522,157 +491,66 @@
   
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Elementos do carrossel
-      const carouselTrack = document.getElementById('carousel-track');
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
-      const carouselDots = document.getElementById('carousel-dots');
-      const categoryGrid = document.getElementById('category-grid');
-      const todosCarousel = document.getElementById('todos-carousel');
+  // Botões de filtragem
+  const categoryButtons = document.querySelectorAll('.category-button');
+  const pricingCards = document.querySelectorAll('.pricing-card');
+  
+  // Filtrar por categoria
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
       
-      // Botões de filtragem
-      const categoryButtons = document.querySelectorAll('.category-button');
-      const pricingCards = Array.from(document.querySelectorAll('.pricing-card'));
+      // Atualizar estado ativo dos botões
+      categoryButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
       
-      // Configuração do carrossel
-      let currentIndex = 0;
-      const cardsPerView = 3;
-      let cardWidth = 300;
-      let gap = 30;
-      let totalCards = pricingCards.length;
-      
-      // Inicializar carrossel
-      function initCarousel() {
-        // Limpar carrossel
-        carouselTrack.innerHTML = '';
-        
-        // Adicionar cards ao carrossel
-        pricingCards.forEach(card => {
-          const clone = card.cloneNode(true);
-          clone.classList.remove('hidden');
-          carouselTrack.appendChild(clone);
-        });
-        
-        // Calcular largura do card
-        if (carouselTrack.children.length > 0) {
-          const cardStyle = window.getComputedStyle(carouselTrack.children[0]);
-          cardWidth = carouselTrack.children[0].offsetWidth + parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
-        }
-        
-        // Criar dots de navegação
-        carouselDots.innerHTML = '';
-        for (let i = 0; i < Math.ceil(totalCards / cardsPerView); i++) {
-          const dot = document.createElement('div');
-          dot.classList.add('carousel-dot');
-          if (i === 0) dot.classList.add('active');
-          dot.addEventListener('click', () => goToSlide(i));
-          carouselDots.appendChild(dot);
-        }
-        
-        updateCarousel();
-      }
-      
-      // Atualizar posição do carrossel
-      function updateCarousel() {
-        const offset = -currentIndex * (cardWidth + gap) * cardsPerView;
-        carouselTrack.style.transform = `translateX(${offset}px)`;
-        
-        // Atualizar dots ativos
-        const dots = document.querySelectorAll('.carousel-dot');
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
-        });
-      }
-      
-      // Navegar para slide específico
-      function goToSlide(index) {
-        currentIndex = index;
-        updateCarousel();
-      }
-      
-      // Event listeners para navegação
-      prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateCarousel();
-        }
-      });
-      
-      nextBtn.addEventListener('click', () => {
-        const maxIndex = Math.ceil(totalCards / cardsPerView) - 1;
-        if (currentIndex < maxIndex) {
-          currentIndex++;
-          updateCarousel();
-        }
-      });
-      
-      // Adicionar listeners aos botões de categoria
-      categoryButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          // Remover classe ativa de todos os botões
-          categoryButtons.forEach(btn => btn.classList.remove('active'));
-          
-          // Adicionar classe ativa ao botão clicado
-          button.classList.add('active');
-          
-          // Obter categoria selecionada
-          const selectedCategory = button.getAttribute('data-category');
-          
-          // Filtrar cards
-          filterCards(selectedCategory);
-        });
-      });
-      
-      // Função para filtrar cards
-      function filterCards(category) {
-        if (category === 'todos') {
-          // Mostrar carrossel e esconder grid
-          todosCarousel.style.display = 'block';
-          categoryGrid.style.display = 'none';
-          initCarousel(); // Re-inicializar carrossel
+      // Filtrar cards por categoria
+      pricingCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (cardCategory === category) {
+          card.style.display = 'block';
         } else {
-          // Mostrar grid e esconder carrossel
-          todosCarousel.style.display = 'none';
-          categoryGrid.style.display = 'flex';
-          
-          // Mostrar/ocultar cards conforme a categoria
-          pricingCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            if (cardCategory === category) {
-              card.classList.remove('hidden');
-            } else {
-              card.classList.add('hidden');
-            }
-          });
+          card.style.display = 'none';
         }
-      }
-      
-      // Botões para expandir detalhes (delegated event)
-      document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('details-btn')) {
-          const content = e.target.nextElementSibling;
-          
-          if (content.classList.contains('show')) {
-            content.classList.remove('show');
-            e.target.textContent = 'Ver mais detalhes';
-          } else {
-            content.classList.add('show');
-            e.target.textContent = 'Ver menos detalhes';
+      });
+    });
+  });
+  
+  // Lidar com os botões de "Ver mais detalhes"
+  document.querySelectorAll('.details-btn').forEach(function(button) {
+    button.addEventListener('click', function() {
+      // Fecha todos os outros conteúdos expandidos
+      document.querySelectorAll('.expanded-content.show').forEach(function(content) {
+        // Verifica se não pertence ao card atual
+        if (!content.closest('.pricing-card').contains(button)) {
+          content.classList.remove('show');
+          // Resetar texto de outros botões
+          const otherButton = content.closest('.pricing-card').querySelector('.details-btn');
+          if (otherButton) {
+            otherButton.textContent = 'Ver mais detalhes';
           }
         }
       });
       
-      // Inicializar
-      initCarousel();
-      filterCards('todos'); // Mostrar carrossel inicialmente
+      // Encontra o conteúdo expandido dentro do mesmo card
+      const currentCard = this.closest('.pricing-card');
+      const expandedContent = currentCard.querySelector('.expanded-content');
       
-      // Ajustar carrossel no resize da janela
-      window.addEventListener('resize', function() {
-        if (document.getElementById('todos-carousel').style.display !== 'none') {
-          initCarousel();
-        }
-      });
+      // Alterna a visibilidade apenas deste conteúdo
+      if (expandedContent) {
+        expandedContent.classList.toggle('show');
+        this.textContent = expandedContent.classList.contains('show') ? 
+                          'Ocultar detalhes' : 'Ver mais detalhes';
+      }
     });
+  });
+  
+  // Iniciar com a categoria "websites" selecionada
+  const websitesButton = document.querySelector('.category-button[data-category="websites"]');
+  if (websitesButton) {
+    websitesButton.click();
+  }
+});
   </script>
 </body>
 </html>
