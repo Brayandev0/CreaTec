@@ -6,7 +6,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <meta charset="UTF-8">  
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/responsive.css">
@@ -16,6 +17,48 @@
         <meta name="theme-color" content="#ffffff">
         <title>Createc</title>
         <script type="module" src="chatbot.js"></script>
+        <script>
+            // Verificação de autenticação ao carregar a página
+            document.addEventListener('DOMContentLoaded', function() {
+                /**
+                 * Função para ler cookies
+                 * @param {string} name - Nome do cookie que deseja obter
+                 * @returns {string|null} Valor do cookie ou null se não existir
+                 */
+                function getCookie(name) {
+                    // Formata a string de cookies para facilitar a busca
+                    const cookies = `; ${document.cookie}`;
+                    
+                    // Divide a string para encontrar o cookie específico
+                    const parts = cookies.split(`; ${name}=`);
+                    
+                    // Se encontrou, retorna o valor, senão retorna null
+                    if (parts.length === 2) return parts.pop().split(';').shift();
+                    return null;
+                }
+                
+                // Verifica se o usuário está logado
+                const usuarioLogado = getCookie('usuarioLogado');
+                
+                // Se não estiver logado, redireciona para a página de login
+                if (usuarioLogado !== 'true') {
+                    window.location.href = "login.html";
+                }
+                
+                // Configura o botão de logout (se existir na página)
+                const logoutBtn = document.getElementById('logoutBtn');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', function() {
+                        // Para fazer logout, invalidamos o cookie
+                        document.cookie = "usuarioLogado=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                        
+                        // Redireciona para a página de login
+                        window.location.href = "login.html";
+                    });
+                }
+            });
+            
+        </script>
     </head>
 
     <header>
@@ -25,16 +68,19 @@
             </div>
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="#index" class="nav-link active">Inicio</a></li>
-                    <li><a href="#sobre-nos" class="nav-link ">Sobre Nós</a></li>
-                    <li><a href="#solucoes" class="nav-link ">Soluções</a></li>
-                    <li><a href="#servicos" class="nav-link ">Serviços</a></li>
-                    <li><a href="#equipe" class="nav-link ">Equipe</a></li>
-                    <li><a href="#faq" class="nav-link ">FAQ</a></li>
+                    <li><a href="/" class="nav-link active">Inicio</a></li>
+                    <li><a href="sobre-nos" class="nav-link ">Sobre Nós</a></li>
+                    <li><a href="solucoes" class="nav-link ">Soluções</a></li>
+                    <li><a href="servicos" class="nav-link ">Serviços</a></li>
+                    <li><a href="equipe" class="nav-link ">Equipe</a></li>
+                    <li><a href="faq" class="nav-link ">FAQ</a></li>
                     <li><a href="/atendimento" class="nav-link">Suporte</a></li>
-                    <li><a href="#contato" class="nav-link ">Contato</a></li>
+                    <li><a href="contato" class="nav-link ">Contato</a></li>
                 </ul>
             </nav>
+            <div class="store-container">
+                <a href="/loja" class="store-button"><i class="fas fa-shopping-cart"></i> Loja Virtual</a>
+            </div>
             <div class="menu-btn"  onclick="toggleMenu()" id="menu-mobile">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -206,5 +252,6 @@
             </a>
         </div> 
     </footer>
+    <script src="efeitos.js"></script>
     <script src="efeitos.js"></script>
 </html>
