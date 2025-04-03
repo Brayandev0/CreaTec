@@ -4,150 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planos e Serviços</title>
-  <link rel="stylesheet" href="./css/layout.css">
   <link rel="stylesheet" href="./css/servicos.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Estilos para os botões de categoria */
-    .category-filters {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    
-    .category-button {
-      padding: 12px 24px;
-      background-color: #f0f0f0;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      color: #333;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    
-    .category-button:hover {
-      background-color: #e0e0e0;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    
-    .category-button.active {
-      background: linear-gradient(45deg, #ff2e51, #8b002e);
-      color: white;
-      box-shadow: 0 4px 15px rgba(139, 0, 46, 0.3);
-    }
-    
-    /* Ajustes de layout para o grid */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin: 20px auto;
-      max-width: 1200px;
-    }
-    
-    /* Para telas médias - 2 cards por linha */
-    @media (max-width: 1100px) and (min-width: 768px) {
-      .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    /* Para telas pequenas - 1 card por linha */
-    @media (max-width: 768px) {
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    /* Estilos para classificação de categorias */
-    .pricing-card {
-      position: relative;
-      width: 100%;
-      min-width: 300px;
-      max-width: 100%;
-      margin-bottom: 30px;
-      transition: all 0.3s ease;
-    }
-    
-    .category-tag {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      padding: 5px 10px;
-      border-radius: 15px;
-      font-size: 12px;
-      font-weight: 600;
-      color: white;
-      z-index: 2;
-    }
-    
-    .category-tag.websites {
-      background-color: #3498db;
-    }
-    
-    .category-tag.ecommerce {
-      background-color: #2ecc71;
-    }
-    
-    .category-tag.marketing {
-      background-color: #e74c3c;
-    }
-
-    /* Custom Plan Section */
-    .custom-plan-section {
-      margin-top: 60px;
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, rgba(255,46,81,0.1) 0%, rgba(139,0,46,0.1) 100%);
-      border-radius: 20px;
-      max-width: 1100px;
-      margin: 40px auto 0;
-    }
-
-    /* Estilos para o conteúdo expandido */
-    .expanded-content {
-      display: none;
-      padding: 15px;
-      margin-top: 10px;
-      background-color: #f9f9f9;
-      border-radius: 0 0 10px 10px;
-      transition: all 0.3s ease;
-      overflow: hidden;
-    }
-
-    .expanded-content.show {
-      display: block;
-    }
-    
-    /* Melhorar visual dos botões de detalhes */
-    .details-btn {
-      background: transparent;
-      border: none;
-      color: #ff2e51;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 10px;
-      padding: 5px 10px;
-      transition: all 0.3s ease;
-      text-decoration: underline;
-    }
-
-    .details-btn:hover {
-      color: #8b002e;
-    }
-    
-    /* Estilo para esconder cards */
-    .pricing-card.hidden {
-      display: none;
-    }
-  </style>
 </head>
 
 <body class="servicos">
@@ -182,6 +41,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>100GB de armazenamento</li>
           <li><i class="fas fa-check-circle feature-icon"></i>Domínio por 1 ano</li>
           <li><i class="fas fa-check-circle feature-icon"></i>1 ano de Hospedagem</li>
+          <br><br>
         </ul>
         <button class="service-button-class">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
@@ -225,6 +85,7 @@
         <div class="expanded-content">
           <h3>Detalhes do Plano Tradicional</h3>
           <p>Perfeito para empresas em crescimento que precisam de uma presença online mais robusta:</p>
+          <br>
           <div class="feature-list">
             <li><i class="fas fa-check-circle feature-icon"></i>CDN Incluído</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Arte para assinatura de e-mail.</li>
@@ -265,6 +126,7 @@
         <div class="expanded-content">
           <h3>Detalhes do Plano Turbo</h3>
           <p>Solução completa para empresas que buscam excelência digital:</p>
+          <br><br>
           <div class="feature-list">
             <li><i class="fas fa-check-circle feature-icon"></i>CDN Incluído</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Arte para assinatura de e-mail.</li>
@@ -301,6 +163,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>150GB de armazenamento</li>
           <li><i class="fas fa-check-circle feature-icon"></i>Domínio por 1 ano</li>
           <li><i class="fas fa-check-circle feature-icon"></i>1 ano de Hospedagem</li>
+          <br><br><br>
         </ul>
         <button class="service-button-class">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
@@ -308,8 +171,8 @@
           <h3>Detalhes do Plano E-commerce Básico</h3>
           <p>Ideal para pequenos lojistas iniciando vendas online:</p>
           <div class="feature-list">
-            <li><i class="fas fa-check-circle feature-icon"></i>Plataforma WordPress com WooCommerce</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Integração com 3 meios de pagamento</li>
+            <li><i class="fas fa-check-circle feature-icon"></i>WordPress com WooCommerce.</li>
+            <li><i class="fas fa-check-circle feature-icon"></i>3 formas de pagamento</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Painel administrativo simples</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Relatório básico de vendas</li>
           </div>
@@ -349,7 +212,7 @@
             <li><i class="fas fa-check-circle feature-icon"></i>Sistema de relatórios avançados</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Integração com transportadoras</li>
             <li><i class="fas fa-check-circle feature-icon"></i>SEO para e-commerce</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Sistema de recuperação de carrinho</li>
+            <li><i class="fas fa-check-circle feature-icon"></i>Recuperação de carrinho.</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Integração com CRM</li>
           </div>
           <p>Prazo de entrega: 75 dias* úteis</p>
@@ -375,6 +238,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>Relatório mensal de performance</li>
           <li><i class="fas fa-check-circle feature-icon"></i>Estratégia básica de conteúdo</li>
           <li><i class="fas fa-check-circle feature-icon"></i>1 campanha de anúncios por mês</li>
+          <br><br>
         </ul>
         <button class="service-button-class">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
@@ -382,9 +246,9 @@
           <h3>Detalhes do Plano Marketing Inicial</h3>
           <p>Presença digital básica para pequenos negócios:</p>
           <div class="feature-list">
-            <li><i class="fas fa-check-circle feature-icon"></i>Criação de identidade visual para posts</li>
+            <li><i class="fas fa-check-circle feature-icon"></i>Identidade visual para posts.</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Análise de concorrência básica</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Resposta a comentários (2x semana)</li>
+            <li><i class="fas fa-check-circle feature-icon"></i>Resposta a comentários.</li>
           </div>
           <p>Contrato mínimo: 3 meses</p>
           <p class="atencao"><strong>*Não inclui budget para anúncios*</strong></p>
@@ -419,11 +283,11 @@
           <p>Estratégia digital completa para empresas em crescimento:</p>
           <div class="feature-list">
             <li><i class="fas fa-check-circle feature-icon"></i>Planejamento estratégico trimestral</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Análise de concorrência detalhada</li>
+            <li><i class="fas fa-check-circle feature-icon"></i>Análise detalhada da concorrência.</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Gestão de reputação online</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Criação de landing pages</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Resposta a comentários diária</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Relatório quinzenal de performance</li>
+            <li><i class="fas fa-check-circle feature-icon"></i>Relatório de performance quinzenal.</li>
           </div>
           <p>Contrato mínimo: 6 meses</p>
           <p class="atencao"><strong>*Não inclui budget para anúncios*</strong></p>
@@ -433,57 +297,23 @@
     
     <!-- Add custom plan section -->
     <div class="custom-plan-section">
+      <img src="./arts/logo-sem-fundo.png" alt="">
       <h2>Precisa de algo diferente?</h2>
       <div class="custom-plan-content">
         <div class="custom-plan-text">
           <h3>Plano Personalizado</h3>
           <p>Não encontrou o plano ideal para seu projeto? Vamos criar uma solução sob medida para você!</p>
           <ul>
+            <div id="loirab">
             <li><i class="fas fa-check-circle feature-icon"></i>Recursos personalizados</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Orçamento flexível</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Atendimento dedicado</li>
             <li><i class="fas fa-check-circle feature-icon"></i>Prazo adaptável</li>
+            <li><i class="fas fa-check-circle feature-icon"></i>Soluções escaláveis</li>
+            <li><i class="fas fa-check-circle feature-icon"></i>Suporte estratégico</li>
+          </div>
           </ul>
           <button class="custom-plan-btn">Solicitar Orçamento</button>
-        </div>
-        <div class="custom-plan-illustration">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="custom-plan-svg">
-            <g transform="translate(100 100)" fill="#ff2e4a">
-              <!-- Puzzle piece -->
-              <path d="
-                M-40,-40 
-                L20,-40 
-                C20,-40 20,-55 30,-55 
-                C40,-55 40,-40 40,-40 
-                L40,20
-                C40,20 55,20 55,30
-                C55,40 40,40 40,40
-                L-20,40
-                C-20,40 -20,55 -30,55
-                C-40,55 -40,40 -40,40
-                L-40,-20
-                C-40,-20 -55,-20 -55,-30
-                C-55,-40 -40,-40 -40,-40
-                Z
-              ">
-                <animateTransform
-                  attributeName="transform"
-                  type="rotate"
-                  values="0;10;-10;0"
-                  dur="3s"
-                  repeatCount="indefinite"
-                />
-                <animateTransform
-                  attributeName="transform"
-                  type="scale"
-                  values="1;1.1;1"
-                  dur="2s"
-                  repeatCount="indefinite"
-                  additive="sum"
-                />
-              </path>
-            </g>
-          </svg>
         </div>
       </div>
     </div>
@@ -491,66 +321,89 @@
   
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-  // Botões de filtragem
-  const categoryButtons = document.querySelectorAll('.category-button');
-  const pricingCards = document.querySelectorAll('.pricing-card');
-  
-  // Filtrar por categoria
-  categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const category = button.getAttribute('data-category');
+      // Botões de filtragem
+      const categoryButtons = document.querySelectorAll('.category-button');
+      const pricingCards = Array.from(document.querySelectorAll('.pricing-card'));
       
-      // Atualizar estado ativo dos botões
-      categoryButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      
-      // Filtrar cards por categoria
-      pricingCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        if (cardCategory === category) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-  
-  // Lidar com os botões de "Ver mais detalhes"
-  document.querySelectorAll('.details-btn').forEach(function(button) {
-    button.addEventListener('click', function() {
-      // Fecha todos os outros conteúdos expandidos
-      document.querySelectorAll('.expanded-content.show').forEach(function(content) {
-        // Verifica se não pertence ao card atual
-        if (!content.closest('.pricing-card').contains(button)) {
-          content.classList.remove('show');
-          // Resetar texto de outros botões
-          const otherButton = content.closest('.pricing-card').querySelector('.details-btn');
-          if (otherButton) {
-            otherButton.textContent = 'Ver mais detalhes';
+      // Filtrar por categoria
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const category = button.getAttribute('data-category');
+          
+          // Atualizar estado ativo dos botões
+          categoryButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          // Filtrar cards por categoria
+          pricingCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            if (cardCategory === category) {
+              card.style.display = 'block';
+              card.classList.remove('hidden');
+            } else {
+              card.style.display = 'none';
+              card.classList.add('hidden');
+            }
+          });
+          
+          // Fechar todos os conteúdos expandidos quando mudar de categoria
+          const expandedContents = document.querySelectorAll('.expanded-content.show');
+          if (expandedContents.length > 0) {
+            expandedContents.forEach(content => {
+              content.classList.remove('show');
+            });
+            
+            // Atualizar texto de todos os botões
+            document.querySelectorAll('.details-btn').forEach(btn => {
+              btn.textContent = 'Ver mais detalhes';
+            });
           }
-        }
+        });
       });
       
-      // Encontra o conteúdo expandido dentro do mesmo card
-      const currentCard = this.closest('.pricing-card');
-      const expandedContent = currentCard.querySelector('.expanded-content');
+      // Inicializar botões "Ver mais detalhes"
+      const detailsButtons = document.querySelectorAll('.details-btn');
       
-      // Alterna a visibilidade apenas deste conteúdo
-      if (expandedContent) {
-        expandedContent.classList.toggle('show');
-        this.textContent = expandedContent.classList.contains('show') ? 
-                          'Ocultar detalhes' : 'Ver mais detalhes';
+      detailsButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.stopPropagation(); // Impedir propagação do evento
+          
+          // Verificar se qualquer conteúdo está expandido
+          const anyExpanded = document.querySelector('.expanded-content.show') !== null;
+          
+          // Verificar se o botão atual está no estado "Ver mais detalhes"
+          const isShowMoreState = this.textContent === 'Ver mais detalhes';
+          
+          if (isShowMoreState) {
+            // Expandir TODOS os conteúdos
+            document.querySelectorAll('.expanded-content').forEach(content => {
+              content.classList.add('show');
+            });
+            
+            // Atualizar texto de TODOS os botões
+            document.querySelectorAll('.details-btn').forEach(btn => {
+              btn.textContent = 'Ocultar detalhes';
+            });
+          } else {
+            // Recolher TODOS os conteúdos
+            document.querySelectorAll('.expanded-content').forEach(content => {
+              content.classList.remove('show');
+            });
+            
+            // Atualizar texto de TODOS os botões
+            document.querySelectorAll('.details-btn').forEach(btn => {
+              btn.textContent = 'Ver mais detalhes';
+            });
+          }
+        });
+      });
+      
+      // Iniciar com a categoria "websites" selecionada
+      const websitesButton = document.querySelector('.category-button[data-category="websites"]');
+      if (websitesButton) {
+        websitesButton.click();
       }
     });
-  });
-  
-  // Iniciar com a categoria "websites" selecionada
-  const websitesButton = document.querySelector('.category-button[data-category="websites"]');
-  if (websitesButton) {
-    websitesButton.click();
-  }
-});
   </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* servicos.css - Versão Completa Atualizada */
+/* servicos.css - Versão Corrigida para Expansão Individual */
 * {
   margin: 0;
   padding: 0;
@@ -141,14 +141,49 @@ h1 {
 }
 
 /* Estilos dos Cards de Preço */
+/* Ajustes no grid para permitir alturas independentes */
 .pricing-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  margin-top: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+  margin: 20px auto;
+  max-width: 1200px;
+  grid-auto-rows: min-content; /* Isso permite que as linhas tenham alturas independentes */
+}
+
+/* Garantir que os cards tenham alturas independentes */
+.pricing-card {
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+  max-width: 100%;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  height: auto; /* Altura automática baseada no conteúdo */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo para o conteúdo expandido - CORRIGIDO PARA EXPANSÃO INDIVIDUAL */
+.expanded-content {
+  display: none;
+  padding: 15px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.5s ease;
+}
+
+/* Classe específica para o card ativo - CORRIGIDO */
+.expanded-content.show {
+  display: block;
+  height: auto;
+  opacity: 1;
+  max-height: 1000px; /* Valor grande o suficiente para acomodar todo o conteúdo */
 }
 
 .pricing-card {
@@ -369,25 +404,22 @@ li:hover {
   box-shadow: 0 6px 15px rgba(139, 0, 0, 0.3) !important;
 }
 
-/* Conteúdo Expandido */
+/* Conteúdo Expandido - CORRIGIDO */
 .expanded-content {
   display: none;
   padding: 20px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .expanded-content.show {
   display: block;
   opacity: 1;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  max-height: 1000px;
 }
 
 .expanded-content h3 {
@@ -429,8 +461,13 @@ li:hover {
   padding: 40px 20px;
   background: linear-gradient(135deg, rgba(255,46,81,0.1) 0%, rgba(139,0,46,0.1) 100%);
   border-radius: 20px;
-  max-width: 1100px;
+  width: 1000px;
   margin: 40px auto 0;
+}
+
+.custom-plan-section img{
+  max-width: 400px;
+  height: auto;
 }
 
 .custom-plan-section h2 {
@@ -446,15 +483,29 @@ li:hover {
   gap: 40px;
 }
 
+#loirab{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#loirab li{
+  margin-right: 70px;
+  margin-bottom: 0px;
+}
+
 .custom-plan-text {
   flex: 1;
-  text-align: left;
+  text-align: center;
 }
 
 .custom-plan-text h3 {
   color: #ff2e51;
   font-size: 1.8rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .custom-plan-text p {
@@ -473,7 +524,7 @@ li:hover {
   margin: 10px 0;
   color: #333;
   display: flex;
-  align-items: center;
+
   gap: 10px;
   padding: 0;
   border: none;
@@ -501,94 +552,169 @@ li:hover {
 .custom-plan-illustration {
   flex: 1;
   max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.custom-plan-svg {
+.custom-plan-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  animation: pulseRotate 5s infinite ease-in-out;
+}
+
+.custom-plan-img {
+  width: 200px;
+  height: 200px;
+  animation: pulseRotate 5s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes pulseRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(5deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(0deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(-5deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.logo-custom-plan {
   width: 100%;
   height: auto;
 }
 
-/* Responsividade */
-@media (max-width: 1200px) {
-  .pricing-card {
-    max-width: 320px;
-  }
+/* Estilos para os botões de categoria */
+.category-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-@media (max-width: 992px) {
-  .carousel-container {
-    max-width: 680px;
-  }
-  
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .custom-plan-content {
-    flex-direction: column;
-  }
-  
-  .custom-plan-illustration {
-    order: -1;
-    max-width: 200px;
-    margin-bottom: 30px;
-  }
+.category-button {
+  padding: 12px 24px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  .category-filters {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .category-button {
-    width: 80%;
-    max-width: 250px;
-  }
-  
-  .pricing-card {
-    max-width: 100%;
-  }
-  
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
+.category-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-@media (max-width: 576px) {
-  body {
-    padding: 20px 10px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  .pricing-card {
-    padding: 25px 15px;
-  }
-  
-  .price {
-    font-size: 2.2rem;
-  }
-  
-  .original-price {
-    font-size: 1.1rem;
-    top: -20px;
-  }
-  
-  .custom-plan-section {
-    padding: 30px 15px;
-  }
-  
-  .custom-plan-text h3 {
-    font-size: 1.5rem;
-  }
+.category-button.active {
+  background: linear-gradient(45deg, #ff2e51, #8b002e);
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 0, 46, 0.3);
+}
+
+/* Ajustes de layout para o grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Estilos para classificação de categorias */
+.pricing-card {
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+  max-width: 100%;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.category-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  z-index: 2;
+}
+
+.category-tag.websites {
+  background-color: #3498db;
+}
+
+.category-tag.ecommerce {
+  background-color: #2ecc71;
+}
+
+.category-tag.marketing {
+  background-color: #e74c3c;
+}
+
+/* Custom Plan Section */
+.custom-plan-section {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(255,46,81,0.1) 0%, rgba(139,0,46,0.1) 100%);
+  border-radius: 20px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+/* Estilos para o conteúdo expandido */
+.expanded-content {
+  display: none;
+  padding: 15px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 0 0 10px 10px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.expanded-content.show {
+  display: block;
+}
+
+/* Melhorar visual dos botões de detalhes */
+.details-btn {
+  background: transparent;
+  border: none;
+  color: #ff2e51;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  text-decoration: underline;
+}
+
+.details-btn:hover {
+  color: #8b002e;
+}
+
+/* Estilo para esconder cards */
+.pricing-card.hidden {
+  display: none;
 }
