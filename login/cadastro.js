@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Redirecionar para página de dashboard após um breve delay
             setTimeout(function() {
-                window.location.href = 'dashboard.html';
+                window.location.href = '/index.html';
             }, 1500);
         }, 1000);
     }

@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Redirecionar após um pequeno delay
                 setTimeout(function() {
-                    window.location.href = 'dashboard.html';
+                    window.location.href = 'index.html';
                 }, 1500);
             } else {
                 // Login falhou
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verificar se o token ainda é válido
             if (validarToken(token)) {
                 // Redirecionar para a página dashboard
-                window.location.href = 'dashboard.html';
+                window.location.href = '/index.html';
             } else {
                 // Token expirado, limpar dados
                 limparSessao();
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function salvarSessao(usuario) {
         // Criar um token simples com data de expiração (7 dias)
         const agora = new Date();
-        const expiracao = new Date(agora.getTime() + 7 * 24 * 60 * 60 * 1000); // 7 dias
+        const expiracao = new Date(agora.getTime() + 3 * 24 * 60 * 60 * 1000); // 3 dias    
         
         const tokenUsuario = {
             id: usuario.id,
@@ -244,7 +244,6 @@ document.addEventListener('DOMContentLoaded', function() {
             email: usuario.email,
             exp: expiracao.getTime()
         };
-        
         // Salvar token no localStorage
         localStorage.setItem('authToken', JSON.stringify(tokenUsuario));
         

@@ -38,7 +38,7 @@
             </nav>
             <div class="header-links-container">
                 <a href="/loja" class="store-button"><i class="fas fa-shopping-cart"></i> Loja Virtual</a>
-
+            </div>
             <div class="menu-btn"  onclick="toggleMenu()" id="menu-mobile">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -323,8 +323,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     </button>
                     <div class="login-dropdown">
                         <ul>
-                            <li><a href="/login">Fazer Login</a></li>
-                            <li><a href="/cadastro">Cadastre-se</a></li>
+                            <li><a href="/login/login.html">Fazer Login</a></li>
+                            <li><a href="/login/cadastro.html">Cadastre-se</a></li>
                         </ul>
                     </div>
                 `;
@@ -364,23 +364,26 @@ document.addEventListener('DOMContentLoaded', function() {
             position: relative;
             display: inline-block;
         }
-        
+
         .perfil-button, .login-button {
             display: flex;
+            margin-top: 7%; 
+            margin-left: 20px;
             align-items: center;
             gap: 8px;
             padding: 8px 16px;
-            background-color: #4a90e2;
-            color: white;
+            background-color: transparent;
+            color: black;
             border: none;
-            border-radius: 4px;
+            border-radius: 800px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 15px;
             transition: background-color 0.3s;
         }
         
         .perfil-button:hover, .login-button:hover {
-            background-color: #357bd8;
+            background-color: #850630;
+            color: white;
         }
         
         .perfil-dropdown, .login-dropdown {
