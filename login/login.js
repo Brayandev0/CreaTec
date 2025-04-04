@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Redirecionar após um pequeno delay
                 setTimeout(function() {
-                    window.location.href = 'index.html';
+                    window.location.href = '/index.html';
                 }, 1500);
             } else {
                 // Login falhou
