@@ -23,7 +23,9 @@ header {
     font-family: 'Poppins', sans-serif;
 }
 
-   
+.header-links-container {
+    display: flex;
+}
 
 
 header .container {
