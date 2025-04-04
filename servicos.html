@@ -18,6 +18,10 @@
       <button class="category-button active" data-category="websites">Websites</button>
       <button class="category-button" data-category="ecommerce">E-commerce</button>
       <button class="category-button" data-category="marketing">Marketing Digital</button>
+      <button class="category-button" data-category="emails">Emails Profissionais</button>
+      <button class="category-button" data-category="seo">SEO</button>
+      <button class="category-button" data-category="design">Criação de Designs</button>
+      <button class="category-button" data-category="suporte">Suporte Técnico</button>
     </div>
     
     <!-- Grid para exibição de cards -->
@@ -43,7 +47,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>1 ano de Hospedagem</li>
           <br><br>
         </ul>
-        <button class="service-button-class">Ativar Acesso</button>
+        <button class="service-button-class" id="service-button">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
         <div class="expanded-content">
           <h3>Detalhes do Plano Starter</h3>
@@ -80,7 +84,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>Domínio por 1 ano </li>
           <li><i class="fas fa-check-circle feature-icon"></i>1 ano de Hosedagem</li>
         </ul>
-        <button class="service-button-class">Ativar Acesso</button>
+        <button class="service-button-class" id="service-button">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
         <div class="expanded-content">
           <h3>Detalhes do Plano Tradicional</h3>
@@ -121,7 +125,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>Domínio por 1 ano</li>
           <li><i class="fas fa-check-circle feature-icon"></i>1 ano de  Hospedagem</li>
         </ul>
-        <button class="service-button-class">Ativar Acesso</button>
+        <button class="service-button-class" id="service-button">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
         <div class="expanded-content">
           <h3>Detalhes do Plano Turbo</h3>
@@ -165,7 +169,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>1 ano de Hospedagem</li>
           <br><br><br>
         </ul>
-        <button class="service-button-class">Ativar Acesso</button>
+        <button class="service-button-class" id="service-button">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
         <div class="expanded-content">
           <h3>Detalhes do Plano E-commerce Básico</h3>
@@ -202,7 +206,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>Sistema de cupons e descontos</li>
           <li><i class="fas fa-check-circle feature-icon"></i>250GB de armazenamento</li>
         </ul>
-        <button class="service-button-class">Ativar Acesso</button>
+        <button class="service-button-class" id="service-button">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
         <div class="expanded-content">
           <h3>Detalhes do Plano E-commerce Premium</h3>
@@ -240,7 +244,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>1 campanha de anúncios por mês</li>
           <br><br>
         </ul>
-        <button class="service-button-class">Ativar Acesso</button>
+        <button class="service-button-class" id="service-button">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
         <div class="expanded-content">
           <h3>Detalhes do Plano Marketing Inicial</h3>
@@ -276,7 +280,7 @@
           <li><i class="fas fa-check-circle feature-icon"></i>Produção de conteúdo para blog</li>
           <li><i class="fas fa-check-circle feature-icon"></i>3 campanhas de anúncios por mês</li>
         </ul>
-        <button class="service-button-class">Ativar Acesso</button>
+        <button class="service-button-class" id="service-button">Ativar Acesso</button>
         <button class="details-btn">Ver mais detalhes</button>
         <div class="expanded-content">
           <h3>Detalhes do Plano Marketing Completo</h3>
@@ -295,28 +299,339 @@
       </div>
     </div>
     
-    <!-- Add custom plan section -->
-    <div class="custom-plan-section">
-      <img src="./arts/logo-sem-fundo.png" alt="">
-      <h2>Precisa de algo diferente?</h2>
-      <div class="custom-plan-content">
-        <div class="custom-plan-text">
-          <h3>Plano Personalizado</h3>
-          <p>Não encontrou o plano ideal para seu projeto? Vamos criar uma solução sob medida para você!</p>
-          <ul>
-            <div id="loirab">
-            <li><i class="fas fa-check-circle feature-icon"></i>Recursos personalizados</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Orçamento flexível</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Atendimento dedicado</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Prazo adaptável</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Soluções escaláveis</li>
-            <li><i class="fas fa-check-circle feature-icon"></i>Suporte estratégico</li>
+    <!-- Plano Email Básico -->
+    <body class="servicos">
+      <div class="container">     
+        <!-- Grid para exibição de cards -->
+        <div class="pricing-grid" id="category-grid">
+          <!-- Planos de Websites, E-commerce e Marketing mantidos como no original -->
+          
+          <!-- CORREÇÃO: Mova os cards de Email para dentro da div pricing-grid -->
+          <!-- Plano Email Básico -->
+          <div class="pricing-card basic" data-category="emails">
+            <div class="category-tag emails">Email</div>
+            <div class="discount-badge">-15%</div>
+            <div class="icon-wrapper">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h2>Email Básico</h2>
+            <div class="price">
+              <div class="original-price">R$ 600</div>
+              <span>R$</span>500<span>/ano</span>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle feature-icon"></i>5 contas de email</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>50GB por conta</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Antispam avançado</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Suporte técnico</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Webmail responsivo</li>
+              <br><br>
+            </ul>
+            <button class="service-button-class" id="service-button">Ativar Acesso</button>
+            <button class="details-btn">Ver mais detalhes</button>
+            <div class="expanded-content">
+              <h3>Detalhes do Plano Email Básico</h3>
+              <p>Solução de email profissional para pequenas empresas:</p>
+              <div class="feature-list">
+                <li><i class="fas fa-check-circle feature-icon"></i>Integração com dispositivos móveis</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Backup diário automático</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Proteção contra malware</li>
+              </div>
+              <p>Prazo de ativação: 1 dia útil</p>
+              <p class="atencao"><strong>*Inclui configuração inicial*</strong></p>
+            </div>
           </div>
-          </ul>
-          <button class="custom-plan-btn">Solicitar Orçamento</button>
+    
+          <!-- Plano Email Empresarial -->
+          <div class="pricing-card pro" data-category="emails">
+            <div class="category-tag emails">Email</div>
+            <div class="popular">Popular</div>
+            <div class="discount-badge">-20%</div>
+            <div class="icon-wrapper">
+              <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <h2>Email Empresarial</h2>
+            <div class="price">
+              <div class="original-price">R$ 1200</div>
+              <span>R$</span>960<span>/ano</span>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle feature-icon"></i>15 contas de email</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>100GB por conta</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Filtros avançados</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Assinatura personalizada</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Antispam e antivírus premium</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Suporte prioritário</li>
+            </ul>
+            <button class="service-button-class" id="service-button">Ativar Acesso</button>
+            <button class="details-btn">Ver mais detalhes</button>
+            <div class="expanded-content">
+              <h3>Detalhes do Plano Email Empresarial</h3>
+              <p>Solução completa para comunicação empresarial:</p>
+              <div class="feature-list">
+                <li><i class="fas fa-check-circle feature-icon"></i>Recursos de colaboração</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Calendário compartilhado</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Backup em tempo real</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Recuperação de emails excluídos (30 dias)</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Integração com ferramentas de produtividade</li>
+              </div>
+              <p>Prazo de ativação: 1 dia útil</p>
+              <p class="atencao"><strong>*Inclui migração de emails existentes*</strong></p>
+            </div>
+          </div>
+    
+          <!-- Plano SEO Básico -->
+          <div class="pricing-card basic" data-category="seo">
+            <div class="category-tag seo">SEO</div>
+            <div class="discount-badge">-10%</div>
+            <div class="icon-wrapper">
+              <i class="fas fa-search"></i>
+            </div>
+            <h2>SEO Básico</h2>
+            <div class="price">
+              <div class="original-price">R$ 900</div>
+              <span>R$</span>800<span>/mês</span>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle feature-icon"></i>Análise de palavras-chave</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Otimização on-page</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Relatórios mensais</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Melhoria de meta tags</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Otimização de imagens</li>
+              <br><br>
+            </ul>
+            <button class="service-button-class" id="service-button">Ativar Acesso</button>
+            <button class="details-btn">Ver mais detalhes</button>
+            <div class="expanded-content">
+              <h3>Detalhes do Plano SEO Básico</h3>
+              <p>Ideal para pequenas empresas que desejam iniciar seu posicionamento:</p>
+              <div class="feature-list">
+                <li><i class="fas fa-check-circle feature-icon"></i>Análise de concorrentes (3 sites)</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Correção de erros técnicos</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Sugestões de conteúdo mensal</li>
+              </div>
+              <p>Contrato mínimo: 3 meses</p>
+              <p class="atencao"><strong>*Resultados visíveis em 3-6 meses*</strong></p>
+            </div>
+          </div>
+    
+          <!-- Plano SEO Avançado -->
+          <div class="pricing-card pro" data-category="seo">
+            <div class="category-tag seo">SEO</div>
+            <div class="popular">Popular</div>
+            <div class="discount-badge">-15%</div>
+            <div class="icon-wrapper">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h2>SEO Avançado</h2>
+            <div class="price">
+              <div class="original-price">R$ 1800</div>
+              <span>R$</span>1.500<span>/mês</span>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle feature-icon"></i>Pesquisa aprofundada de palavras-chave</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Otimização on-page completa</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Construção de links (5/mês)</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Otimização técnica avançada</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Conteúdo otimizado (2 artigos/mês)</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Relatórios quinzenais</li>
+            </ul>
+            <button class="service-button-class" id="service-button">Ativar Acesso</button>
+            <button class="details-btn">Ver mais detalhes</button>
+            <div class="expanded-content">
+              <h3>Detalhes do Plano SEO Avançado</h3>
+              <p>Estratégia completa para empresas que buscam resultados consistentes:</p>
+              <div class="feature-list">
+                <li><i class="fas fa-check-circle feature-icon"></i>Análise de concorrentes (10 sites)</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Auditoria técnica mensal</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Otimização para Google My Business</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Estratégia de conteúdo trimestral</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>SEO local</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Consultoria estratégica mensal</li>
+              </div>
+              <p>Contrato mínimo: 6 meses</p>
+              <p class="atencao"><strong>*Inclui análise de ROI mensal*</strong></p>
+            </div>
+          </div>
+    
+          <!-- Plano Design Essencial -->
+          <div class="pricing-card basic" data-category="design">
+            <div class="category-tag design">Design</div>
+            <div class="discount-badge">-15%</div>
+            <div class="icon-wrapper">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h2>Design Essencial</h2>
+            <div class="price">
+              <div class="original-price">R$ 1200</div>
+              <span>R$</span>1.000<span>/projeto</span>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle feature-icon"></i>Logo + Identidade Visual</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>2 opções de logo</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Cartão de visita</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Assinatura de email</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Papelaria básica</li>
+              <br><br>
+            </ul>
+            <button class="service-button-class" id="service-button">Ativar Acesso</button>
+            <button class="details-btn">Ver mais detalhes</button>
+            <div class="expanded-content">
+              <h3>Detalhes do Plano Design Essencial</h3>
+              <p>Ideal para startups e pequenos negócios:</p>
+              <div class="feature-list">
+                <li><i class="fas fa-check-circle feature-icon"></i>Manual de identidade básico</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Arquivos em alta resolução</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>2 rodadas de alterações</li>
+              </div>
+              <p>Prazo de entrega: 15 dias úteis</p>
+              <p class="atencao"><strong>*Inclui arquivos editáveis*</strong></p>
+            </div>
+          </div>
+    
+          <!-- Plano Design Completo -->
+          <div class="pricing-card pro" data-category="design">
+            <div class="category-tag design">Design</div>
+            <div class="popular">Popular</div>
+            <div class="discount-badge">-20%</div>
+            <div class="icon-wrapper">
+              <i class="fas fa-pencil-ruler"></i>
+            </div>
+            <h2>Design Completo</h2>
+            <div class="price">
+              <div class="original-price">R$ 2500</div>
+              <span>R$</span>2.000<span>/projeto</span>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle feature-icon"></i>Logo + Identidade Visual Completa</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>4 opções de logo</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Papelaria completa</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Templates para redes sociais</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Mockups personalizados</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Signage básica</li>
+            </ul>
+            <button class="service-button-class" id="service-button">Ativar Acesso</button>
+            <button class="details-btn">Ver mais detalhes</button>
+            <div class="expanded-content">
+              <h3>Detalhes do Plano Design Completo</h3>
+              <p>Identidade visual profissional para empresas em crescimento:</p>
+              <div class="feature-list">
+                <li><i class="fas fa-check-circle feature-icon"></i>Manual de identidade completo</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Arquivos para web e impressão</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>3 rodadas de alterações</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Adaptações para diversos formatos</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Apresentação de conceito</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Consultoria de aplicação</li>
+              </div>
+              <p>Prazo de entrega: 30 dias úteis</p>
+              <p class="atencao"><strong>*Inclui pesquisa de mercado*</strong></p>
+            </div>
+          </div>
+    
+          <!-- Plano Suporte Básico -->
+          <div class="pricing-card basic" data-category="suporte">
+            <div class="category-tag suporte">Suporte</div>
+            <div class="discount-badge">-10%</div>
+            <div class="icon-wrapper">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h2>Suporte Básico</h2>
+            <div class="price">
+              <div class="original-price">R$ 300</div>
+              <span>R$</span>270<span>/mês</span>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle feature-icon"></i>5 horas de suporte mensal</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Atendimento em horário comercial</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Suporte por email e chat</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Tempo de resposta em até 24h</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Manutenção preventiva básica</li>
+              <br><br>
+            </ul>
+            <button class="service-button-class" id="service-button">Ativar Acesso</button>
+            <button class="details-btn">Ver mais detalhes</button>
+            <div class="expanded-content">
+              <h3>Detalhes do Plano Suporte Básico</h3>
+              <p>Suporte essencial para pequenos sites:</p>
+              <div class="feature-list">
+                <li><i class="fas fa-check-circle feature-icon"></i>Atualizações de segurança</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Backup semanal</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Resolução de problemas simples</li>
+              </div>
+              <p>Contrato mínimo: 3 meses</p>
+              <p class="atencao"><strong>*Horas não utilizadas não acumulam*</strong></p>
+            </div>
+          </div>
+    
+          <!-- Plano Suporte Premium -->
+          <div class="pricing-card pro" data-category="suporte">
+            <div class="category-tag suporte">Suporte</div>
+            <div class="popular">Popular</div>
+            <div class="discount-badge">-15%</div>
+            <div class="icon-wrapper">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h2>Suporte Premium</h2>
+            <div class="price">
+              <div class="original-price">R$ 600</div>
+              <span>R$</span>500<span>/mês</span>
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle feature-icon"></i>15 horas de suporte mensal</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Atendimento estendido (8h-22h)</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Suporte por email, chat e telefone</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Tempo de resposta em até 4h</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Manutenção preventiva completa</li>
+              <li><i class="fas fa-check-circle feature-icon"></i>Monitoramento 24/7</li>
+            </ul>
+            <button class="service-button-class" id="service-button">Ativar Acesso</button>
+            <button class="details-btn">Ver mais detalhes</button>
+            <div class="expanded-content">
+              <h3>Detalhes do Plano Suporte Premium</h3>
+              <p>Suporte completo para sites e aplicações críticas:</p>
+              <div class="feature-list">
+                <li><i class="fas fa-check-circle feature-icon"></i>Atualizações de segurança em tempo real</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Backup diário</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Resolução de problemas complexos</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Consultoria técnica</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Relatório mensal de performance</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Otimização de desempenho trimestral</li>
+              </div>
+              <p>Contrato mínimo: 6 meses</p>
+              <p class="atencao"><strong>*Até 5h acumulam para o mês seguinte*</strong></p>
+            </div>
+          </div>
+        </div> <!-- Aqui fecha a div pricing-grid -->
+    
+        <!-- Add custom plan section -->
+        <div class="custom-plan-section">
+          <img src="./arts/logo-sem-fundo.png" alt="">
+          <h2>Precisa de algo diferente?</h2>
+          <div class="custom-plan-content">
+            <div class="custom-plan-text">
+              <h3>Plano Personalizado</h3>
+              <p>Não encontrou o plano ideal para seu projeto? Vamos criar uma solução sob medida para você!</p>
+              <ul>
+                <div id="loirab">
+                <li><i class="fas fa-check-circle feature-icon"></i>Recursos personalizados</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Orçamento flexível</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Atendimento dedicado</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Prazo adaptável</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Soluções escaláveis</li>
+                <li><i class="fas fa-check-circle feature-icon"></i>Suporte estratégico</li>
+                </div>
+              </ul>
+              <button class="custom-plan-btn">Solicitar Orçamento</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    </div>
+  </div> <!-- Aqui fecha a div pricing-grid -->
+
+
   </div>
   
   <script>
