@@ -36,7 +36,7 @@
                     <li><a href="contato" class="nav-link ">Contato</a></li>
                 </ul>
             </nav>
-            <div class="store-container">
+            <div class="header-links-container">
                 <a href="/loja" class="store-button"><i class="fas fa-shopping-cart"></i> Loja Virtual</a>
             </div>
             <div class="menu-btn"  onclick="toggleMenu()" id="menu-mobile">
@@ -211,5 +211,231 @@
         </div> 
     </footer>
     <script src="efeitos.js"></script>
-    <script src="efeitos.js"></script>
+    <script> 
+        // Adicione este script ao seu header ou a um arquivo JavaScript incluído no header
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos do DOM no header
+    const headerLinksContainer = document.querySelector('.header-links-container');
+    const loginButton = document.querySelector('.login-button');
+    
+    // Função para verificar se o usuário está logado
+    function verificarUsuarioLogado() {
+        // Verificar token armazenado no localStorage
+        const tokenString = localStorage.getItem('authToken');
+        const token = tokenString ? JSON.parse(tokenString) : null;
+        
+        // Verificar usuário na sessão atual
+        const usuarioString = sessionStorage.getItem('usuarioLogado');
+        const usuario = usuarioString ? JSON.parse(usuarioString) : null;
+        
+        // Verificar se o token existe e ainda é válido
+        if (token && validarToken(token)) {
+            return usuario || { nome: token.nome };
+        } else if (usuario) {
+            // Usuário está na sessão mas não tem token (não marcou "lembrar")
+            return usuario;
+        }
+        
+        return null;
+    }
+    
+    // Função para validar token
+    function validarToken(token) {
+        // Verificar se o token ainda não expirou
+        const agora = new Date().getTime();
+        return token.exp > agora;
+    }
+    
+    // Função para atualizar a interface do header
+    function atualizarHeaderAuth() {
+        const usuario = verificarUsuarioLogado();
+        
+        // Se existe um usuário logado
+        if (usuario) {
+            // Remover o botão de login atual
+            if (loginButton) {
+                loginButton.remove();
+            }
+            
+            // Criar botão de perfil com dropdown
+            const perfilContainer = document.createElement('div');
+            perfilContainer.className = 'perfil-container';
+            
+            perfilContainer.innerHTML = `
+                <button class="perfil-button">
+                    <i class="fas fa-user"></i>
+                    <span>${usuario.nome ? usuario.nome.split(' ')[0] : 'Perfil'}</span>
+                </button>
+                <div class="perfil-dropdown">
+                    <ul>
+                        <li><a href="/perfil/editar">Editar Dados</a></li>
+                        <li><a href="/perfil/processos">Processos em Andamento</a></li>
+                        <li><a href="/perfil/historico">Histórico de Compras</a></li>
+                        <li><a href="#" id="botao-logout">Sair</a></li>
+                    </ul>
+                </div>
+            `;
+            
+            // Adicionar à div de links do header
+            headerLinksContainer.appendChild(perfilContainer);
+            
+            // Adicionar evento de click para mostrar/esconder dropdown
+            const perfilButton = perfilContainer.querySelector('.perfil-button');
+            const perfilDropdown = perfilContainer.querySelector('.perfil-dropdown');
+            
+            perfilButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                perfilDropdown.classList.toggle('ativo');
+            });
+            
+            // Fechar dropdown ao clicar fora
+            document.addEventListener('click', function() {
+                perfilDropdown.classList.remove('ativo');
+            });
+            
+            // Evitar que cliques dentro do dropdown fechem ele
+            perfilDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            // Adicionar evento para logout
+            const botaoLogout = perfilContainer.querySelector('#botao-logout');
+            botaoLogout.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Limpar dados de sessão
+                localStorage.removeItem('authToken');
+                sessionStorage.removeItem('usuarioLogado');
+                
+                // Recarregar a página para atualizar o estado
+                window.location.reload();
+            });
+        } else {
+            // Se não houver botão de login, criar um novo
+            if (!loginButton) {
+                const loginContainer = document.createElement('div');
+                loginContainer.className = 'login-container';
+                
+                loginContainer.innerHTML = `
+                    <button class="login-button">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                    <div class="login-dropdown">
+                        <ul>
+                            <li><a href="/login/login.html">Fazer Login</a></li>
+                            <li><a href="/login/cadastro.html">Cadastre-se</a></li>
+                        </ul>
+                    </div>
+                `;
+                
+                // Adicionar à div de links do header
+                headerLinksContainer.appendChild(loginContainer);
+                
+                // Adicionar evento de click para mostrar/esconder dropdown
+                const novoLoginButton = loginContainer.querySelector('.login-button');
+                const loginDropdown = loginContainer.querySelector('.login-dropdown');
+                
+                novoLoginButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    loginDropdown.classList.toggle('ativo');
+                });
+                
+                // Fechar dropdown ao clicar fora
+                document.addEventListener('click', function() {
+                    loginDropdown.classList.remove('ativo');
+                });
+                
+                // Evitar que cliques dentro do dropdown fechem ele
+                loginDropdown.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+        }
+    }
+    
+    // Executar verificação quando a página carregar
+    atualizarHeaderAuth();
+    
+    // Adicionar estilos CSS para o dropdown
+    const style = document.createElement('style');
+    style.textContent = `
+        .perfil-container, .login-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .perfil-button, .login-button {
+            display: flex;
+            margin-top: 7%; 
+            margin-left: 20px;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: transparent;
+            color: black;
+            border: none;
+            border-radius: 800px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .perfil-button:hover, .login-button:hover {
+            background-color: #850630;
+            color: white;
+        }
+        
+        .perfil-dropdown, .login-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 220px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            display: none;
+            z-index: 1000;
+            margin-top: 5px;
+        }
+        
+        .perfil-dropdown.ativo, .login-dropdown.ativo {
+            display: block;
+        }
+        
+        .perfil-dropdown ul, .login-dropdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .perfil-dropdown li, .login-dropdown li {
+            padding: 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .perfil-dropdown li:last-child, .login-dropdown li:last-child {
+            border-bottom: none;
+        }
+        
+        .perfil-dropdown a, .login-dropdown a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        
+        .perfil-dropdown a:hover, .login-dropdown a:hover {
+            background-color: #f5f5f5;
+        }
+        
+        #botao-logout {
+            color: #e74c3c;
+        }
+    `;
+    
+    document.head.appendChild(style);
+});
+    </script>
 </html>
